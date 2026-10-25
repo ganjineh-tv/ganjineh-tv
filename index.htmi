@@ -1,1 +1,65 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>گنجینه نوستالژی | تماشای آنلاین</title>
+<style>
+body{margin:0;background:#111827;color:white;font-family:Tahoma,Arial,sans-serif}
+header{text-align:center;padding:28px 12px;background:#7c2d12}
+main{max-width:850px;margin:25px auto;padding:16px}
+h1{margin:0 0 12px}
+.panel{background:#1f2937;padding:18px;border-radius:14px}
+input{box-sizing:border-box;width:100%;padding:13px;margin:8px 0;border-radius:8px;border:1px solid #64748b;font-size:16px}
+button{padding:12px 20px;background:#f59e0b;color:#111827;border:0;border-radius:8px;font-size:16px;cursor:pointer}
+video,iframe{width:100%;aspect-ratio:16/9;margin-top:18px;border:0;border-radius:10px;background:#000}
+.note{color:#cbd5e1;font-size:13px;line-height:2}
+footer{text-align:center;color:#cbd5e1;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<h1>🎞️ گنجینه نوستالژی</h1>
+<div>آرشیو خاطره‌انگیز برنامه‌های کودک</div>
+</header>
+<main>
+<section class="panel">
+<h2>تماشای آنلاین</h2>
+<p>لینک مستقیم فیلم یا لینک پخش قابل‌تعبیه را وارد کن:</p>
+<input id="filmLink" type="url" placeholder="https://example.com/video.mp4">
+<button onclick="playFilm()">▶ پخش فیلم</button>
+<div id="player"></div>
+<p class="note">توجه: لینک باید عمومی و قابل‌دسترسی باشد. بعضی سایت‌ها اجازهٔ پخش در سایت دیگر را نمی‌دهند.</p>
+</section>
+</main>
+<footer>گنجینه نوستالژی ©</footer>
+<script>
+function playFilm(){
+  const raw=document.getElementById('filmLink').value.trim();
+  const box=document.getElementById('player');
+  box.replaceChildren();
+  let u;
+  try { u=new URL(raw); } catch(e) {
+    box.textContent='لطفاً یک لینک معتبر وارد کن.';
+    return;
+  }
+  if(!['https:','http:'].includes(u.protocol)){
+    box.textContent='این نوع لینک پشتیبانی نمی‌شود.';
+    return;
+  }
+  if(/\.(mp4|webm|ogg|m3u8)(?:$|[?#])/i.test(u.href)){
+    const v=document.createElement('video');
+    v.controls=true;v.playsInline=true;v.src=u.href;
+    box.appendChild(v);
+  } else {
+    const f=document.createElement('iframe');
+    f.src=u.href;f.allowFullscreen=true;
+    f.allow='autoplay; encrypted-media; picture-in-picture';
+    f.referrerPolicy='strict-origin-when-cross-origin';
+    box.appendChild(f);
+  }
+}
+</script>
+</body>
+</html>
