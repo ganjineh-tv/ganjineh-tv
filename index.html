@@ -3,68 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>گنجینه نوستالژی | تماشای آنلاین</title>
+<title>گنجینه نوستالژی | آرشیو کلاه‌قرمزی</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#101522;color:#fff;font-family:Tahoma,Arial,sans-serif}
-header{text-align:center;padding:35px 15px;background:linear-gradient(135deg,#7c2d12,#b45309)}
-header h1{font-size:28px;margin:0 0 12px}
-header p{margin:0;line-height:2}
-main{max-width:850px;margin:25px auto;padding:15px}
-.panel{background:#1e293b;padding:22px;border-radius:16px}
-h2{color:#fbbf24}
-input{width:100%;padding:14px;margin:10px 0;border-radius:9px;border:1px solid #64748b;font-size:15px;direction:ltr}
-button{padding:13px 20px;background:#f59e0b;color:#111827;border:0;border-radius:9px;font-size:16px;cursor:pointer}
-#player video,#player iframe{width:100%;aspect-ratio:16/9;margin-top:18px;border:0;border-radius:10px;background:#000}
-.note{color:#cbd5e1;font-size:13px;line-height:2}
-footer{text-align:center;padding:25px;color:#cbd5e1}
+body{margin:0;background:#07152c;color:#fff;font-family:Tahoma,Arial,sans-serif}
+header{background:#061027;padding:18px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-size:22px;font-weight:bold;color:#ffd54a}
+nav a{color:white;text-decoration:none;margin:8px;font-size:14px}
+.hero{padding:35px 20px;background:linear-gradient(110deg,#7f1d1d,#172554);text-align:center}
+.hero h1{font-size:32px;color:#fff;margin:0 0 14px}
+.hero p{line-height:2;color:#e5e7eb}
+main{max-width:1100px;margin:auto;padding:22px 15px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+input{flex:1;min-width:180px;padding:13px;border-radius:9px;border:1px solid #334155;font-size:15px}
+button{cursor:pointer;border:0;border-radius:9px;background:#f0264f;color:#fff;padding:13px 18px;font-size:15px}
+h2{font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
+.card{overflow:hidden;background:#0d2040;border:1px solid #24466f;border-radius:14px}
+.poster{height:135px;display:grid;place-items:center;background:linear-gradient(135deg,#7f1d1d,#d97706);font-size:55px}
+.card-body{padding:15px}
+.card h3{font-size:17px;margin:0 0 10px}
+.card p{font-size:13px;color:#cbd5e1;line-height:1.8}
+.card button{width:100%}
+#player{margin-top:22px}
+video{width:100%;max-height:65vh;background:#000;border-radius:12px}
+.notice{font-size:13px;line-height:2;color:#cbd5e1;margin-top:20px}
+footer{text-align:center;padding:25px;background:#061027;color:#cbd5e1;line-height:2}
 </style>
 </head>
 <body>
 <header>
-<h1>🎞️ گنجینه نوستالژی</h1>
-<p>آرشیو خاطره‌انگیز برنامه‌های کودک</p>
-<p>خاطرات قدیمی، تماشای دوباره</p>
+<div class="brand">📺 گنجینه نوستالژی</div>
+<nav>
+<a href="#home">خانه</a>
+<a href="#archive">آرشیو کلاه‌قرمزی</a>
+</nav>
 </header>
-<main>
-<section class="panel">
-<h2>▶ تماشای آنلاین</h2>
-<p>لینک مستقیم ویدئو یا لینک پخش را وارد کن:</p>
-<input id="filmLink" type="url" placeholder="https://example.com/video.mp4">
-<button onclick="playFilm()">پخش فیلم</button>
-<div id="player"></div>
-<p class="note">لینک باید عمومی باشد. لینک مستقیم MP4 معمولاً قابل پخش است؛ بعضی سایت‌ها اجازه نمایش ویدئو در سایت دیگر را نمی‌دهند.</p>
+<section class="hero" id="home">
+<h1>آرشیو کلاه‌قرمزی 🎩</h1>
+<p>خاطرات شیرین کودکی؛ قسمت‌های خاطره‌انگیز را پیدا کن و تماشا کن.</p>
 </section>
+<main id="archive">
+<h2>🎬 قسمت‌های کلاه‌قرمزی</h2>
+<div class="tools">
+<input id="search" placeholder="جست‌وجوی قسمت..." oninput="filterCards()">
+</div>
+<div class="grid" id="grid">
+<div class="card" data-title="کلاه قرمزی قسمت 1">
+<div class="poster">🎭</div>
+<div class="card-body">
+<h3>کلاه‌قرمزی - قسمت ۱</h3>
+<p>برای تماشای این قسمت، دکمهٔ پخش را بزن.</p>
+<button onclick="playVideo('https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/1080p/Kolah.Ghermezi.88.1080p.E01.IR-DL.mp4')">▶ پخش فیلم</button>
+</div>
+</div>
+<div class="card" data-title="کلاه قرمزی قسمت 2">
+<div class="poster">📺</div>
+<div class="card-body">
+<h3>کلاه‌قرمزی - قسمت ۲</h3>
+<p>لینک این قسمت هنوز اضافه نشده است.</p>
+<button onclick="alert('لینک قسمت ۲ هنوز اضافه نشده است.')">مشاهده</button>
+</div>
+</div>
+</div>
+<div id="player"></div>
+<p class="notice">برای اضافه‌کردن قسمت‌های دیگر، باید لینک مستقیم هر ویدئو را در کد سایت وارد کنیم. بعضی لینک‌ها ممکن است از دسترس خارج شوند.</p>
 </main>
-<footer>گنجینه نوستالژی ©</footer>
+<footer>❤️ گنجینه نوستالژی | آرشیو خاطرات برنامه‌های کودک</footer>
 <script>
-function playFilm(){
- const raw=document.getElementById('filmLink').value.trim();
- const box=document.getElementById('player');
- box.replaceChildren();
- let u;
- try{u=new URL(raw)}catch(e){
-  box.textContent='لطفاً یک لینک معتبر وارد کن.';
-  return;
- }
- if(!['https:','http:'].includes(u.protocol)){
-  box.textContent='لینک معتبر نیست.';
-  return;
- }
- if(/\.(mp4|webm|ogg|m3u8)(?:$|[?#])/i.test(u.href)){
-  const v=document.createElement('video');
-  v.controls=true;
-  v.playsInline=true;
-  v.src=u.href;
-  box.appendChild(v);
- }else{
-  const f=document.createElement('iframe');
-  f.src=u.href;
-  f.allowFullscreen=true;
-  f.allow='autoplay; encrypted-media; picture-in-picture';
-  f.referrerPolicy='strict-origin-when-cross-origin';
-  box.appendChild(f);
- }
+function playVideo(url){
+const box=document.getElementById('player');
+box.replaceChildren();
+const v=document.createElement('video');
+v.controls=true;
+v.playsInline=true;
+v.src=url;
+box.appendChild(v);
+v.scrollIntoView({behavior:'smooth',block:'center'});
+v.play().catch(()=>{});
+}
+function filterCards(){
+const q=document.getElementById('search').value.trim().toLowerCase();
+document.querySelectorAll('.card').forEach(card=>{
+card.style.display=card.dataset.title.toLowerCase().includes(q)?'':'none';
+});
 }
 </script>
 </body>
