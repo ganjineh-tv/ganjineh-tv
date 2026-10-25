@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>گنجینه نوستالژی | تماشای آنلاین</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101522;color:#fff;font-family:Tahoma,Arial,sans-serif}
+header{text-align:center;padding:35px 15px;background:linear-gradient(135deg,#7c2d12,#b45309)}
+header h1{font-size:28px;margin:0 0 12px}
+header p{margin:0;line-height:2}
+main{max-width:850px;margin:25px auto;padding:15px}
+.panel{background:#1e293b;padding:22px;border-radius:16px}
+h2{color:#fbbf24}
+input{width:100%;padding:14px;margin:10px 0;border-radius:9px;border:1px solid #64748b;font-size:15px;direction:ltr}
+button{padding:13px 20px;background:#f59e0b;color:#111827;border:0;border-radius:9px;font-size:16px;cursor:pointer}
+#player video,#player iframe{width:100%;aspect-ratio:16/9;margin-top:18px;border:0;border-radius:10px;background:#000}
+.note{color:#cbd5e1;font-size:13px;line-height:2}
+footer{text-align:center;padding:25px;color:#cbd5e1}
+</style>
+</head>
+<body>
+<header>
+<h1>🎞️ گنجینه نوستالژی</h1>
+<p>آرشیو خاطره‌انگیز برنامه‌های کودک</p>
+<p>خاطرات قدیمی، تماشای دوباره</p>
+</header>
+<main>
+<section class="panel">
+<h2>▶ تماشای آنلاین</h2>
+<p>لینک مستقیم ویدئو یا لینک پخش را وارد کن:</p>
+<input id="filmLink" type="url" placeholder="https://example.com/video.mp4">
+<button onclick="playFilm()">پخش فیلم</button>
+<div id="player"></div>
+<p class="note">لینک باید عمومی باشد. لینک مستقیم MP4 معمولاً قابل پخش است؛ بعضی سایت‌ها اجازه نمایش ویدئو در سایت دیگر را نمی‌دهند.</p>
+</section>
+</main>
+<footer>گنجینه نوستالژی ©</footer>
+<script>
+function playFilm(){
+ const raw=document.getElementById('filmLink').value.trim();
+ const box=document.getElementById('player');
+ box.replaceChildren();
+ let u;
+ try{u=new URL(raw)}catch(e){
+  box.textContent='لطفاً یک لینک معتبر وارد کن.';
+  return;
+ }
+ if(!['https:','http:'].includes(u.protocol)){
+  box.textContent='لینک معتبر نیست.';
+  return;
+ }
+ if(/\.(mp4|webm|ogg|m3u8)(?:$|[?#])/i.test(u.href)){
+  const v=document.createElement('video');
+  v.controls=true;
+  v.playsInline=true;
+  v.src=u.href;
+  box.appendChild(v);
+ }else{
+  const f=document.createElement('iframe');
+  f.src=u.href;
+  f.allowFullscreen=true;
+  f.allow='autoplay; encrypted-media; picture-in-picture';
+  f.referrerPolicy='strict-origin-when-cross-origin';
+  box.appendChild(f);
+ }
+}
+</script>
+</body>
+</html>
