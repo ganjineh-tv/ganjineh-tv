@@ -6,157 +6,109 @@
 <title>گنجینه نوستالژی | آرشیو کلاه‌قرمزی</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#050d19;color:#fff;font-family:Tahoma,Arial,sans-serif}
-header{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;padding:18px 4%;background:#081326;border-bottom:1px solid #243750}
-.logo{font-size:22px;font-weight:bold;color:#ffd447}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:#e5e7eb;text-decoration:none;font-size:14px}
-.search{background:#18263b;border:1px solid #2c405e;color:white;padding:12px 15px;border-radius:25px;max-width:100%;width:230px}
-.hero{padding:55px 6%;background:linear-gradient(90deg,#09101f,#132a31 55%,#411b2b);min-height:260px;display:flex;align-items:center}
-.hero div{max-width:570px}
-.hero small{color:#ff4d6d;font-size:15px}
-.hero h1{font-size:clamp(30px,5vw,48px);margin:14px 0}
-.hero p{color:#d5dcea;line-height:2}
-.btn{display:inline-block;background:#f0143d;color:white;border:0;border-radius:25px;padding:13px 22px;text-decoration:none;font-weight:bold;cursor:pointer}
-main{max-width:1400px;margin:auto;padding:25px 4%}
-.heading{display:flex;align-items:center;gap:12px;font-size:23px;margin:15px 0 20px}
-.heading:before{content:"";width:5px;height:28px;background:#f0143d;border-radius:5px}
-.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px}
-.card{background:#0c1b30;border:1px solid #243b59;border-radius:12px;overflow:hidden}
-.poster{height:135px;display:flex;align-items:center;justify-content:center;font-size:55px;background:linear-gradient(135deg,#6f2434,#d18b45)}
-.p2{background:linear-gradient(135deg,#204e45,#b96c42)}
-.p3{background:linear-gradient(135deg,#273a68,#764265)}
-.info{padding:13px}
-.info h3{font-size:14px;line-height:1.8;margin:0 0 8px}
-.meta{font-size:12px;color:#aab9ce;margin-bottom:12px}
-.play{width:100%;padding:11px;border:0;border-radius:8px;background:#ed1740;color:white;font-family:inherit;cursor:pointer}
-.play:disabled{background:#29374b;color:#bbc6d5;cursor:default}
-#player{margin-top:25px;scroll-margin-top:15px}
-#player video{width:100%;max-height:70vh;background:#000;border-radius:12px}
-.note{color:#aab9ce;font-size:12px;line-height:2;margin-top:25px}
-footer{text-align:center;background:#081326;color:#c5cfdd;padding:25px;line-height:2;margin-top:35px}
-@media(max-width:950px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:600px){
- header{align-items:flex-start}
- nav{order:3;width:100%;gap:14px}
- nav a{font-size:12px}
- .search{width:100%}
- .hero{padding:35px 20px;min-height:220px}
- main{padding:20px 12px}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
- .poster{height:100px}
- .info{padding:9px}
- .info h3{font-size:12px}
- .play{font-size:12px;padding:10px 4px}
- .heading{font-size:19px}
-}
+body{margin:0;background:#08111f;color:#fff;font-family:Tahoma,Arial,sans-serif}
+header{padding:22px 16px;background:#111e30;text-align:center;border-bottom:2px solid #e52b4b}
+header h1{margin:0;color:#ff526b;font-size:25px}
+header p{color:#cbd5e1;margin-bottom:0}
+main{max-width:1100px;margin:auto;padding:18px}
+h2{color:#ff657a}
+#search{width:100%;padding:13px;border-radius:10px;border:1px solid #526176;background:#152238;color:white;font-size:16px;margin-bottom:20px}
+.year{margin:28px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.card{background:#152238;border:1px solid #263951;border-radius:12px;padding:14px;text-align:center}
+.thumb{height:90px;background:linear-gradient(135deg,#283e5c,#101827);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:38px;margin-bottom:10px}
+.card h3{font-size:15px;margin:8px 0}
+button,select{padding:10px;border:0;border-radius:8px;background:#e52b4b;color:white;font-size:14px;cursor:pointer}
+select{width:100%;margin:8px 0;background:#263951}
+.play{width:100%}
+#playerBox{display:none;background:#152238;padding:14px;border-radius:12px;margin:20px 0}
+video{width:100%;max-height:65vh;background:#000;border-radius:8px}
+#playerTitle{font-size:18px;color:#ff657a}
+.note{color:#b8c4d6;font-size:13px;line-height:1.8}
+footer{text-align:center;padding:25px;color:#9aabc0}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">📺 گنجینه نوستالژی</div>
-<nav>
-<a href="#">خانه</a>
-<a href="#archive">آرشیو کلاه‌قرمزی</a>
-<a href="#other">مجموعه‌های دیگر</a>
-</nav>
-<input class="search" id="search" placeholder="جست‌وجوی قسمت‌ها...">
+<h1>📺 گنجینه نوستالژی</h1>
+<p>آرشیو خاطرات کودکی | کلاه‌قرمزی</p>
 </header>
-
-<section class="hero">
-<div>
-<small>دنیای خاطرات کودکی</small>
-<h1>آرشیو کلاه‌قرمزی 🎩</h1>
-<p>به خاطرات شیرین کودکی برگرد! قسمت‌های محبوب کلاه‌قرمزی را در گنجینه نوستالژی پیدا کن و تماشا کن.</p>
-<a class="btn" href="#archive">▶ مشاهده آرشیو</a>
-</div>
-</section>
-
 <main>
-<section id="archive">
-<h2 class="heading">قسمت‌های کلاه‌قرمزی</h2>
-<div class="grid" id="grid">
-<article class="card" data-title="کلاه قرمزی قسمت ۱">
-<div class="poster">🎭</div>
-<div class="info">
-<h3>کلاه‌قرمزی — قسمت ۱</h3>
-<div class="meta">سال ۱۳۸۸ · قسمت اول</div>
-<button class="play" onclick="playVideo(1)">▶ پخش فیلم</button>
+<input id="search" placeholder="جست‌وجوی سال یا شماره قسمت..." oninput="render()">
+<div id="playerBox">
+<h2 id="playerTitle">پخش ویدئو</h2>
+<video id="video" controls playsinline preload="metadata"></video>
+<p class="note">اگر ویدئو پخش نشد، کیفیت دیگری را انتخاب کن یا لینک را در مرورگر باز کن.</p>
 </div>
-</article>
-<article class="card" data-title="کلاه قرمزی قسمت ۲">
-<div class="poster p2">📺</div>
-<div class="info">
-<h3>کلاه‌قرمزی — قسمت ۲</h3>
-<div class="meta">لینک هنوز اضافه نشده</div>
-<button class="play" disabled>به‌زودی</button>
-</div>
-</article>
-<article class="card" data-title="کلاه قرمزی قسمت ۳">
-<div class="poster p3">🎬</div>
-<div class="info">
-<h3>کلاه‌قرمزی — قسمت ۳</h3>
-<div class="meta">لینک هنوز اضافه نشده</div>
-<button class="play" disabled>به‌زودی</button>
-</div>
-</article>
-<article class="card" data-title="کلاه قرمزی قسمت ۴">
-<div class="poster p2">⭐</div>
-<div class="info">
-<h3>کلاه‌قرمزی — قسمت ۴</h3>
-<div class="meta">لینک هنوز اضافه نشده</div>
-<button class="play" disabled>به‌زودی</button>
-</div>
-</article>
-<article class="card" data-title="کلاه قرمزی قسمت ۵">
-<div class="poster">🎪</div>
-<div class="info">
-<h3>کلاه‌قرمزی — قسمت ۵</h3>
-<div class="meta">لینک هنوز اضافه نشده</div>
-<button class="play" disabled>به‌زودی</button>
-</div>
-</article>
-</div>
-<div id="player"></div>
-</section>
-
-<section id="other">
-<h2 class="heading">مجموعه‌های دیگر</h2>
-<p class="note">به‌زودی آرشیو دیگر برنامه‌های کودک هم به این مجموعه اضافه می‌شود.</p>
-</section>
-<p class="note">پخش فیلم به فعال بودن لینک وابسته است. برای انتشار ویدئوها باید اجازهٔ لازم را داشته باشید.</p>
+<div id="catalog"></div>
 </main>
-
-<footer>❤️ گنجینه نوستالژی<br>آرشیو خاطرات شیرین برنامه‌های کودک</footer>
-
+<footer>گنجینه نوستالژی 🎞️</footer>
 <script>
-const videos={
-1:"https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/1080p/Kolah.Ghermezi.88.1080p.E01.IR-DL.mp4"
-};
-function playVideo(id){
-const box=document.getElementById('player');
-box.replaceChildren();
-if(!videos[id]){
-box.textContent='لینک این قسمت هنوز اضافه نشده است.';
-return;
+const years=[
+ {year:1388,count:15,folder:"88"},
+ {year:1390,count:16,folder:"90"}
+];
+function url(year,ep,quality){
+ const n=String(ep).padStart(2,"0");
+ return `https://dl3.ir-dl.com/series/Kolah.Ghermezi.${year.folder}/${quality}p/Kolah.Ghermezi.${year.folder}.${quality}p.E${n}.IR-DL.mp4`;
 }
-const title=document.createElement('h3');
-title.textContent='کلاه‌قرمزی — قسمت '+id;
-const v=document.createElement('video');
-v.controls=true;
-v.playsInline=true;
-v.preload='metadata';
-v.src=videos[id];
-box.append(title,v);
-box.scrollIntoView({behavior:'smooth',block:'start'});
-v.play().catch(()=>{});
+function render(){
+ const q=document.getElementById("search").value.trim();
+ const root=document.getElementById("catalog");
+ root.innerHTML="";
+ years.forEach(y=>{
+  const episodes=[];
+  for(let i=1;i<=y.count;i++){
+   const title=`کلاه‌قرمزی ${y.year} - قسمت ${String(i).padStart(2,"0")}`;
+   if(!q||title.includes(q)||String(y.year).includes(q)||String(i).includes(q)){
+    episodes.push({i,title});
+   }
+  }
+  if(!episodes.length)return;
+  const section=document.createElement("section");
+  section.className="year";
+  const heading=document.createElement("h2");
+  heading.textContent=`🎩 آرشیو کلاه‌قرمزی ${y.year}`;
+  section.appendChild(heading);
+  const grid=document.createElement("div");
+  grid.className="grid";
+  episodes.forEach(ep=>{
+   const card=document.createElement("article");
+   card.className="card";
+   const thumb=document.createElement("div");
+   thumb.className="thumb";
+   thumb.textContent="🎬";
+   const h=document.createElement("h3");
+   h.textContent=ep.title;
+   const select=document.createElement("select");
+   ["480","720","1080"].forEach(quality=>{
+    const opt=document.createElement("option");
+    opt.value=quality;
+    opt.textContent=quality+"p";
+    select.appendChild(opt);
+   });
+   const button=document.createElement("button");
+   button.className="play";
+   button.textContent="▶ پخش قسمت";
+   button.onclick=()=>{
+    const box=document.getElementById("playerBox");
+    const video=document.getElementById("video");
+    document.getElementById("playerTitle").textContent=ep.title+" ("+select.value+"p)";
+    box.style.display="block";
+    video.pause();
+    video.src=url(y,ep.i,select.value);
+    video.load();
+    box.scrollIntoView({behavior:"smooth",block:"start"});
+    video.play().catch(()=>{});
+   };
+   card.append(thumb,h,select,button);
+   grid.appendChild(card);
+  });
+  section.appendChild(grid);
+  root.appendChild(section);
+ });
 }
-document.getElementById('search').addEventListener('input',function(){
-const q=this.value.trim().toLowerCase();
-document.querySelectorAll('.card').forEach(card=>{
-card.style.display=card.dataset.title.toLowerCase().includes(q)?'':'none';
-});
-});
+render();
 </script>
 </body>
 </html>
