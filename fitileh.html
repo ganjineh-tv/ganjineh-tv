@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>آرشیو عموهای فیتیله‌ای | گنجینه نوستالژی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#14243b;font-family:Vazirmatn,Tahoma,sans-serif}
+header{background:#101c31;color:white;padding:18px}
+nav{max-width:1000px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
+a{color:#168b8d;text-decoration:none}
+header a{color:#f2c46d}
+main{max-width:1000px;margin:auto;padding:22px 15px 50px}
+.hero{background:linear-gradient(120deg,#14243b,#17636a);color:white;padding:30px 22px;border-radius:22px}
+h1{margin:0 0 12px;font-size:clamp(25px,5vw,38px)}
+.hero p{line-height:2;color:#e0edf2}
+.back{display:inline-block;background:#f2c46d;color:#14243b;padding:10px 15px;border-radius:10px;font-weight:bold}
+h2{margin-top:28px}
+.years{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:12px}
+.year{border:1px solid #e0e7f0;background:white;border-radius:14px;padding:18px 10px;text-align:center;cursor:pointer;color:#14243b;font:inherit;font-weight:bold}
+.year:hover,.year.active{background:#168b8d;color:white}
+#result{margin-top:20px;background:white;border-radius:16px;padding:20px;line-height:2;border:1px solid #e0e7f0}
+.note{font-size:13px;color:#64748b}
+footer{text-align:center;background:#101c31;color:white;padding:24px;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<strong>📼 گنجینه نوستالژی</strong>
+<a href="index.html">بازگشت به صفحه اصلی ←</a>
+</nav>
+</header>
+<main>
+<section class="hero">
+<h1>🎉 آرشیو عموهای فیتیله‌ای</h1>
+<p>پنجره‌ای به خاطرات شیرین برنامه فیتیله جمعه تعطیله؛ سال موردنظرت را انتخاب کن.</p>
+<a class="back" href="#years">مشاهده سال‌ها ↓</a>
+</section>
+
+<h2 id="years">📅 انتخاب سال پخش</h2>
+<div class="years" id="yearsList"></div>
+
+<section id="result">
+<strong>به آرشیو فیتیله خوش آمدی!</strong>
+<p>برای دیدن اطلاعات هر سال، یکی از سال‌ها را انتخاب کن.</p>
+</section>
+<p class="note">فهرست قسمت‌ها و لینک‌های پخش به‌تدریج پس از بررسی و تأیید اطلاعات اضافه می‌شوند.</p>
+</main>
+<footer>🎬 گنجینه نوستالژی | خانه خاطرات تلویزیونی</footer>
+<script>
+const years=Array.from({length:14},(_,i)=>1381+i);
+const list=document.getElementById("yearsList");
+const result=document.getElementById("result");
+
+years.forEach(year=>{
+ const button=document.createElement("button");
+ button.className="year";
+ button.textContent="سال "+year;
+ button.onclick=()=>{
+  document.querySelectorAll(".year").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  result.innerHTML="";
+  const title=document.createElement("h3");
+  title.textContent="فیتیله — سال "+year;
+  const message=document.createElement("p");
+  message.textContent="فهرست قسمت‌های این سال هنوز در حال آماده‌سازی است.";
+  const note=document.createElement("p");
+  note.className="note";
+  note.textContent="بعد از پیدا کردن فهرست معتبر، قسمت‌ها و لینک‌های پخش اینجا اضافه می‌شوند.";
+  result.append(title,message,note);
+  result.scrollIntoView({behavior:"smooth",block:"nearest"});
+ };
+ list.appendChild(button);
+});
+</script>
+</body>
+  </html>
