@@ -7,26 +7,26 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f3f6fb;color:#172840}
-header{background:#101d32;color:white;padding:17px 14px}
-nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+header{background:#101d32;color:white;padding:18px}
+nav{max-width:1050px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .logo{font-size:19px;font-weight:bold}
-nav a{color:#f2c46d;text-decoration:none;font-size:13px}
+nav a{color:#f2c46d;text-decoration:none}
 main{max-width:1050px;margin:auto;padding:18px 13px 40px}
 .hero{background:linear-gradient(135deg,#101d32,#176c73);color:white;padding:32px 22px;border-radius:22px}
-.hero h1{font-size:28px;line-height:1.8;margin:0 0 10px}
-.hero p{line-height:2;color:#e1edf3;font-size:14px}
+.hero h1{font-size:27px;line-height:1.8}
+.hero p{line-height:2;color:#e1edf3}
 .search{display:flex;gap:8px;margin-top:20px}
 input{min-width:0;flex:1;padding:13px;border:0;border-radius:10px;font:inherit}
 button{cursor:pointer;border:0;border-radius:10px;padding:12px 15px;font:inherit;font-weight:bold;background:#f2c46d;color:#172840}
 h2{font-size:20px;margin:28px 0 15px}
 .categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .category{display:block;background:white;padding:19px 14px;border-radius:16px;text-decoration:none;color:#172840;border:1px solid #e1e7ef}
-.category .emoji{font-size:32px;display:block;margin-bottom:12px}
+.emoji{font-size:32px;display:block;margin-bottom:12px}
 .category strong{display:block;font-size:15px}
 .category small{display:block;color:#66768a;margin-top:9px;line-height:1.8}
 .notice{background:white;border:1px solid #e1e7ef;border-radius:15px;padding:18px;line-height:2;color:#52647b}
 footer{text-align:center;background:#101d32;color:#dbe5f0;padding:25px 12px;font-size:13px;line-height:2}
-@media(max-width:600px){.categories{grid-template-columns:1fr}.hero h1{font-size:23px}.hero{padding:25px 17px}.category{padding:15px}}
+@media(max-width:600px){.categories{grid-template-columns:1fr}.hero h1{font-size:23px}.hero{padding:25px 17px}}
 </style>
 </head>
 <body>
@@ -36,61 +36,39 @@ footer{text-align:center;background:#101d32;color:#dbe5f0;padding:25px 12px;font
 <a href="#programs">برنامه‌ها ↓</a>
 </nav>
 </header>
-
 <main>
 <section class="hero">
 <h1>خاطره‌ها هیچ‌وقت قدیمی نمی‌شوند 📼</h1>
-<p>به خانهٔ خاطرات کودکی خوش آمدی؛ جایی برای پیدا کردن برنامه‌های خاطره‌انگیز تلویزیون ایران.</p>
+<p>خانهٔ خاطرات کودکی؛ برنامه‌های خاطره‌انگیز تلویزیون ایران.</p>
 <div class="search">
 <input id="search" type="search" placeholder="نام برنامه را جست‌وجو کن">
 <button onclick="findProgram()">جست‌وجو</button>
 </div>
 </section>
-
 <section id="programs">
 <h2>📺 آرشیو برنامه‌ها</h2>
-<div class="categories" id="categories">
+<div class="categories">
 <a class="category" href="fitileh.html" data-name="فیتیله عموهای فیتیله‌ای">
-<span class="emoji">🎉</span>
-<strong>عموهای فیتیله‌ای</strong>
-<small>فیتیله جمعه تعطیله و خاطرات قدیمی</small>
-</a>
-
+<span class="emoji">🎉</span><strong>عموهای فیتیله‌ای</strong>
+<small>فیتیله جمعه تعطیله و خاطرات کودکی</small></a>
 <a class="category" href="kolah-ghermezi.html" data-name="کلاه قرمزی">
-<span class="emoji">🧸</span>
-<strong>کلاه‌قرمزی</strong>
-<small>مجموعه‌ها و قسمت‌های خاطره‌انگیز</small>
-</a>
-
+<span class="emoji">🧸</span><strong>کلاه‌قرمزی</strong>
+<small>مجموعه‌ها و قسمت‌های خاطره‌انگیز</small></a>
 <a class="category" href="amupoorang.html" data-name="عمو پورنگ">
-<span class="emoji">⭐</span>
-<strong>عمو پورنگ</strong>
-<small>برنامه‌های کودک و خاطرات گذشته</small>
-</a>
-
+<span class="emoji">⭐</span><strong>عمو پورنگ</strong>
+<small>برنامه‌های کودک و خاطرات گذشته</small></a>
 <a class="category" href="other.html" data-name="سایر برنامه‌ها">
-<span class="emoji">📼</span>
-<strong>سایر برنامه‌ها</strong>
-<small>گنجینه‌ای از خاطرات تلویزیونی</small>
-</a>
+<span class="emoji">📼</span><strong>سایر برنامه‌ها</strong>
+<small>گنجینه‌ای از خاطرات تلویزیونی</small></a>
 </div>
 <p id="notFound" class="notice" hidden>برنامه‌ای با این نام پیدا نشد.</p>
 </section>
-
 <section>
 <h2>✨ دربارهٔ گنجینه</h2>
-<div class="notice">
-هدف گنجینه نوستالژی، دسته‌بندی و نگهداری خاطرات شیرین تلویزیون است.
-فهرست قسمت‌ها و پخش هر برنامه به‌تدریج تکمیل می‌شود.
-</div>
+<div class="notice">آرشیو خاطرات شیرین تلویزیون؛ فهرست قسمت‌ها و لینک‌های پخش به‌تدریج تکمیل می‌شوند.</div>
 </section>
 </main>
-
-<footer>
-<strong>🎬 گنجینه نوستالژی</strong><br>
-پنجره‌ای به خاطرات شیرین گذشته
-</footer>
-
+<footer>🎬 گنجینه نوستالژی<br>پنجره‌ای به خاطرات شیرین گذشته</footer>
 <script>
 function findProgram(){
 const q=document.getElementById("search").value.trim().toLowerCase();
