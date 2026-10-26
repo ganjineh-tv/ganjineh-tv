@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تماشای برنامه | گنجینه نوستالژی</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101827;color:#f5f7fb;font-family:Tahoma,Arial,sans-serif}
+header{padding:20px;background:#172438;border-bottom:1px solid #304158}
+header a{color:#55dfce;text-decoration:none}
+main{max-width:1000px;margin:auto;padding:20px}
+h1{font-size:24px;margin:10px 0}
+p{color:#bac6d7;line-height:1.9}
+.player{background:#000;border-radius:14px;overflow:hidden}
+video{display:block;width:100%;max-height:560px;aspect-ratio:16/9;background:#000}
+input,button{font:inherit;border:0;border-radius:9px;padding:12px}
+input{width:100%;background:#202e43;color:white;margin:6px 0}
+button{background:#19b8a6;color:#071b23;cursor:pointer;font-weight:bold}
+.urlbox{display:flex;gap:8px;margin:12px 0}
+.urlbox input{min-width:0}
+.urlbox button{white-space:nowrap}
+.panel{background:#172438;border:1px solid #304158;border-radius:14px;padding:16px;margin-top:18px}
+.episode{display:block;width:100%;text-align:right;background:#202e43;color:white;margin-top:8px;font-weight:normal}
+.episode:hover{background:#2b405a}
+.small{font-size:12px;color:#9eacc0}
+</style>
+</head>
+<body>
+<header>
+<a href="index.html">← بازگشت به گنجینه نوستالژی</a>
+</header>
+
+<main>
+<p>آرشیو تماشای آنلاین</p>
+<h1 id="title">تماشای برنامه</h1>
+<p id="description">برنامه‌های خاطره‌انگیز را از آرشیو تماشا کن.</p>
+
+<div class="player">
+<video id="video" controls playsinline preload="metadata"></video>
+</div>
+
+<section class="panel">
+<h3>پخش ویدئو با لینک مستقیم</h3>
+<div class="urlbox">
+<input id="videoUrl" type="url" placeholder="لینک مستقیم فایل ویدئو">
+<button onclick="playVideo()">پخش</button>
+</div>
+<p class="small">لینک باید مستقیم به فایل ویدئو مثل MP4 باشد؛ لینک صفحهٔ وب یا یوتیوب لزوماً کار نمی‌کند.</p>
+</section>
+
+<section class="panel">
+<h3>جست‌وجو در قسمت‌ها</h3>
+<input id="search" placeholder="نام برنامه یا قسمت را بنویس..." oninput="filterEpisodes()">
+<div id="episodes"></div>
+</section>
+
+<p class="small">گنجینه نوستالژی | خانهٔ خاطرات تلویزیونی</p>
+</main>
+
+<script>
+const params = new URLSearchParams(location.search);
+const initialTitle = params.get("title") || "تماشای برنامه";
+const initialVideo = params.get("video") || "";
+
+document.getElementById("title").textContent = initialTitle;
+document.title = initialTitle + " | گنجینه نوستالژی";
+document.getElementById("videoUrl").value = initialVideo;
+
+function playVideo(){
+  const url = document.getElementById("videoUrl").value.trim();
+  if(!url){
+    alert("اول لینک مستقیم ویدئو را وارد کن.");
+    return;
+  }
+  const video = document.getElementById("video");
+  video.src = url;
+  video.load();
+  video.play().catch(()=>{});
+}
+
+const episodes = [
+  {title:"کلاه قرمزی ۱۳۸۸",url:""},
+  {title:"کلاه قرمزی ۱۳۹۰",url:""},
+  {title:"فیتیله جمعه تعطیله",url:""},
+  {title:"عمو پورنگ",url:""}
+];
+
+function filterEpisodes(){
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const list = document.getElementById("episodes");
+  list.innerHTML = "";
+  episodes.filter(e=>e.title.toLowerCase().includes(q)).forEach(e=>{
+    const btn = document.createElement("button");
+    btn.className = "episode";
+    btn.textContent = e.title;
+    btn.onclick = ()=>{
+      document.getElementById("title").textContent = e.title;
+      if(e.url){
+        document.getElementById("videoUrl").value = e.url;
+        playVideo();
+      }else{
+        document.getElementById("videoUrl").focus();
+        alert("برای این قسمت هنوز لینک ویدئو ثبت نشده است.");
+      }
+    };
+    list.appendChild(btn);
+  });
+}
+filterEpisodes();
+
+if(initialVideo) playVideo();
+</script>
+</body>
+</html>
