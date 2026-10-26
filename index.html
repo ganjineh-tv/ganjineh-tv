@@ -2,103 +2,120 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>گنجینه نوستالژی</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>گنجینه نوستالژی | خانه خاطرات</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f7fc;--navy:#15243d;--teal:#178c91;--gold:#f1bb52;--muted:#69768a;--white:#fff}
+:root{--navy:#14243b;--deep:#0d192b;--teal:#168b8d;--gold:#f2c46d;--bg:#f4f7fb;--muted:#6c7a90}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--navy);font-family:Vazirmatn,Tahoma,sans-serif}
-header{background:var(--navy);color:white;position:sticky;top:0;z-index:5;box-shadow:0 5px 25px #15243d22}
-nav{max-width:1150px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:900}
-.logo{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,var(--gold),#ffdf91);display:grid;place-items:center;font-size:25px}
-nav a{color:#d9e5f3;text-decoration:none;font-size:13px}
-main{max-width:1150px;margin:auto;padding:24px 18px 50px}
-.hero{border-radius:27px;padding:38px 30px;background:linear-gradient(120deg,#15243d,#20546b);color:white;position:relative;overflow:hidden}
-.hero:after{content:"✦";position:absolute;left:8%;top:0;color:#f1bb5255;font-size:180px}
-.eyebrow{color:#ffdb8c;font-size:13px;font-weight:700}
-h1{font-size:clamp(28px,5vw,43px);margin:12px 0;line-height:1.5}
-.hero p{max-width:600px;color:#d5e3ef;line-height:2;font-size:14px}
-.search{display:flex;gap:10px;max-width:620px;position:relative;z-index:1}
+header{background:var(--deep);color:white;position:sticky;top:0;z-index:9;border-bottom:1px solid #ffffff16}
+nav{max-width:1150px;margin:auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px}
+.logo{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,var(--gold),#ffe9b7);display:grid;place-items:center;font-size:24px}
+nav a{color:#dbe6f5;text-decoration:none;font-size:13px}
+main{max-width:1150px;margin:auto;padding:24px 18px 55px}
+.hero{position:relative;overflow:hidden;border-radius:28px;padding:clamp(28px,6vw,58px);color:white;background:linear-gradient(115deg,#101c31 10%,#174c5d 100%);box-shadow:0 18px 45px #14243b20}
+.hero:before{content:"✦";position:absolute;left:8%;top:-45px;font-size:220px;color:#f2c46d22}
+.hero:after{content:"📼";position:absolute;left:12%;bottom:8px;font-size:95px;opacity:.13;transform:rotate(-13deg)}
+.eyebrow{display:inline-block;color:#ffdf9a;background:#ffffff12;border:1px solid #ffffff1c;padding:7px 13px;border-radius:30px;font-size:12px}
+h1{font-size:clamp(29px,5vw,48px);line-height:1.5;margin:17px 0 10px;max-width:650px}
+.hero p{color:#d3e1ed;line-height:2;max-width:600px;font-size:14px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1}
+.btn{display:inline-block;padding:12px 17px;border-radius:12px;text-decoration:none;font-weight:800;font-size:13px}
+.primary{background:var(--gold);color:#19263b}
+.secondary{background:#ffffff12;border:1px solid #ffffff35;color:white}
+.search-wrap{display:flex;gap:9px;max-width:680px;margin-top:24px;position:relative;z-index:1}
 input,select,button{font:inherit}
-input{min-width:0;flex:1;border:1px solid #ffffff33;border-radius:12px;padding:12px 14px;background:white;color:var(--navy);outline:none}
-button{border:0;border-radius:12px;padding:11px 16px;background:var(--gold);color:#18243a;font-weight:800;cursor:pointer}
-.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:30px 0 15px}
+input{flex:1;min-width:0;padding:13px 15px;border-radius:12px;border:1px solid #dfe6ef;background:white;color:var(--navy);outline:none}
+button{cursor:pointer;border:0}
+.search-wrap button{background:var(--teal);color:white;padding:12px 17px;border-radius:12px;font-weight:700}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:32px 0 15px}
 h2{font-size:21px;margin:0}
-.muted{color:var(--muted);font-size:12px}
-.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.category{border:1px solid #e5eaf2;background:white;border-radius:18px;padding:17px;display:flex;align-items:center;gap:13px;box-shadow:0 5px 18px #15243d08}
-.cat-icon{width:52px;height:52px;flex-shrink:0;border-radius:16px;display:grid;place-items:center;font-size:27px;background:#e4f5f4}
-.category:nth-child(2) .cat-icon{background:#fff1d2}
-.category:nth-child(3) .cat-icon{background:#eee9ff}
-.category strong{font-size:14px;display:block}
-.category small{color:var(--muted);font-size:11px}
+.sub{font-size:12px;color:var(--muted)}
+.categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.category{display:flex;align-items:center;gap:14px;background:white;border:1px solid #e5ebf3;padding:17px;border-radius:19px;text-decoration:none;color:var(--navy);box-shadow:0 5px 18px #14243b08;transition:.2s}
+.category:hover{transform:translateY(-3px);box-shadow:0 12px 25px #14243b12}
+.cat-icon{height:55px;width:55px;flex-shrink:0;display:grid;place-items:center;border-radius:17px;background:#def3f1;font-size:28px}
+.category:nth-child(2) .cat-icon{background:#fff0cf}
+.category:nth-child(3) .cat-icon{background:#eee8ff}
+.category strong{display:block;font-size:14px}
+.category small{display:block;color:var(--muted);font-size:11px;margin-top:4px}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:17px}
-.filters button{background:white;border:1px solid #e0e7f0;color:var(--navy);font-size:13px}
+.filters button{background:white;border:1px solid #dfe6ef;color:var(--navy);padding:9px 14px;border-radius:11px;font-size:12px}
 .filters button.active{background:var(--teal);color:white;border-color:var(--teal)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:16px}
-.card{background:white;border:1px solid #e6ebf3;border-radius:20px;overflow:hidden;box-shadow:0 6px 20px #15243d09;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #15243d18}
-.cover{height:145px;display:grid;place-items:center;background:linear-gradient(140deg,#d9f1ef,#e8eafa);font-size:55px;position:relative}
-.cover:after{content:"";position:absolute;width:80px;height:80px;border-radius:50%;background:#ffffff55}
+.card{background:white;border:1px solid #e5ebf3;border-radius:19px;overflow:hidden;box-shadow:0 5px 18px #14243b08;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.cover{height:145px;display:grid;place-items:center;background:linear-gradient(135deg,#d8f1ef,#e8eafa);position:relative;font-size:53px}
+.cover:before{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:#ffffff70}
 .cover span{z-index:1}
-.cover small{position:absolute;right:11px;bottom:10px;background:#15243ddd;color:white;padding:5px 9px;border-radius:8px;font-size:11px;z-index:2}
+.cover small{position:absolute;bottom:10px;right:10px;background:#14243be8;color:white;border-radius:8px;padding:5px 9px;font-size:11px;z-index:2}
 .info{padding:15px}
-.info h3{margin:0 0 5px;font-size:15px}
-.info p{color:var(--muted);font-size:12px;margin:0 0 13px}
+.info h3{font-size:15px;margin:0 0 5px}
+.info p{font-size:12px;color:var(--muted);margin:0 0 13px}
 .controls{display:flex;gap:7px}
-.controls select{min-width:0;flex:1;border:1px solid #e0e7f0;border-radius:10px;padding:8px;background:white;font-size:12px}
-.controls button{padding:8px 12px;background:var(--teal);color:white;font-size:12px}
-.empty{display:none;text-align:center;padding:30px;color:var(--muted)}
-.player{display:none;margin-top:25px;background:white;border-radius:20px;padding:16px;border:1px solid #e5eaf2}
+.controls select{flex:1;min-width:0;border:1px solid #dfe6ef;border-radius:10px;padding:8px;background:white;font-size:12px}
+.controls button{background:var(--teal);color:white;border-radius:10px;padding:8px 12px;font-size:12px}
+.empty{display:none;padding:28px;text-align:center;color:var(--muted)}
+.player{display:none;background:white;border:1px solid #e3eaf3;padding:16px;border-radius:20px;margin-top:24px}
 .player video{width:100%;max-height:65vh;background:#000;border-radius:12px}
 .player-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
-.player-top button{background:#e8edf5}
-footer{text-align:center;padding:25px;background:var(--navy);color:#d6e0ef;font-size:12px}
-@media(max-width:650px){main{padding:15px 12px 35px}.hero{padding:27px 19px}.categories{grid-template-columns:1fr}.category{padding:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cover{height:110px;font-size:43px}.info{padding:11px}.info h3{font-size:13px}.controls{flex-direction:column}.controls select,.controls button{width:100%}.brand{font-size:15px}}
+.close{background:#eaf0f6;padding:9px 12px;border-radius:10px}
+footer{background:var(--deep);color:#d5dfed;text-align:center;padding:27px 15px;font-size:12px}
+footer strong{color:var(--gold)}
+@media(max-width:650px){main{padding:14px 12px 35px}.hero{padding:27px 19px}.hero:after{font-size:65px}.categories{grid-template-columns:1fr;gap:9px}.category{padding:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cover{height:108px;font-size:42px}.info{padding:10px}.info h3{font-size:13px}.controls{flex-direction:column}.controls select,.controls button{width:100%}.brand{font-size:15px}.logo{width:39px;height:39px}.section-head{margin-top:25px}}
 </style>
 </head>
 <body>
 <header><nav>
 <div class="brand"><span class="logo">🎬</span><span>گنجینه نوستالژی</span></div>
-<a href="#archive">مشاهده آرشیو ↓</a>
+<a href="#archive">ورود به آرشیو ↓</a>
 </nav></header>
+
 <main>
 <section class="hero">
-<div class="eyebrow">✦ خاطرات شیرین، همیشه زنده‌اند</div>
-<h1>به دنیای خاطره‌ها خوش آمدی!</h1>
-<p>گنجینه‌ای از برنامه‌های خاطره‌انگیز کودک و نوجوان؛ برای دوباره دیدن لحظه‌هایی که فراموش نمی‌شوند.</p>
-<div class="search">
-<input id="search" type="search" placeholder="نام برنامه یا شماره قسمت..." aria-label="جست‌وجو">
+<span class="eyebrow">✦ خانهٔ خاطرات ماندگار</span>
+<h1>خاطره‌ها هیچ‌وقت قدیمی نمی‌شوند</h1>
+<p>به گنجینه نوستالژی خوش آمدی؛ مجموعه‌ای از برنامه‌های خاطره‌انگیز کودک و نوجوان، برای زنده کردن دوبارهٔ روزهای شیرین گذشته.</p>
+<div class="hero-actions">
+<a class="btn primary" href="#archive">تماشای آرشیو ←</a>
+<a class="btn secondary" href="#programs">کشف برنامه‌ها ✦</a>
+</div>
+<div class="search-wrap">
+<input id="search" type="search" placeholder="جست‌وجوی برنامه یا شماره قسمت..." aria-label="جست‌وجو">
 <button onclick="render()">جست‌وجو</button>
 </div>
 </section>
 
-<div class="section-title"><h2>دنیای برنامه‌ها</h2><span class="muted">آرشیو خاطرات</span></div>
-<section class="categories">
-<div class="category"><div class="cat-icon">📺</div><div><strong>کلاه‌قرمزی</strong><small>برنامه‌های خاطره‌انگیز</small></div></div>
-<div class="category"><div class="cat-icon">🎉</div><div><strong>عموهای فیتیله‌ای</strong><small>خاطرات شیرین کودکی</small></div></div>
-<div class="category"><div class="cat-icon">⭐</div><div><strong>عمو پورنگ</strong><small>دنیای شادی و سرگرمی</small></div></div>
+<section id="programs">
+<div class="section-head"><h2>دنیای برنامه‌ها</h2><span class="sub">هر خاطره، یک داستان</span></div>
+<div class="categories">
+<a class="category" href="#archive" onclick="chooseProgram('کلاه‌قرمزی')"><span class="cat-icon">📺</span><span><strong>کلاه‌قرمزی</strong><small>شخصیت‌های دوست‌داشتنی</small></span></a>
+<a class="category" href="#archive" onclick="chooseProgram('فیتیله')"><span class="cat-icon">🎉</span><span><strong>عموهای فیتیله‌ای</strong><small>شادی و خاطرات کودکی</small></span></a>
+<a class="category" href="#archive" onclick="chooseProgram('عمو پورنگ')"><span class="cat-icon">⭐</span><span><strong>عمو پورنگ</strong><small>دنیای سرگرمی و خنده</small></span></a>
+</div>
 </section>
 
 <section id="archive">
-<div class="section-title"><h2>📼 آرشیو کلاه‌قرمزی</h2><span class="muted" id="count"></span></div>
+<div class="section-head"><h2>📼 آرشیو کلاه‌قرمزی</h2><span class="sub" id="count"></span></div>
 <div class="filters">
 <button class="active" onclick="setYear('all',this)">همه سال‌ها</button>
 <button onclick="setYear('88',this)">سال ۱۳۸۸</button>
 <button onclick="setYear('90',this)">سال ۱۳۹۰</button>
 </div>
 <div class="grid" id="grid"></div>
-<div class="empty" id="empty">قسمتی پیدا نشد؛ عبارت دیگری جست‌وجو کن.</div>
+<div class="empty" id="empty">موردی پیدا نشد؛ عبارت دیگری جست‌وجو کن.</div>
 <div class="player" id="player">
-<div class="player-top"><strong id="playingTitle">پخش ویدئو</strong><button onclick="closePlayer()">بستن ✕</button></div>
+<div class="player-top"><strong id="playingTitle">پخش ویدئو</strong><button class="close" onclick="closePlayer()">بستن ✕</button></div>
 <video id="video" controls playsinline preload="metadata"></video>
-<p class="muted">اگر ویدئو پخش نشد، ممکن است لینک فایل در دسترس نباشد.</p>
+<p class="sub">اگر ویدئو پخش نشد، ممکن است لینک فایل در دسترس نباشد.</p>
 </div>
 </section>
 </main>
-<footer>🎬 گنجینه نوستالژی | پنجره‌ای رو به خاطرات ماندگار</footer>
+
+<footer><strong>🎬 گنجینه نوستالژی</strong><br><br>پنجره‌ای به خاطرات شیرین گذشته ✦</footer>
 
 <script>
 const archives=[
@@ -106,6 +123,7 @@ const archives=[
 {year:"90",name:"۱۳۹۰",total:16,prefix:"Kolah.Ghermezi.90"}
 ];
 let selectedYear="all";
+let programFilter="";
 function allItems(){
 return archives.flatMap(a=>Array.from({length:a.total},(_,i)=>({year:a.year,name:a.name,prefix:a.prefix,episode:i+1})));
 }
@@ -113,16 +131,31 @@ function makeUrl(item,quality){
 const ep=String(item.episode).padStart(2,"0");
 return `https://dl3.ir-dl.com/series/${item.prefix}/${quality}p/${item.prefix}.${quality}p.E${ep}.IR-DL.mp4`;
 }
+function chooseProgram(name){
+if(name!=="کلاه‌قرمزی"){
+document.getElementById("search").value=name;
+programFilter=name;
+}else{
+document.getElementById("search").value="";
+programFilter="";
+}
+render();
+}
 function setYear(year,button){
 selectedYear=year;
 document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-button.classList.add("active");render();
+button.classList.add("active");
+render();
 }
 function render(){
 const q=document.getElementById("search").value.trim().toLowerCase();
-const items=allItems().filter(x=>(selectedYear==="all"||x.year===selectedYear)&&
-(`کلاه قرمزی ${x.name} قسمت ${x.episode} ${x.episode}`).toLowerCase().includes(q));
-const grid=document.getElementById("grid");grid.innerHTML="";
+const items=allItems().filter(x=>
+(selectedYear==="all"||x.year===selectedYear)&&
+(!programFilter||"کلاه‌قرمزی".includes(programFilter))&&
+(`کلاه قرمزی ${x.name} قسمت ${x.episode} ${x.episode}`).toLowerCase().includes(q)
+);
+const grid=document.getElementById("grid");
+grid.innerHTML="";
 items.forEach(item=>{
 const card=document.createElement("article");card.className="card";
 const cover=document.createElement("div");cover.className="cover";
@@ -152,7 +185,7 @@ function closePlayer(){
 const video=document.getElementById("video");video.pause();video.removeAttribute("src");video.load();
 document.getElementById("player").style.display="none";
 }
-document.getElementById("search").addEventListener("input",render);
+document.getElementById("search").addEventListener("input",()=>{programFilter="";render()});
 render();
 </script>
 </body>
