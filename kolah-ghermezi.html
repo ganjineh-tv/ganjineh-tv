@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>آرشیو کلاه‌قرمزی | گنجینه نوستالژی</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f3f6fb;color:#172840}
+header{background:#101d32;color:white;padding:18px}
+header a{color:#f2c46d;text-decoration:none}
+main{max-width:950px;margin:auto;padding:20px 14px}
+h1{font-size:25px}
+p{line-height:2;color:#627187}
+.years{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.year{background:white;padding:18px;border:1px solid #e1e7ef;border-radius:15px}
+.year h2{font-size:18px}
+button{background:#168b8d;color:white;border:0;border-radius:9px;padding:11px;font:inherit;cursor:pointer}
+.episodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
+.episode{background:white;padding:14px;border-radius:12px;border:1px solid #e1e7ef}
+.episode button{margin-top:10px;width:100%}
+#message{line-height:2;background:white;padding:15px;border-radius:12px;margin-top:18px}
+@media(max-width:480px){.years,.episodes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<a href="index.html">← بازگشت به گنجینه نوستالژی</a>
+</header>
+<main>
+<h1>🧸 آرشیو کلاه‌قرمزی</h1>
+<p>سال موردنظرت رو انتخاب کن تا فهرست قسمت‌ها رو ببینی.</p>
+<div class="years">
+<div class="year"><h2>کلاه‌قرمزی ۱۳۸۸</h2><button onclick="showEpisodes(1388,15)">نمایش قسمت‌ها</button></div>
+<div class="year"><h2>کلاه‌قرمزی ۱۳۹۰</h2><button onclick="showEpisodes(1390,16)">نمایش قسمت‌ها</button></div>
+</div>
+<div id="message">برای دیدن فهرست، یکی از سال‌ها رو انتخاب کن.</div>
+<div class="episodes" id="episodes"></div>
+</main>
+<script>
+function showEpisodes(year,total){
+const box=document.getElementById("episodes");
+box.innerHTML="";
+document.getElementById("message").textContent=
+"فهرست کلاه‌قرمزی "+year+" — لینک پخش قسمت‌ها هنوز باید اضافه شود.";
+for(let i=1;i<=total;i++){
+const item=document.createElement("div");
+item.className="episode";
+item.innerHTML="<strong>کلاه‌قرمزی "+year+" — قسمت "+i+"</strong><br><button type='button'>لینک پخش هنوز اضافه نشده</button>";
+box.appendChild(item);
+}
+}
+</script>
+</body>
+</html>
