@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -6,21 +7,27 @@
 <title>آرشیو کلاه‌قرمزی | گنجینه نوستالژی</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f3f6fb;color:#172840}
-header{background:#101d32;color:white;padding:18px}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f2f5fa;color:#172840}
+header{background:#101d32;color:white;padding:17px}
 header a{color:#f2c46d;text-decoration:none}
-main{max-width:950px;margin:auto;padding:20px 14px}
-h1{font-size:25px}
-p{line-height:2;color:#627187}
-.years{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.year{background:white;padding:18px;border:1px solid #e1e7ef;border-radius:15px}
-.year h2{font-size:18px}
-button{background:#168b8d;color:white;border:0;border-radius:9px;padding:11px;font:inherit;cursor:pointer}
-.episodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
-.episode{background:white;padding:14px;border-radius:12px;border:1px solid #e1e7ef}
-.episode button{margin-top:10px;width:100%}
-#message{line-height:2;background:white;padding:15px;border-radius:12px;margin-top:18px}
-@media(max-width:480px){.years,.episodes{grid-template-columns:1fr}}
+main{max-width:950px;margin:auto;padding:18px 13px 40px}
+h1{font-size:24px}
+p{line-height:2;color:#617187}
+select,input,button{font:inherit;padding:11px;border-radius:9px}
+input,select{border:1px solid #dce4ee;background:white;min-width:0}
+input{width:100%;margin:10px 0}
+.years{display:flex;gap:9px;flex-wrap:wrap}
+button{border:0;background:#168b8d;color:white;cursor:pointer}
+.years button.active{background:#f2c46d;color:#172840}
+.episodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.episode{background:white;border:1px solid #e0e7f0;border-radius:13px;padding:14px}
+.episode strong{display:block;margin-bottom:12px;font-size:14px}
+.episode select{width:100%;margin-bottom:8px}
+.episode button{width:100%}
+#player{display:none;margin-top:22px;background:#101d32;color:white;padding:15px;border-radius:14px}
+video{width:100%;max-height:60vh;background:black;margin-top:12px}
+.back{display:inline-block;margin-top:10px}
+@media(max-width:500px){.episodes{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -29,27 +36,89 @@ button{background:#168b8d;color:white;border:0;border-radius:9px;padding:11px;fo
 </header>
 <main>
 <h1>🧸 آرشیو کلاه‌قرمزی</h1>
-<p>سال موردنظرت رو انتخاب کن تا فهرست قسمت‌ها رو ببینی.</p>
+<p>سال موردنظر رو انتخاب کن، قسمت رو پیدا کن و کیفیت پخش رو انتخاب کن.</p>
+
 <div class="years">
-<div class="year"><h2>کلاه‌قرمزی ۱۳۸۸</h2><button onclick="showEpisodes(1388,15)">نمایش قسمت‌ها</button></div>
-<div class="year"><h2>کلاه‌قرمزی ۱۳۹۰</h2><button onclick="showEpisodes(1390,16)">نمایش قسمت‌ها</button></div>
+<button class="active" onclick="showYear('88',this)">سال ۱۳۸۸</button>
+<button onclick="showYear('90',this)">سال ۱۳۹۰</button>
 </div>
-<div id="message">برای دیدن فهرست، یکی از سال‌ها رو انتخاب کن.</div>
-<div class="episodes" id="episodes"></div>
+
+<input id="search" type="search" placeholder="جست‌وجوی شماره قسمت..." oninput="render()">
+<div id="episodes" class="episodes"></div>
+
+<section id="player">
+<strong id="playingTitle">پخش کلاه‌قرمزی</strong>
+<video id="video" controls playsinline preload="metadata"></video>
+<p id="status" style="color:white">اگر ویدئو پخش نشد، ممکن است لینک منبع در دسترس نباشد.</p>
+<button onclick="closePlayer()">بستن پخش</button>
+</section>
 </main>
+
 <script>
-function showEpisodes(year,total){
+let year="88";
+
+function showYear(y,btn){
+year=y;
+document.querySelectorAll(".years button").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+render();
+}
+
+function makeUrl(ep,quality){
+const prefix="Kolah.Ghermezi."+year;
+const number=String(ep).padStart(2,"0");
+return "https://dl3.ir-dl.com/series/"+prefix+"/"+quality+"p/"+prefix+"."+quality+"p.E"+number+".IR-DL.mp4";
+}
+
+function render(){
+const total=year==="88"?15:16;
+const q=document.getElementById("search").value.trim();
 const box=document.getElementById("episodes");
 box.innerHTML="";
-document.getElementById("message").textContent=
-"فهرست کلاه‌قرمزی "+year+" — لینک پخش قسمت‌ها هنوز باید اضافه شود.";
 for(let i=1;i<=total;i++){
-const item=document.createElement("div");
-item.className="episode";
-item.innerHTML="<strong>کلاه‌قرمزی "+year+" — قسمت "+i+"</strong><br><button type='button'>لینک پخش هنوز اضافه نشده</button>";
-box.appendChild(item);
+if(q&&!String(i).includes(q))continue;
+const card=document.createElement("div");
+card.className="episode";
+const title=document.createElement("strong");
+title.textContent="کلاه‌قرمزی "+(year==="88"?"۱۳۸۸":"۱۳۹۰")+" — قسمت "+i;
+const select=document.createElement("select");
+select.setAttribute("aria-label","کیفیت پخش");
+[["480","480p"],["720","720p"],["1080","1080p"]].forEach(([v,t])=>{
+const option=document.createElement("option");
+option.value=v;
+option.textContent=t;
+select.appendChild(option);
+});
+const button=document.createElement("button");
+button.textContent="▶ پخش قسمت";
+button.onclick=()=>playEpisode(i,select.value);
+card.append(title,select,button);
+box.appendChild(card);
 }
 }
+
+function playEpisode(ep,quality){
+const video=document.getElementById("video");
+document.getElementById("playingTitle").textContent=
+"کلاه‌قرمزی "+(year==="88"?"۱۳۸۸":"۱۳۹۰")+" — قسمت "+ep+" — "+quality+"p";
+video.src=makeUrl(ep,quality);
+document.getElementById("player").style.display="block";
+document.getElementById("player").scrollIntoView({behavior:"smooth"});
+video.play().catch(()=>{
+document.getElementById("status").textContent=
+"پخش خودکار انجام نشد؛ دکمهٔ پخش روی ویدئو رو بزن. اگر باز هم پخش نشد، لینک منبع ممکنه خراب یا غیرفعال باشه.";
+});
+}
+
+function closePlayer(){
+const video=document.getElementById("video");
+video.pause();
+video.removeAttribute("src");
+video.load();
+document.getElementById("player").style.display="none";
+}
+
+render();
 </script>
 </body>
 </html>
