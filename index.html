@@ -59,10 +59,6 @@ h2{font-size:21px;margin:0}
 .controls select{flex:1;min-width:0;border:1px solid #dfe6ef;border-radius:10px;padding:8px;background:white;font-size:12px}
 .controls button{background:var(--teal);color:white;border-radius:10px;padding:8px 12px;font-size:12px}
 .empty{display:none;padding:28px;text-align:center;color:var(--muted)}
-.player{display:none;background:white;border:1px solid #e3eaf3;padding:16px;border-radius:20px;margin-top:24px}
-.player video{width:100%;max-height:65vh;background:#000;border-radius:12px}
-.player-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
-.close{background:#eaf0f6;padding:9px 12px;border-radius:10px}
 footer{background:var(--deep);color:#d5dfed;text-align:center;padding:27px 15px;font-size:12px}
 footer strong{color:var(--gold)}
 @media(max-width:650px){main{padding:14px 12px 35px}.hero{padding:27px 19px}.hero:after{font-size:65px}.categories{grid-template-columns:1fr;gap:9px}.category{padding:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cover{height:108px;font-size:42px}.info{padding:10px}.info h3{font-size:13px}.controls{flex-direction:column}.controls select,.controls button{width:100%}.brand{font-size:15px}.logo{width:39px;height:39px}.section-head{margin-top:25px}}
@@ -75,11 +71,8 @@ footer strong{color:var(--gold)}
 </nav></header>
 
 <main>
-<img
-  src="https://raw.githubusercontent.com/ganjineh-tv/ganjineh-tv/main/IMG_0fa4af91-e18d-4462-9aa5-10eb9e337b5a.jpg"
-  alt="گنجینه نوستالژی"
-  style="display:block;width:100%;height:auto;max-height:320px;object-fit:cover;border-radius:22px;margin-bottom:20px;"
->
+<img src="https://raw.githubusercontent.com/ganjineh-tv/ganjineh-tv/main/IMG_0fa4af91-e18d-4462-9aa5-10eb9e337b5a.jpg" alt="گنجینه نوستالژی" style="display:block;width:100%;height:auto;max-height:320px;object-fit:cover;border-radius:22px;margin-bottom:20px;">
+
 <section class="hero">
 <span class="eyebrow">✦ خانهٔ خاطرات ماندگار</span>
 <h1>خاطره‌ها هیچ‌وقت قدیمی نمی‌شوند</h1>
@@ -112,11 +105,6 @@ footer strong{color:var(--gold)}
 </div>
 <div class="grid" id="grid"></div>
 <div class="empty" id="empty">موردی پیدا نشد؛ عبارت دیگری جست‌وجو کن.</div>
-<div class="player" id="player">
-<div class="player-top"><strong id="playingTitle">پخش ویدئو</strong><button class="close" onclick="closePlayer()">بستن ✕</button></div>
-<video id="video" controls playsinline preload="metadata"></video>
-<p class="sub">اگر ویدئو پخش نشد، ممکن است لینک فایل در دسترس نباشد.</p>
-</div>
 </section>
 </main>
 
@@ -129,13 +117,16 @@ const archives=[
 ];
 let selectedYear="all";
 let programFilter="";
+
 function allItems(){
 return archives.flatMap(a=>Array.from({length:a.total},(_,i)=>({year:a.year,name:a.name,prefix:a.prefix,episode:i+1})));
 }
+
 function makeUrl(item,quality){
 const ep=String(item.episode).padStart(2,"0");
 return `https://dl3.ir-dl.com/series/${item.prefix}/${quality}p/${item.prefix}.${quality}p.E${ep}.IR-DL.mp4`;
 }
+
 function chooseProgram(name){
 if(name!=="کلاه‌قرمزی"){
 document.getElementById("search").value=name;
@@ -146,12 +137,14 @@ programFilter="";
 }
 render();
 }
+
 function setYear(year,button){
 selectedYear=year;
 document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
 button.classList.add("active");
 render();
 }
+
 function render(){
 const q=document.getElementById("search").value.trim().toLowerCase();
 const items=allItems().filter(x=>
@@ -165,6 +158,35 @@ items.forEach(item=>{
 const card=document.createElement("article");card.className="card";
 const cover=document.createElement("div");cover.className="cover";
 cover.innerHTML=`<span>📺</span><small>فصل ${item.name}</small>`;
+const info=document.createElement("div");info.className="info";
+const title=document.createElement("h3");title.textContent=`کلاه‌قرمزی ${item.name}`;
+const desc=document.createElement("p");desc.textContent=`قسمت ${item.episode}`;
+const controls=document.createElement("div");controls.className="controls";
+const select=document.createElement("select");select.setAttribute("aria-label","انتخاب کیفیت");
+[["480","480p"],["720","720p"],["1080","1080p"]].forEach(([v,t])=>{const o=document.createElement("option");o.value=v;o.textContent=t;select.appendChild(o)});
+const play=document.createElement("button");play.textContent="▶ پخش";
+play.onclick=()=>playEpisode(item,select.value);
+controls.append(select,play);info.append(title,desc,controls);card.append(cover,info);grid.appendChild(card);
+});
+document.getElementById("count").textContent=`${items.length} قسمت`;
+document.getElementById("empty").style.display=items.length?"none":"block";
+}
+
+function playEpisode(item,quality){
+const videoUrl=makeUrl(item,quality);
+const title=`کلاه‌قرمزی ${item.name} — قسمت ${item.episode} — ${quality}p`;
+const watchPage=new URL("watch.html",window.location.href);
+watchPage.searchParams.set("title",title);
+watchPage.searchParams.set("video",videoUrl);
+window.location.href=watchPage.toString();
+}
+
+document.getElementById("search").addEventListener("input",()=>{programFilter="";render()});
+render();
+</script>
+</body>
+</html>
+;
 const info=document.createElement("div");info.className="info";
 const title=document.createElement("h3");title.textContent=`کلاه‌قرمزی ${item.name}`;
 const desc=document.createElement("p");desc.textContent=`قسمت ${item.episode}`;
