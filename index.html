@@ -1,286 +1,65 @@
-
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#073c32">
-<meta name="google-site-verification" content="i2ljrD7BCBAx_lX8w85ADAGMMVxt-pPr0pKEGvQIEVg">
-<title>گنجینه نوستالژی | خانه خاطرات</title>
-<meta name="description" content="گنجینه نوستالژی؛ آرشیو فیتیله، کلاه قرمزی، عمو پورنگ، کارتون‌ها و برنامه‌های خاطره‌انگیز تلویزیون.">
+<section id="kolahArchive" dir="rtl">
 <style>
-:root{
- --bg:#071d19;
- --panel:#0d2b24;
- --panel2:#12382e;
- --green:#087b60;
- --gold:#e5bd69;
- --gold2:#f8dda0;
- --white:#fff9e9;
- --muted:#b8c9bd;
- --line:#315648;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
- margin:0;background:
- radial-gradient(ellipse at 50% -10%,#15513d 0,transparent 48%),var(--bg);
- color:var(--white);font-family:Tahoma,Arial,sans-serif;line-height:1.9;
-}
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-header{
- position:sticky;top:0;z-index:10;
- background:#071d19ed;backdrop-filter:blur(15px);
- border-bottom:1px solid var(--line);
-}
-.nav{
- max-width:1180px;margin:auto;padding:13px 20px;
- display:flex;align-items:center;justify-content:space-between;gap:18px;
-}
-.brand{display:flex;align-items:center;gap:11px;font-weight:bold;color:var(--gold2);font-size:20px}
-.logo{
- width:48px;height:48px;border:2px solid var(--gold);
- border-radius:15px;display:grid;place-items:center;
- color:var(--gold);font-size:25px;
- background:linear-gradient(145deg,#175b45,#09271f);
- box-shadow:0 0 18px #e5bd6920;
-}
-.brand small{display:block;font-size:10px;color:var(--muted);font-weight:normal}
-nav{display:flex;gap:20px;font-size:13px;flex-wrap:wrap}
-nav a:hover{color:var(--gold)}
-.hero{
- max-width:1180px;margin:auto;padding:75px 22px 85px;
- display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px;
-}
-.eyebrow{color:var(--gold);font-size:13px}
-h1{font-size:clamp(34px,6vw,62px);line-height:1.5;margin:12px 0}
-h1 span{color:var(--gold)}
-.hero p{color:var(--muted);max-width:620px;font-size:16px}
-.btn{
- display:inline-block;padding:11px 22px;margin:8px 5px 0 0;
- border-radius:10px;background:linear-gradient(135deg,var(--gold2),var(--gold));
- color:#17251c;font-weight:bold;border:1px solid var(--gold);cursor:pointer;
-}
-.btn.alt{background:transparent;color:var(--gold2)}
-.hero-art{
- min-height:280px;border:1px solid var(--line);border-radius:28px;
- background:radial-gradient(circle at 50% 40%,#287457,#0b2b22 65%);
- display:grid;place-items:center;position:relative;overflow:hidden;
-}
-.hero-art:before,.hero-art:after{
- content:"";position:absolute;border:1px solid #e5bd6940;border-radius:50%;
- width:230px;height:230px;
-}
-.hero-art:after{width:290px;height:290px}
-.hero-icon{font-size:105px;z-index:1;filter:drop-shadow(0 12px 15px #0008)}
-.container{max-width:1180px;margin:auto;padding:30px 20px}
-.section-head{
- display:flex;justify-content:space-between;align-items:center;
- gap:15px;margin-bottom:22px;
-}
-h2{font-size:23px;margin:0}
-.search{
- width:min(100%,340px);padding:12px 15px;border-radius:11px;
- border:1px solid var(--line);background:var(--panel);color:white;outline:none;
-}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:17px}
-.card{
- border:1px solid var(--line);border-radius:17px;overflow:hidden;
- background:linear-gradient(150deg,var(--panel2),var(--panel));
- transition:.2s;cursor:pointer;
-}
-.card:hover{transform:translateY(-5px);border-color:var(--gold)}
-.poster{
- min-height:165px;display:grid;place-items:center;position:relative;
- background:radial-gradient(circle at 50% 45%,#267858,#0a3025 75%);
-}
-.poster:after{
- content:"";position:absolute;inset:10px;border:1px solid #e5bd6940;border-radius:12px;
-}
-.poster span{font-size:65px;z-index:1;filter:drop-shadow(0 8px 9px #0008)}
-.poster.gold-bg{background:radial-gradient(circle,#8c6830,#392b19 75%)}
-.poster.blue-bg{background:radial-gradient(circle,#315f78,#142c3c 75%)}
-.poster.red-bg{background:radial-gradient(circle,#9c443c,#431e25 75%)}
-.card-body{padding:14px}
-.card h3{margin:0 0 5px;font-size:16px}
-.card p{margin:0;color:var(--muted);font-size:12px}
-.tag{color:var(--gold);font-size:11px;margin-top:8px;display:block}
-.panel{
- background:var(--panel);border:1px solid var(--line);
- border-radius:17px;padding:20px;margin-top:20px;
-}
-.hidden{display:none!important}
-.year-card{text-align:center;padding:20px}
-.year{font-size:27px;color:var(--gold2);font-weight:bold}
-.note{color:var(--muted);font-size:13px}
-.back{margin-bottom:20px}
-.empty{color:var(--muted);padding:20px}
-footer{
- border-top:1px solid var(--line);margin-top:45px;
- text-align:center;padding:30px 15px;color:var(--muted);font-size:12px;
-}
-footer strong{color:var(--gold)}
-@media(max-width:700px){
- .nav{align-items:flex-start;flex-direction:column}
- nav{gap:13px}
- .hero{grid-template-columns:1fr;padding:48px 20px}
- .hero-art{min-height:210px}
- .section-head{align-items:flex-start;flex-direction:column}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
- .poster{min-height:125px}
- .poster span{font-size:48px}
- .card-body{padding:10px}
-}
+#kolahArchive{font-family:Tahoma;color:#fff9e9;background:#09271f;padding:20px;border-radius:18px}
+#kolahArchive h2{color:#f1d18b}
+#kolahArchive button,#kolahArchive select{padding:11px;margin:5px;border-radius:9px;border:1px solid #d8ad5b;background:#12382e;color:white}
+#kolahArchive .episode{padding:15px;margin:12px 0;background:#12382e;border:1px solid #315648;border-radius:12px}
+#kolahArchive video{width:100%;max-height:420px;background:#000;border-radius:12px;margin-top:12px}
+#kolahArchive .quality{background:#d8ad5b;color:#17251c;font-weight:bold}
 </style>
-</head>
-<body>
 
-<header>
- <div class="nav">
-  <a class="brand" href="#" onclick="goHome()">
-   <div class="logo">📼</div>
-   <div>گنجینه نوستالژی<small>خانه خاطرات قدیمی ما</small></div>
-  </a>
-  <nav>
-   <a href="#" onclick="goHome()">خانه</a>
-   <a href="#archives" onclick="goHome()">آرشیو</a>
-   <a href="#about">درباره ما</a>
-  </nav>
- </div>
-</header>
+<h2>🎭 آرشیو کلاه‌قرمزی</h2>
+<p>ایرانیان دانلود | انتخاب سال، قسمت و کیفیت</p>
 
-<section class="hero" id="hero">
- <div>
-  <div class="eyebrow">آرشیوی برای زنده نگه داشتن خاطرات</div>
-  <h1>دوباره به دنیای<br><span>خاطرات برگرد!</span></h1>
-  <p>از فیتیله و کلاه‌قرمزی تا عمو پورنگ، کارتون‌ها و برنامه‌های خاطره‌انگیز تلویزیون؛ همه در خانه خاطرات قدیمی ما.</p>
-  <a class="btn" href="#archives">ورود به آرشیو</a>
-  <a class="btn alt" href="#about">درباره گنجینه</a>
- </div>
- <div class="hero-art"><div class="hero-icon">📺</div></div>
-</section>
+<label for="kolahYear">انتخاب مجموعه:</label>
+<select id="kolahYear" onchange="loadKolahEpisode()">
+<option value="88">کلاه‌قرمزی ۱۳۸۸</option>
+<option value="90">کلاه‌قرمزی ۱۳۹۰</option>
+</select>
 
-<main>
-<section class="container" id="archives">
- <div class="section-head">
-  <h2>قفسه‌های خاطرات</h2>
-  <input class="search" id="search" placeholder="نام برنامه را جست‌وجو کن..." oninput="searchCards()">
- </div>
- <div class="grid" id="categoryGrid">
-  <div class="card" data-search="فیتیله جمعه تعطیله" onclick="openCategory('fitileh')">
-   <div class="poster"><span>📺</span></div>
-   <div class="card-body"><h3>فیتیله</h3><p>فیتیله جمعه تعطیله و برنامه‌های خاطره‌انگیز</p><span class="tag">مشاهده آرشیو ←</span></div>
-  </div>
-  <div class="card" data-search="کلاه قرمزی جغجغه" onclick="openCategory('kolah')">
-   <div class="poster red-bg"><span>🎭</span></div>
-   <div class="card-body"><h3>کلاه‌قرمزی و جغجغه</h3><p>خاطرات عروسکی تلویزیون</p><span class="tag">مشاهده آرشیو ←</span></div>
-  </div>
-  <div class="card" data-search="عمو پورنگ" onclick="openCategory('pourang')">
-   <div class="poster gold-bg"><span>🎈</span></div>
-   <div class="card-body"><h3>عمو پورنگ</h3><p>مجموعه‌های خاطره‌انگیز</p><span class="tag">مشاهده آرشیو ←</span></div>
-  </div>
-  <div class="card" data-search="کارتون انیمیشن" onclick="openCategory('cartoon')">
-   <div class="poster blue-bg"><span>🧸</span></div>
-   <div class="card-body"><h3>کارتون و انیمیشن</h3><p>دنیای انیمیشن‌های قدیمی</p><span class="tag">مشاهده آرشیو ←</span></div>
-  </div>
-  <div class="card" data-search="سریال تلویزیونی" onclick="openCategory('series')">
-   <div class="poster"><span>🎞️</span></div>
-   <div class="card-body"><h3>سریال‌ها</h3><p>سریال‌های خاطره‌انگیز</p><span class="tag">مشاهده آرشیو ←</span></div>
-  </div>
-  <div class="card" data-search="برنامه تلویزیونی" onclick="openCategory('tv')">
-   <div class="poster gold-bg"><span>📼</span></div>
-   <div class="card-body"><h3>برنامه‌های تلویزیونی</h3><p>برنامه‌های قدیمی و نوستالژیک</p><span class="tag">مشاهده آرشیو ←</span></div>
-  </div>
- </div>
-</section>
-
-<section class="container hidden" id="archivePage">
- <button class="btn alt back" onclick="goHome()">← بازگشت به قفسه‌ها</button>
- <h2 id="pageTitle"></h2>
- <p id="pageDesc" class="note"></p>
- <div class="grid" id="yearGrid"></div>
- <div id="yearInfo" class="panel hidden"></div>
-</section>
-
-<section class="container" id="about">
- <div class="panel">
-  <h2>درباره گنجینه نوستالژی</h2>
-  <p class="note">گنجینه نوستالژی با هدف گردآوری و معرفی برنامه‌ها، کارتون‌ها و خاطرات تلویزیونی سال‌های گذشته ساخته شده است.</p>
-  <p style="color:var(--gold)">گنجینه نوستالژی؛ خانه خاطرات قدیمی ما 📼</p>
- </div>
-</section>
-</main>
-
-<footer>
- <strong>گنجینه نوستالژی</strong><br>
- خانه خاطرات قدیمی ما<br>
- © گنجینه نوستالژی
-</footer>
+<div class="episode">
+<h3 id="kolahTitle">کلاه‌قرمزی ۱۳۸۸ - قسمت ۱</h3>
+<label for="kolahQuality">کیفیت:</label>
+<select id="kolahQuality" onchange="loadKolahEpisode()">
+<option value="480p">480p</option>
+<option value="720p">720p</option>
+<option value="1080p">1080p</option>
+</select>
+<button class="quality" onclick="playKolah()">▶ پخش آنلاین</button>
+<video id="kolahVideo" controls playsinline preload="none"></video>
+<p id="kolahStatus">برای شروع پخش، کیفیت را انتخاب و روی پخش آنلاین بزن.</p>
+<a id="kolahDownload" href="#" target="_blank" rel="noopener">دریافت مستقیم فایل</a>
+</div>
 
 <script>
-const info={
- fitileh:["آرشیو فیتیله","سال‌های آرشیو فیتیله از ۱۳۸۱ تا ۱۳۹۴"],
- kolah:["آرشیو کلاه‌قرمزی و جغجغه","مجموعه‌های خاطره‌انگیز کلاه‌قرمزی و جغجغه"],
- pourang:["آرشیو عمو پورنگ","برنامه‌ها و مجموعه‌های عمو پورنگ"],
- cartoon:["کارتون و انیمیشن","کارتون‌ها و انیمیشن‌های خاطره‌انگیز"],
- series:["آرشیو سریال‌ها","سریال‌های خاطره‌انگیز تلویزیون"],
- tv:["برنامه‌های تلویزیونی","برنامه‌های قدیمی و خاطره‌انگیز"]
-};
-const years=["۱۳۸۱","۱۳۸۲","۱۳۸۳","۱۳۸۴","۱۳۸۵","۱۳۸۶","۱۳۸۷","۱۳۸۸","۱۳۸۹","۱۳۹۰","۱۳۹۱","۱۳۹۲","۱۳۹۳","۱۳۹۴"];
-
-function openCategory(id){
- const d=info[id];
- if(!d)return;
- ["hero","archives","about"].forEach(x=>document.getElementById(x).classList.add("hidden"));
- document.getElementById("archivePage").classList.remove("hidden");
- document.getElementById("pageTitle").textContent=d[0];
- document.getElementById("pageDesc").textContent=d[1];
- const grid=document.getElementById("yearGrid");
- const yi=document.getElementById("yearInfo");
- grid.innerHTML="";
- yi.classList.add("hidden");
- yi.innerHTML="";
- if(id==="fitileh"){
-  years.forEach(y=>addCard(grid,y,"آرشیو فیتیله",()=>showYear(y,id)));
- }else if(id==="kolah"){
-  ["کلاه‌قرمزی","جغجغه","مجموعه‌های ویژه"].forEach(y=>addCard(grid,y,"مشاهده مجموعه‌ها",()=>showYear(y,id)));
- }else{
-  grid.innerHTML='<div class="empty">این بخش در حال آماده‌سازی است.</div>';
- }
- window.scrollTo(0,0);
+function getKolahUrl(){
+ const year=document.getElementById("kolahYear").value;
+ const quality=document.getElementById("kolahQuality").value;
+ return `https://dl3.ir-dl.com/series/Kolah.Ghermezi.${year}/${quality}/Kolah.Ghermezi.${year}.${quality}.E01.IR-DL.mp4`;
 }
-function addCard(grid,title,desc,action){
- const c=document.createElement("div");
- c.className="card year-card";
- const y=document.createElement("div");
- y.className="year";y.textContent=title;
- const p=document.createElement("div");
- p.className="note";p.textContent=desc;
- c.append(y,p);c.onclick=action;grid.appendChild(c);
+function loadKolahEpisode(){
+ const year=document.getElementById("kolahYear").value;
+ document.getElementById("kolahTitle").textContent=
+  `کلاه‌قرمزی ۱۳${year} - قسمت ۱`;
+ const video=document.getElementById("kolahVideo");
+ video.pause();
+ video.removeAttribute("src");
+ video.load();
+ document.getElementById("kolahDownload").href=getKolahUrl();
+ document.getElementById("kolahStatus").textContent="کیفیت انتخاب شد؛ برای پخش کلیک کن.";
 }
-function showYear(y,id){
- const yi=document.getElementById("yearInfo");
- yi.classList.remove("hidden");
- const title=document.createElement("h2");
- title.textContent=info[id][0]+" "+y;
- const p=document.createElement("p");
- p.className="note";
- p.textContent="اطلاعات و لینک برنامه‌های این بخش به‌مرور اضافه خواهد شد.";
- yi.replaceChildren(title,p);
- yi.scrollIntoView({behavior:"smooth",block:"center"});
-}
-function goHome(){
- ["hero","archives","about"].forEach(x=>document.getElementById(x).classList.remove("hidden"));
- document.getElementById("archivePage").classList.add("hidden");
- window.scrollTo(0,0);
-}
-function searchCards(){
- const q=document.getElementById("search").value.trim().toLowerCase();
- document.querySelectorAll("#categoryGrid .card").forEach(c=>{
-  c.style.display=c.dataset.search.toLowerCase().includes(q)?"":"none";
+function playKolah(){
+ const video=document.getElementById("kolahVideo");
+ const url=getKolahUrl();
+ video.src=url;
+ video.load();
+ video.play().then(()=>{
+  document.getElementById("kolahStatus").textContent="در حال پخش قسمت اول";
+ }).catch(()=>{
+  document.getElementById("kolahStatus").textContent=
+   "پخش مستقیم ممکن نشد؛ از لینک دریافت مستقیم فایل استفاده کن.";
  });
+ document.getElementById("kolahDownload").href=url;
 }
 </script>
-</body>
-</html>
+</section>
