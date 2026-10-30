@@ -1,65 +1,300 @@
-<section id="kolahArchive" dir="rtl">
-<style>
-#kolahArchive{font-family:Tahoma;color:#fff9e9;background:#09271f;padding:20px;border-radius:18px}
-#kolahArchive h2{color:#f1d18b}
-#kolahArchive button,#kolahArchive select{padding:11px;margin:5px;border-radius:9px;border:1px solid #d8ad5b;background:#12382e;color:white}
-#kolahArchive .episode{padding:15px;margin:12px 0;background:#12382e;border:1px solid #315648;border-radius:12px}
-#kolahArchive video{width:100%;max-height:420px;background:#000;border-radius:12px;margin-top:12px}
-#kolahArchive .quality{background:#d8ad5b;color:#17251c;font-weight:bold}
-</style>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="i2ljrD7BCBAx_lX8w85ADAGMMVxt-pPr0pKEGvQIEVg">
+  <meta name="description" content="گنجینه نوستالژی؛ آرشیو برنامه‌های خاطره‌انگیز تلویزیون ایران">
+  <title>گنجینه نوستالژی | آرشیو خاطرات</title>
+  <style>
+    :root {
+      --bg:#071b16; --panel:#102b23; --green:#087c55;
+      --gold:#e5bd68; --text:#f5f1e8; --muted:#b5c4bb;
+    }
+    * { box-sizing:border-box }
+    body {
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:Tahoma,Arial,sans-serif; line-height:1.9;
+    }
+    header {
+      background:linear-gradient(120deg,#064b37,#10271f);
+      padding:22px 16px; border-bottom:2px solid var(--gold);
+    }
+    .wrap { max-width:1100px; margin:auto; padding:0 15px }
+    .brand { display:flex; align-items:center; gap:12px }
+    .logo { font-size:38px }
+    h1 { color:var(--gold); font-size:24px; margin:0 }
+    header p { margin:0; color:var(--muted); font-size:13px }
+    nav { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px }
+    button, .btn {
+      background:var(--green); color:white; border:1px solid #319c76;
+      border-radius:10px; padding:10px 15px; cursor:pointer;
+      font:inherit; text-decoration:none; display:inline-block;
+    }
+    button:hover,.btn:hover { background:#0b9867 }
+    .hero {
+      margin:22px auto; padding:35px 20px; text-align:center;
+      background:linear-gradient(135deg,#123d2e,#172b23);
+      border:1px solid #94783e; border-radius:18px;
+    }
+    .hero h2 { color:var(--gold); font-size:25px; margin:0 0 8px }
+    .hero p { color:var(--muted) }
+    input,select {
+      width:100%; padding:12px; border-radius:9px;
+      border:1px solid #47715f; background:#0b211a;
+      color:white; font:inherit; margin:6px 0 12px;
+    }
+    .search { max-width:600px; margin:20px auto }
+    h2.section-title { color:var(--gold); font-size:21px; margin-top:28px }
+    .grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px; margin:15px 0 30px;
+    }
+    .card {
+      background:var(--panel); border:1px solid #315747;
+      border-radius:14px; padding:18px; text-align:center;
+    }
+    .poster {
+      height:125px; border-radius:10px; margin-bottom:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:38px; background:linear-gradient(135deg,#14533c,#a17a38);
+    }
+    .card h3 { color:var(--gold); margin:5px }
+    .muted { color:var(--muted); font-size:13px }
+    .page { display:none; margin:25px auto }
+    .page.active { display:block }
+    .player {
+      background:#102b23; border:1px solid #806a3d;
+      border-radius:14px; padding:18px; margin:20px 0;
+    }
+    video { width:100%; max-height:500px; background:#000; border-radius:10px }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
+    footer {
+      border-top:1px solid #94783e; text-align:center;
+      padding:25px 10px; color:var(--muted); margin-top:45px;
+    }
+    @media(max-width:500px) {
+      h1 { font-size:20px }
+      .hero h2 { font-size:21px }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo">📼</span>
+      <div>
+        <h1>گنجینه نوستالژی</h1>
+        <p>خانه خاطرات شیرین تلویزیون ایران</p>
+      </div>
+    </div>
+    <nav>
+      <button onclick="goHome()">صفحه اصلی</button>
+      <button onclick="showPage('archive')">آرشیو برنامه‌ها</button>
+      <button onclick="showPage('kolah')">کلاه‌قرمزی</button>
+      <button onclick="showPage('about')">درباره ما</button>
+    </nav>
+  </div>
+</header>
 
-<h2>🎭 آرشیو کلاه‌قرمزی</h2>
-<p>ایرانیان دانلود | انتخاب سال، قسمت و کیفیت</p>
+<main class="wrap">
+  <section id="home" class="page active">
+    <div class="hero">
+      <h2>به گنجینه خاطرات خوش آمدید</h2>
+      <p>آرشیوی برای زنده نگه‌داشتن خاطرات تلویزیون ایران</p>
+      <button onclick="showPage('archive')">ورود به آرشیو</button>
+    </div>
 
-<label for="kolahYear">انتخاب مجموعه:</label>
-<select id="kolahYear" onchange="loadKolahEpisode()">
-<option value="88">کلاه‌قرمزی ۱۳۸۸</option>
-<option value="90">کلاه‌قرمزی ۱۳۹۰</option>
-</select>
+    <div class="search">
+      <input id="searchInput" placeholder="نام برنامه موردنظر را جست‌وجو کن..." oninput="searchCards()">
+    </div>
 
-<div class="episode">
-<h3 id="kolahTitle">کلاه‌قرمزی ۱۳۸۸ - قسمت ۱</h3>
-<label for="kolahQuality">کیفیت:</label>
-<select id="kolahQuality" onchange="loadKolahEpisode()">
-<option value="480p">480p</option>
-<option value="720p">720p</option>
-<option value="1080p">1080p</option>
-</select>
-<button class="quality" onclick="playKolah()">▶ پخش آنلاین</button>
-<video id="kolahVideo" controls playsinline preload="none"></video>
-<p id="kolahStatus">برای شروع پخش، کیفیت را انتخاب و روی پخش آنلاین بزن.</p>
-<a id="kolahDownload" href="#" target="_blank" rel="noopener">دریافت مستقیم فایل</a>
-</div>
+    <h2 class="section-title">قفسه برنامه‌ها</h2>
+    <div class="grid" id="categoryGrid">
+      <div class="card searchable">
+        <div class="poster">🎈</div>
+        <h3>فیتیله جمعه تعطیله</h3>
+        <p class="muted">آرشیو سال‌های ۱۳۸۱ تا ۱۳۹۴</p>
+        <button onclick="showPage('fitile')">مشاهده آرشیو</button>
+      </div>
+      <div class="card searchable">
+        <div class="poster">🎩</div>
+        <h3>کلاه‌قرمزی و جغجغه</h3>
+        <p class="muted">مجموعه‌های خاطره‌انگیز</p>
+        <button onclick="showPage('kolah')">مشاهده مجموعه‌ها</button>
+      </div>
+      <div class="card searchable">
+        <div class="poster">🧸</div>
+        <h3>عمو پورنگ</h3>
+        <p class="muted">برنامه‌های کودک و نوجوان</p>
+        <button onclick="showPage('amupoorang')">مشاهده آرشیو</button>
+      </div>
+      <div class="card searchable">
+        <div class="poster">📺</div>
+        <h3>کارتون و انیمیشن</h3>
+        <p class="muted">خاطرات انیمیشنی</p>
+        <button onclick="showPage('cartoon')">مشاهده آرشیو</button>
+      </div>
+      <div class="card searchable">
+        <div class="poster">🎬</div>
+        <h3>سریال‌های خاطره‌انگیز</h3>
+        <p class="muted">مجموعه‌های تلویزیونی</p>
+        <button onclick="showPage('series')">مشاهده آرشیو</button>
+      </div>
+      <div class="card searchable">
+        <div class="poster">🎤</div>
+        <h3>برنامه‌های تلویزیونی</h3>
+        <p class="muted">برنامه‌های قدیمی و نوستالژیک</p>
+        <button onclick="showPage('programs')">مشاهده آرشیو</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="archive" class="page">
+    <h2 class="section-title">آرشیو گنجینه نوستالژی</h2>
+    <p>یکی از مجموعه‌ها را برای مشاهده انتخاب کن.</p>
+    <div class="grid">
+      <div class="card"><h3>فیتیله</h3><button onclick="showPage('fitile')">ورود</button></div>
+      <div class="card"><h3>کلاه‌قرمزی</h3><button onclick="showPage('kolah')">ورود</button></div>
+      <div class="card"><h3>عمو پورنگ</h3><button onclick="showPage('amupoorang')">ورود</button></div>
+    </div>
+  </section>
+
+  <section id="fitile" class="page">
+    <h2 class="section-title">آرشیو فیتیله جمعه تعطیله</h2>
+    <p class="muted">سال موردنظر را انتخاب کن. لینک قسمت‌ها در حال تکمیل است.</p>
+    <div class="grid" id="fitileYears"></div>
+  </section>
+
+  <section id="kolah" class="page">
+    <h2 class="section-title">آرشیو کلاه‌قرمزی</h2>
+    <p class="muted">سال مجموعه را انتخاب کن.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="poster">🎩</div>
+        <h3>کلاه‌قرمزی ۱۳۸۸</h3>
+        <p class="muted">قسمت اول</p>
+        <button onclick="openKolah('88')">مشاهده و پخش</button>
+      </div>
+      <div class="card">
+        <div class="poster">🎩</div>
+        <h3>کلاه‌قرمزی ۱۳۹۰</h3>
+        <p class="muted">قسمت اول</p>
+        <button onclick="openKolah('90')">مشاهده و پخش</button>
+      </div>
+    </div>
+    <p class="muted">قسمت‌های دیگر هنوز به آرشیو اضافه نشده‌اند.</p>
+  </section>
+
+  <section id="kolahPlayer" class="page">
+    <h2 class="section-title" id="kolahTitle">پخش کلاه‌قرمزی</h2>
+    <div class="player">
+      <label for="quality">انتخاب کیفیت:</label>
+      <select id="quality" onchange="changeQuality()">
+        <option value="480">480p</option>
+        <option value="720">720p</option>
+        <option value="1080">1080p</option>
+      </select>
+      <video id="videoPlayer" controls playsinline preload="metadata">
+        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+      </video>
+      <div class="actions">
+        <a id="downloadLink" class="btn" href="#" target="_blank" rel="noopener">دانلود مستقیم قسمت</a>
+        <button onclick="showPage('kolah')">بازگشت به آرشیو</button>
+      </div>
+      <p class="muted">اگر پخش آنلاین انجام نشد، از گزینه دانلود مستقیم استفاده کن.</p>
+    </div>
+  </section>
+
+  <section id="amupoorang" class="page">
+    <h2 class="section-title">آرشیو عمو پورنگ</h2>
+    <p>این بخش به‌زودی تکمیل می‌شود.</p>
+  </section>
+  <section id="cartoon" class="page">
+    <h2 class="section-title">کارتون و انیمیشن</h2>
+    <p>این بخش به‌زودی تکمیل می‌شود.</p>
+  </section>
+  <section id="series" class="page">
+    <h2 class="section-title">سریال‌های خاطره‌انگیز</h2>
+    <p>این بخش به‌زودی تکمیل می‌شود.</p>
+  </section>
+  <section id="programs" class="page">
+    <h2 class="section-title">برنامه‌های تلویزیونی</h2>
+    <p>این بخش به‌زودی تکمیل می‌شود.</p>
+  </section>
+  <section id="about" class="page">
+    <h2 class="section-title">درباره گنجینه نوستالژی</h2>
+    <p>گنجینه نوستالژی با هدف نگهداری و معرفی خاطرات تلویزیون ایران ساخته شده است.</p>
+  </section>
+</main>
+
+<footer>
+  <p>📼 گنجینه نوستالژی</p>
+  <p>خانه خاطرات شیرین دیروز</p>
+</footer>
 
 <script>
-function getKolahUrl(){
- const year=document.getElementById("kolahYear").value;
- const quality=document.getElementById("kolahQuality").value;
- return `https://dl3.ir-dl.com/series/Kolah.Ghermezi.${year}/${quality}/Kolah.Ghermezi.${year}.${quality}.E01.IR-DL.mp4`;
-}
-function loadKolahEpisode(){
- const year=document.getElementById("kolahYear").value;
- document.getElementById("kolahTitle").textContent=
-  `کلاه‌قرمزی ۱۳${year} - قسمت ۱`;
- const video=document.getElementById("kolahVideo");
- video.pause();
- video.removeAttribute("src");
- video.load();
- document.getElementById("kolahDownload").href=getKolahUrl();
- document.getElementById("kolahStatus").textContent="کیفیت انتخاب شد؛ برای پخش کلیک کن.";
-}
-function playKolah(){
- const video=document.getElementById("kolahVideo");
- const url=getKolahUrl();
- video.src=url;
- video.load();
- video.play().then(()=>{
-  document.getElementById("kolahStatus").textContent="در حال پخش قسمت اول";
- }).catch(()=>{
-  document.getElementById("kolahStatus").textContent=
-   "پخش مستقیم ممکن نشد؛ از لینک دریافت مستقیم فایل استفاده کن.";
- });
- document.getElementById("kolahDownload").href=url;
-}
+  const kolahLinks = {
+    "88": {
+      "480":"https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E01.IR-DL.mp4",
+      "720":"https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/720p/Kolah.Ghermezi.88.720p.E01.IR-DL.mp4",
+      "1080":"https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/1080p/Kolah.Ghermezi.88.1080p.E01.IR-DL.mp4"
+    },
+    "90": {
+      "480":"https://dl3.ir-dl.com/series/Kolah.Ghermezi.90/480p/Kolah.Ghermezi.90.480p.E01.IR-DL.mp4",
+      "720":"https://dl3.ir-dl.com/series/Kolah.Ghermezi.90/720p/Kolah.Ghermezi.90.720p.E01.IR-DL.mp4",
+      "1080":"https://dl3.ir-dl.com/series/Kolah.Ghermezi.90/1080p/Kolah.Ghermezi.90.1080p.E01.IR-DL.mp4"
+    }
+  };
+
+  let currentYear = "88";
+
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const page = document.getElementById(id);
+    if (page) page.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+    const player = document.getElementById('videoPlayer');
+    if (id !== 'kolahPlayer' && player) player.pause();
+  }
+
+  function goHome() { showPage('home'); }
+
+  function openKolah(year) {
+    currentYear = year;
+    document.getElementById('kolahTitle').textContent =
+      'کلاه‌قرمزی ۱۳' + year + ' - قسمت اول';
+    document.getElementById('quality').value = '720';
+    changeQuality();
+    showPage('kolahPlayer');
+  }
+
+  function changeQuality() {
+    const quality = document.getElementById('quality').value;
+    const url = kolahLinks[currentYear][quality];
+    const player = document.getElementById('videoPlayer');
+    player.pause();
+    player.src = url;
+    player.load();
+    document.getElementById('downloadLink').href = url;
+  }
+
+  function searchCards() {
+    const q = document.getElementById('searchInput').value.trim().toLowerCase();
+    document.querySelectorAll('#categoryGrid .card').forEach(card => {
+      card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  }
+
+  const years = document.getElementById('fitileYears');
+  for (let y=1381; y<=1394; y++) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = '<div class="poster">🎈</div><h3>فیتیله سال ' + y +
+      '</h3><p class="muted">آرشیو این سال</p><span class="muted">لینک قسمت‌ها در حال تکمیل است</span>';
+    years.appendChild(card);
+  }
 </script>
-</section>
+</body>
+</html>
