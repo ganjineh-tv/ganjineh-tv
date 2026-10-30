@@ -3,311 +3,465 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#100d09">
-<title>گنجینه نوستالژی | خانه خاطرات</title>
+<meta name="theme-color" content="#08090c">
+<title>گنجینه نوستالژی | آرشیو خاطرات ایران</title>
 <style>
-:root{
---bg:#100d09;--panel:#1c1711;--gold:#d8ad5b;
---gold2:#f1d18b;--muted:#b9aa91;--line:#493923;
---cream:#fff5df;
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --gold:#e8b957;
+  --light:#ffe6ad;
+  --bg:#08090c;
+  --panel:#12151a;
+  --muted:#aaa49a;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-margin:0;background:radial-gradient(ellipse at 50% -20%,#49351c 0,transparent 48%),var(--bg);
-color:var(--cream);font-family:Tahoma,Arial,sans-serif;line-height:1.9
+  margin:0;background:var(--bg);color:#fff;
+  font-family:Vazirmatn,Tahoma,sans-serif;
 }
-a{color:inherit;text-decoration:none}
+a{text-decoration:none;color:inherit}
 button,input{font:inherit}
+.container{width:min(1200px,92%);margin:auto}
+
+/* HEADER */
 header{
-position:sticky;top:0;z-index:20;background:#100d09ed;
-border-bottom:1px solid var(--line);backdrop-filter:blur(12px)
+  position:sticky;top:0;z-index:20;
+  background:#08090cf2;backdrop-filter:blur(15px);
+  border-bottom:1px solid #755523;
 }
 .nav{
-max-width:1150px;margin:auto;padding:12px 18px;
-display:flex;align-items:center;justify-content:space-between;gap:15px
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
 }
-.brand{font-size:21px;font-weight:bold;color:var(--gold)}
-.brand small{display:block;font-size:10px;color:var(--muted);font-weight:normal}
-nav{display:flex;gap:17px;flex-wrap:wrap;font-size:13px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--gold)}
+.logo-icon{font-size:38px}
+.logo strong{font-size:21px}
+.logo small{display:block;color:#c5bba8;font-size:10px}
+nav{display:flex;gap:25px;font-size:14px}
 nav a:hover{color:var(--gold)}
-.hero{
-min-height:440px;display:flex;align-items:center;padding:65px 20px;
-border-bottom:1px solid var(--line);
-background:linear-gradient(90deg,#100d09a8,#100d09ee),
-radial-gradient(ellipse at 78% 42%,#91652c 0,#382718 34%,#100d09 75%)
-}
-.hero-inner,.container{max-width:1120px;width:100%;margin:auto}
-.eyebrow{color:var(--gold2);letter-spacing:1px;font-size:12px}
-h1{font-size:clamp(34px,6vw,60px);line-height:1.45;margin:12px 0}
-h1 span,.gold{color:var(--gold)}
-.hero p{max-width:580px;color:#d2c2a6}
-.btn{
-display:inline-block;border:0;border-radius:8px;padding:10px 19px;
-margin:6px 4px 6px 0;
-background:linear-gradient(135deg,var(--gold2),var(--gold));
-color:#211708;font-weight:bold;cursor:pointer
-}
-.btn.alt{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
-.container{padding:30px 18px}
-.section-title{
-display:flex;align-items:center;justify-content:space-between;
-gap:15px;margin-bottom:17px
-}
-.section-title h2,h2{font-size:21px;margin:0 0 14px}
 .search{
-width:min(100%,400px);padding:12px 14px;border:1px solid var(--line);
-border-radius:9px;background:var(--panel);color:white
+  background:#191d22;border:1px solid #414047;
+  border-radius:30px;padding:10px 15px;
+  display:flex;gap:8px;align-items:center;width:230px;
 }
-.grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px
+.search input{background:none;border:0;outline:0;color:white;width:100%}
+.menu{
+  display:none;background:none;color:var(--gold);
+  border:1px solid #765727;border-radius:9px;padding:8px 12px;
 }
-.card{
-background:linear-gradient(150deg,#241c12,#17120d);
-border:1px solid var(--line);border-radius:13px;overflow:hidden;
-cursor:pointer;transition:.2s
+
+/* HERO */
+.hero{
+  min-height:510px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 20% 60%,#98601c77,transparent 40%),
+    radial-gradient(ellipse at 80% 20%,#6c461c66,transparent 40%),
+    linear-gradient(120deg,#17110b,#090c11 65%,#1a130b);
+  border-bottom:1px solid #61451f;
 }
-.card:hover{transform:translateY(-4px);border-color:var(--gold)}
-.poster{
-height:145px;display:grid;place-items:center;font-size:47px;
-background:radial-gradient(circle at 50% 42%,#a87532,#392719 62%,#1b140d)
+.hero:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,#08090c 0%,transparent 45%);
 }
-.cardbody{padding:12px}
-.card h3{font-size:15px;margin:0 0 5px}
-.card p{font-size:12px;color:var(--muted);margin:0}
-.panel{
-background:var(--panel);border:1px solid var(--line);
-border-radius:13px;padding:18px;margin-top:16px
+.hero-inner{
+  min-height:510px;position:relative;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:35px;
 }
-.year-card{min-height:120px;text-align:center;padding:17px}
-.year-card .year{font-size:25px;color:var(--gold2);font-weight:bold}
-.note{color:var(--muted);font-size:13px}
-.hidden{display:none!important}
-.back{margin-bottom:18px}
-.empty{
-padding:18px;border:1px dashed var(--line);
-border-radius:10px;color:var(--muted)
+.hero-text{max-width:550px}
+.eyebrow{color:var(--light);font-size:15px}
+.hero h1{
+  font-size:clamp(42px,6vw,72px);
+  color:var(--gold);line-height:1.25;margin:15px 0;
+  text-shadow:0 0 35px #c28a3055;
 }
-footer{
-border-top:1px solid var(--line);text-align:center;
-color:var(--muted);padding:28px 15px;font-size:12px;margin-top:30px
+.hero p{line-height:2.2;color:#ddd5c8;font-size:15px}
+.primary{
+  display:inline-block;margin-top:18px;
+  padding:13px 30px;border-radius:30px;
+  background:linear-gradient(110deg,#d69b2c,#ffe19a);
+  color:#17110a;font-weight:900;
+  box-shadow:0 8px 30px #d69b2c33;
 }
-footer strong{color:var(--gold)}
+.primary:hover{transform:translateY(-3px)}
+.old-tv{
+  height:310px;max-width:440px;margin:auto;
+  width:100%;padding:17px;display:flex;gap:12px;
+  border:12px solid #342112;border-radius:35px;
+  background:linear-gradient(135deg,#79502a,#17100b);
+  box-shadow:0 25px 65px #000,inset 0 0 0 3px #9d6c32;
+  transform:perspective(900px) rotateY(5deg);
+}
+.tv-screen{
+  flex:1;border:8px solid #171719;border-radius:25px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;font-size:26px;font-weight:900;
+  color:#fff0c7;
+  background:radial-gradient(circle,#367d81,#123b42 65%,#07191e);
+  box-shadow:inset 0 0 35px #9ce4d955;
+}
+.tv-screen small{display:block;font-size:12px}
+.tv-controls{width:55px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:17px}
+.knob{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffe1a0,#573512);border:3px solid #160f08}
+
+/* SECTIONS */
+section{padding:48px 0}
+.section-title{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:22px;
+}
+.section-title h2{color:var(--light);font-size:23px;margin:0}
+.section-title span{font-size:12px;color:var(--muted)}
+.categories{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:15px;
+}
+.category{
+  overflow:hidden;border:1px solid #4c3b25;
+  border-radius:15px;background:linear-gradient(145deg,#24201a,#101317);
+  transition:.25s;cursor:pointer;
+}
+.category:hover{
+  transform:translateY(-7px);border-color:var(--gold);
+  box-shadow:0 15px 35px #0009;
+}
+.category-art{
+  height:155px;display:flex;align-items:center;
+  justify-content:center;font-size:55px;
+  background:radial-gradient(circle at 50% 35%,#82602f,#292016 65%,#101114);
+}
+.category:nth-child(2) .category-art{background:radial-gradient(circle,#64413c,#171216)}
+.category:nth-child(3) .category-art{background:radial-gradient(circle,#345e79,#111820)}
+.category:nth-child(4) .category-art{background:radial-gradient(circle,#416d43,#101912)}
+.category-info{text-align:center;padding:14px 8px}
+.category-info h3{font-size:14px;margin:0 0 7px}
+.category-info p{font-size:11px;color:var(--muted);margin:0;line-height:1.8}
+
+/* FITILEH ARCHIVE */
+.archive{
+  padding:25px;border:1px solid #98702f;border-radius:18px;
+  background:linear-gradient(120deg,#1c1914,#101419 70%);
+  display:grid;grid-template-columns:1fr 1fr;gap:25px;
+  box-shadow:0 20px 50px #0007;
+}
+.archive-intro{display:flex;align-items:center;gap:20px}
+.archive-picture{
+  flex:none;width:145px;height:165px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:65px;border:1px solid #9a7034;
+  background:radial-gradient(circle,#bd843a,#4a2917 65%,#111);
+}
+.archive h2{font-size:27px;color:var(--gold);margin:0 0 8px}
+.archive p{color:#c9c0b2;font-size:12px;line-height:2}
+.years{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.year{
+  background:#101216;color:var(--light);
+  border:1px solid #76592d;border-radius:9px;
+  padding:12px 5px;cursor:pointer;transition:.2s;
+}
+.year:hover{background:#79531e;color:white;transform:scale(1.04)}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.feature{
+  padding:22px;background:#111519;
+  border:1px solid #393124;border-radius:13px;
+  display:flex;align-items:center;gap:15px;
+}
+.feature-icon{font-size:30px;color:var(--gold)}
+.feature strong{color:var(--light);font-size:14px}
+.feature small{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+
+/* FOOTER */
+footer{border-top:1px solid #705124;padding:30px 0;background:#090b0e}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-inner strong{font-size:18px;color:var(--gold)}
+.footer-inner span{font-size:12px;color:var(--muted)}
+
+/* POPUP */
+.overlay{
+  display:none;position:fixed;inset:0;z-index:50;
+  background:#000c;align-items:center;justify-content:center;padding:20px;
+}
+.overlay.show{display:flex}
+.popup{
+  width:min(430px,100%);padding:28px;text-align:center;
+  background:#15191d;border:1px solid #9c7538;border-radius:18px;
+}
+.popup h3{color:var(--gold)}
+.popup p{color:#ddd;line-height:2;font-size:14px}
+.popup button{
+  border:0;border-radius:25px;background:var(--gold);
+  padding:10px 28px;font-weight:900;cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .categories{grid-template-columns:repeat(3,1fr)}
+  .archive{grid-template-columns:1fr}
+}
 @media(max-width:650px){
-.nav{align-items:flex-start;flex-direction:column}
-nav{gap:12px}
-.hero{min-height:360px;padding:45px 18px}
-.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.poster{height:115px}
-.section-title{align-items:flex-start;flex-direction:column}
+  .nav{min-height:65px}
+  .logo strong{font-size:16px}
+  .logo-icon{font-size:28px}
+  nav{display:none;position:absolute;top:65px;right:4%;left:4%;padding:18px;background:#17191d;border:1px solid #725326;border-radius:12px;flex-direction:column;gap:18px}
+  nav.open{display:flex}
+  .menu{display:block}
+  .search{width:42px;padding:9px}
+  .search input{display:none}
+  .hero-inner{grid-template-columns:1fr;padding:35px 0;text-align:center}
+  .old-tv{height:210px;width:290px;padding:10px;border-width:8px}
+  .tv-screen{font-size:19px;border-width:5px}
+  .tv-controls{width:35px}
+  .knob{width:19px;height:19px}
+  .hero h1{font-size:42px}
+  .hero p{font-size:13px}
+  .categories{grid-template-columns:repeat(2,1fr);gap:10px}
+  .category-art{height:120px;font-size:43px}
+  .category-info h3{font-size:12px}
+  .archive{padding:15px}
+  .archive-intro{flex-direction:column;text-align:center}
+  .archive-picture{width:100%;height:110px}
+  .years{grid-template-columns:repeat(3,1fr)}
+  .features{grid-template-columns:1fr}
+  .section-title h2{font-size:19px}
+  .section-title span{display:none}
+  .footer-inner{flex-direction:column;text-align:center}
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
-<div class="nav">
-<a class="brand" href="#" onclick="goHome()">
-گنجینه نوستالژی
-<small>خانهٔ خاطرات قدیمی ما</small>
+<div class="container nav">
+<a class="logo" href="#home">
+<span class="logo-icon">📺</span>
+<span><strong>گنجینه نوستالژی</strong>
+<small>خانه خاطرات تلویزیون ایران</small></span>
 </a>
-<nav>
-<a href="#" onclick="goHome()">خانه</a>
-<a href="#archives" onclick="goHome()">آرشیو</a>
+
+<nav id="navigation">
+<a href="#home">خانه</a>
+<a href="#categories">آرشیو برنامه‌ها</a>
+<a href="#fitileh">آرشیو فیتیله</a>
+<a href="#features">امکانات</a>
 <a href="#about">درباره ما</a>
 </nav>
+
+<label class="search">⌕
+<input id="search" placeholder="جستجو در آرشیو..." oninput="searchArchive()">
+</label>
+
+<button class="menu" onclick="toggleMenu()">☰</button>
 </div>
 </header>
 
-<section class="hero" id="hero">
-<div class="hero-inner">
-<div class="eyebrow">آرشیوی برای زنده‌کردن خاطرات</div>
-<h1>به دنیای خاطرات<br><span>خوش آمدی</span></h1>
+<main id="home">
+
+<div class="hero">
+<div class="container hero-inner">
+
+<div class="old-tv">
+<div class="tv-screen">
+<div>دنیای خاطرات
+<small>برنامه‌های خاطره‌انگیز</small></div>
+</div>
+<div class="tv-controls">
+<div class="knob"></div>
+<div class="knob"></div>
+<div class="knob"></div>
+</div>
+</div>
+
+<div class="hero-text">
+<div class="eyebrow">سفری به گذشته، با طعم خاطره...</div>
+<h1>گنجینه نوستالژی</h1>
 <p>
-از فیتیله و کلاه‌قرمزی تا عمو پورنگ، کارتون‌ها و برنامه‌های
-خاطره‌انگیز تلویزیون؛ همه در خانهٔ خاطرات قدیمی ما.
+مجموعه‌ای از بهترین برنامه‌ها، کارتون‌ها و سریال‌های تلویزیونی؛
+جایی برای زنده‌کردن خاطرات شیرین نسل‌های مختلف.
 </p>
-<a class="btn" href="#archives">ورود به آرشیو</a>
-<a class="btn alt" href="#about">درباره گنجینه</a>
+<a class="primary" href="#categories">ورود به آرشیو　←</a>
 </div>
-</section>
 
-<main>
-<section class="container" id="archives">
+</div>
+</div>
+
+<section class="container" id="categories">
 <div class="section-title">
-<h2>قفسه‌های خاطرات</h2>
-<input id="search" class="search"
-placeholder="نام برنامه یا دسته را جست‌وجو کن..."
-oninput="searchCards()">
+<h2>🎞 دسته‌بندی برنامه‌ها</h2>
+<span>خاطراتت رو دوباره پیدا کن</span>
 </div>
 
-<div class="grid" id="categoryGrid">
+<div class="categories" id="categoryList">
 
-<div class="card" data-search="فیتیله فیتیله جمعه تعطیله"
-onclick="openCategory('fitileh')">
-<div class="poster">📺</div>
-<div class="cardbody">
+<a class="category" data-key="فیتیله جمعه تعطیله" href="#fitileh">
+<div class="category-art">📺</div>
+<div class="category-info">
 <h3>فیتیله</h3>
-<p>فیتیله جمعه تعطیله و برنامه‌های خاطره‌انگیز</p>
+<p>فیتیله جمعه تعطیله و برنامه‌های دیگر</p>
 </div>
-</div>
+</a>
 
-<div class="card" data-search="کلاه قرمزی جغجغه"
-onclick="openCategory('kolah')">
-<div class="poster">🎭</div>
-<div class="cardbody">
+<a class="category" data-key="کلاه قرمزی جغجغه" href="#" onclick="showPopup('آرشیو کلاه‌قرمزی و جغجغه');return false">
+<div class="category-art">🎭</div>
+<div class="category-info">
 <h3>کلاه‌قرمزی و جغجغه</h3>
 <p>خاطرات عروسکی تلویزیون</p>
 </div>
-</div>
+</a>
 
-<div class="card" data-search="عمو پورنگ"
-onclick="openCategory('pourang')">
-<div class="poster">🎈</div>
-<div class="cardbody">
+<a class="category" data-key="عمو پورنگ" href="#" onclick="showPopup('آرشیو عمو پورنگ');return false">
+<div class="category-art">🤹</div>
+<div class="category-info">
 <h3>عمو پورنگ</h3>
-<p>مجموعه‌های خاطره‌انگیز</p>
+<p>مجموعه‌ها و برنامه‌های خاطره‌انگیز</p>
 </div>
-</div>
+</a>
 
-<div class="card" data-search="کارتون انیمیشن"
-onclick="openCategory('cartoon')">
-<div class="poster">🧸</div>
-<div class="cardbody">
+<a class="category" data-key="کارتون انیمیشن" href="#" onclick="showPopup('آرشیو کارتون و انیمیشن');return false">
+<div class="category-art">🐱</div>
+<div class="category-info">
 <h3>کارتون و انیمیشن</h3>
-<p>دنیای انیمیشن‌های قدیمی</p>
+<p>دنیای انیمیشن‌های خاطره‌انگیز</p>
 </div>
-</div>
+</a>
 
-<div class="card" data-search="سریال تلویزیونی"
-onclick="openCategory('series')">
-<div class="poster">🎞️</div>
-<div class="cardbody">
+<a class="category" data-key="سریال" href="#" onclick="showPopup('آرشیو سریال‌ها');return false">
+<div class="category-art">🎬</div>
+<div class="category-info">
 <h3>سریال‌ها</h3>
-<p>سریال‌های خاطره‌انگیز</p>
+<p>سریال‌های خاطره‌انگیز تلویزیون</p>
 </div>
-</div>
+</a>
 
-<div class="card" data-search="برنامه تلویزیونی"
-onclick="openCategory('tv')">
-<div class="poster">📼</div>
-<div class="cardbody">
+<a class="category" data-key="برنامه تلویزیونی" href="#" onclick="showPopup('آرشیو برنامه‌های تلویزیونی');return false">
+<div class="category-art">📡</div>
+<div class="category-info">
 <h3>برنامه‌های تلویزیونی</h3>
-<p>برنامه‌های قدیمی و نوستالژیک</p>
+<p>برنامه‌های قدیمی و خاطره‌انگیز</p>
 </div>
-</div>
+</a>
 
 </div>
 </section>
 
-<section class="container hidden" id="archivePage">
-<button class="btn alt back" onclick="goHome()">
-← بازگشت به قفسه‌ها
-</button>
-<h2 id="pageTitle"></h2>
-<p id="pageDesc" class="note"></p>
-<div class="grid" id="yearGrid"></div>
-<div id="yearInfo" class="panel hidden"></div>
-</section>
+<section class="container" id="fitileh">
+<div class="archive">
 
-<section class="container" id="about">
-<div class="panel">
-<h2>دربارهٔ گنجینه نوستالژی</h2>
-<p class="note">
-گنجینه نوستالژی با هدف گردآوری و معرفی برنامه‌ها،
-کارتون‌ها و خاطرات تلویزیونی سال‌های گذشته در حال آماده‌سازی است.
+<div class="archive-intro">
+<div class="archive-picture">📺</div>
+<div>
+<h2>آرشیو فیتیله</h2>
+<p>
+مجموعه برنامه‌های فیتیله جمعه تعطیله و دیگر برنامه‌های این گروه محبوب؛
+از سال ۱۳۸۱ تا ۱۳۹۴.
 </p>
-<p class="gold">گنجینه نوستالژی؛ خانهٔ خاطرات قدیمی ما 📼</p>
-<p class="note">
-وب‌سایت در حال تکمیل است؛ بخش‌های آرشیو به‌مرور آماده می‌شوند.
-</p>
+<a class="primary" href="#years">مشاهده سال‌ها　›</a>
+</div>
+</div>
+
+<div class="years" id="years"></div>
+
 </div>
 </section>
+
+<section class="container" id="features">
+<div class="section-title">
+<h2>امکانات گنجینه</h2>
+<span>برای کشف دوباره خاطرات</span>
+</div>
+
+<div class="features">
+<div class="feature">
+<span class="feature-icon">▶</span>
+<div><strong>تماشای آنلاین</strong>
+<small>لینک‌های معتبر و باکیفیت</small></div>
+</div>
+
+<div class="feature">
+<span class="feature-icon">⌕</span>
+<div><strong>جست‌وجوی آرشیو</strong>
+<small>پیداکردن سریع برنامه‌ها</small></div>
+</div>
+
+<div class="feature">
+<span class="feature-icon">▣</span>
+<div><strong>طراحی واکنش‌گرا</strong>
+<small>مناسب موبایل و کامپیوتر</small></div>
+</div>
+</div>
+</section>
+
 </main>
 
-<footer>
-<strong>گنجینه نوستالژی</strong><br>
-خانهٔ خاطرات قدیمی ما<br>
-© گنجینه نوستالژی
+<footer id="about">
+<div class="container footer-inner">
+<span>خانه خاطرات تلویزیون ایران</span>
+<strong>📺 گنجینه نوستالژی</strong>
+<span>برای زنده نگه‌داشتن خاطره‌ها ❤️</span>
+</div>
 </footer>
 
-<script>
-const info={
-fitileh:["آرشیو فیتیله","سال‌های آرشیو فیتیله از ۱۳۸۱ تا ۱۳۹۴"],
-kolah:["آرشیو کلاه‌قرمزی و جغجغه","مجموعه‌های خاطره‌انگیز کلاه‌قرمزی و جغجغه"],
-pourang:["آرشیو عمو پورنگ","برنامه‌ها و مجموعه‌های عمو پورنگ"],
-cartoon:["کارتون و انیمیشن","کارتون‌ها و انیمیشن‌های خاطره‌انگیز"],
-series:["آرشیو سریال‌ها","سریال‌های خاطره‌انگیز تلویزیون"],
-tv:["برنامه‌های تلویزیونی","برنامه‌های قدیمی و خاطره‌انگیز"]
-};
+<div class="overlay" id="overlay" onclick="closeOutside(event)">
+<div class="popup">
+<h3 id="popupTitle">گنجینه نوستالژی</h3>
+<p id="popupText">این بخش در حال آماده‌سازی است.</p>
+<button onclick="closePopup()">باشه</button>
+</div>
+</div>
 
-const faYears=[
-"۱۳۸۱","۱۳۸۲","۱۳۸۳","۱۳۸۴","۱۳۸۵","۱۳۸۶","۱۳۸۷",
-"۱۳۸۸","۱۳۸۹","۱۳۹۰","۱۳۹۱","۱۳۹۲","۱۳۹۳","۱۳۹۴"
+<script>
+const years=[
+'۱۳۸۱','۱۳۸۲','۱۳۸۳','۱۳۸۴',
+'۱۳۸۵','۱۳۸۶','۱۳۸۷','۱۳۸۸',
+'۱۳۸۹','۱۳۹۰','۱۳۹۱','۱۳۹۲',
+'۱۳۹۳','۱۳۹۴'
 ];
 
-function openCategory(id){
-const d=info[id];
-if(!d)return;
+const yearBox=document.getElementById('years');
 
-["hero","archives","about"].forEach(x=>
-document.getElementById(x).classList.add("hidden")
-);
+years.forEach(year=>{
+  const button=document.createElement('button');
+  button.className='year';
+  button.textContent=year;
 
-document.getElementById("archivePage").classList.remove("hidden");
-document.getElementById("pageTitle").textContent=d[0];
-document.getElementById("pageDesc").textContent=d[1];
+  button.onclick=()=>{
+    showPopup(
+      'فیتیله '+year,
+      'آرشیو این سال در حال آماده‌سازی است. لینک برنامه‌ها در آینده به سایت اضافه خواهد شد.'
+    );
+  };
 
-const grid=document.getElementById("yearGrid");
-const yi=document.getElementById("yearInfo");
-
-grid.innerHTML="";
-yi.classList.add("hidden");
-yi.innerHTML="";
-
-if(id==="fitileh"){
-faYears.forEach(y=>{
-const c=document.createElement("div");
-c.className="card year-card";
-c.innerHTML=
-'<div class="year">'+y+'</div>'+
-'<div class="note">آرشیو فیتیله</div>';
-c.onclick=()=>showYear(y);
-grid.appendChild(c);
+  yearBox.appendChild(button);
 });
-}else{
-grid.innerHTML=
-'<div class="empty">این بخش در حال آماده‌سازی است.</div>';
+
+function showPopup(title,text){
+  document.getElementById('popupTitle').textContent=title;
+  document.getElementById('popupText').textContent=
+    text || 'این بخش در حال آماده‌سازی است و پس از تکمیل آرشیو در دسترس قرار می‌گیرد.';
+  document.getElementById('overlay').classList.add('show');
 }
 
-window.scrollTo(0,0);
+function closePopup(){
+  document.getElementById('overlay').classList.remove('show');
 }
 
-function showYear(y){
-const yi=document.getElementById("yearInfo");
-yi.classList.remove("hidden");
-yi.innerHTML=
-'<h2>فیتیله سال '+y+'</h2>'+
-'<p class="note">اطلاعات و لینک برنامه‌های این سال در این بخش قرار خواهد گرفت.</p>'+
-'<p class="gold">لینک برنامه‌ها طبق برنامه‌ریزی، دو ماه دیگر اضافه می‌شود.</p>';
-yi.scrollIntoView({behavior:"smooth",block:"center"});
+function closeOutside(event){
+  if(event.target.id==='overlay') closePopup();
 }
 
-function goHome(){
-["hero","archives","about"].forEach(x=>
-document.getElementById(x).classList.remove("hidden")
-);
-document.getElementById("archivePage").classList.add("hidden");
-window.scrollTo(0,0);
+function toggleMenu(){
+  document.getElementById('navigation').classList.toggle('open');
 }
 
-function searchCards(){
-const q=document.getElementById("search").value.trim().toLowerCase();
-document.querySelectorAll("#categoryGrid .card").forEach(c=>{
-c.style.display=c.dataset.search.includes(q)?"":"none";
-});
+function searchArchive(){
+  const query=document.getElementById('search').value.trim();
+  document.querySelectorAll('.category').forEach(card=>{
+    const text=card.dataset.key || '';
+    card.style.display=text.includes(query)?'block':'none';
+  });
 }
 </script>
-
 </body>
-  </html>
+</html>
