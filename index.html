@@ -2,425 +2,253 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="i2ljrD7BCBAx_lX8w85ADAGMMVxt-pPr0pKEGvQIEVg">
-<meta name="description" content="گنجینه نوستالژی؛ آرشیو برنامه‌های خاطره‌انگیز تلویزیون ایران">
-<title>گنجینه نوستالژی | خانه خاطرات</title>
+<meta name="description" content="گنجینه نوستالژی؛ خانه خاطرات شیرین تلویزیون ایران">
+<title>گنجینه نوستالژی</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
-
-:root{
-  --green:#173d2d;
-  --green2:#24543d;
-  --gold:#d6ad62;
-  --wood:#704629;
-  --wood2:#4d2e1b;
-  --cream:#f3e8d1;
-}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
-  margin:0;
-  font-family:'Vazirmatn',Tahoma,sans-serif;
-  background:#17271f;
-  color:#f7edda;
+ margin:0;background:#21140d;color:#f8e5b7;
+ font-family:Tahoma,Arial,sans-serif
 }
-a{text-decoration:none;color:inherit}
 header{
-  background:linear-gradient(135deg,#102b20,#24543d);
-  border-bottom:3px solid var(--gold);
-  padding:18px 5%;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 5px 20px #0006;
+ background:#101b1b;border-bottom:3px solid #c99a42;
+ padding:15px;display:flex;justify-content:space-between;
+ align-items:center;gap:12px;flex-wrap:wrap
 }
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:15px;
+.logo{font-size:24px;font-weight:bold;color:#f4c75d}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#f5dfad;text-decoration:none;font-size:14px}
+nav a:hover{color:#ffc94f}
+.search{
+ background:#102020;padding:12px;text-align:center
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:23px;
-  font-weight:800;
-  color:var(--gold);
+.search input{
+ width:min(500px,95%);padding:13px;border-radius:25px;
+ border:2px solid #c99a42;font-size:15px
 }
-.logo-icon{
-  width:53px;height:43px;
-  border:3px solid var(--gold);
-  border-radius:8px;
-  display:grid;
-  place-items:center;
-  font-size:27px;
-  background:#10251c;
+.hero{max-width:1500px;margin:auto;padding:12px}
+.hero img{
+ display:block;width:100%;height:auto;
+ border:4px solid #9b652c;border-radius:8px;
+ box-shadow:0 8px 30px #0009
 }
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{
-  font-size:13px;
-  color:#f8ecd7;
-  padding:8px 4px;
+main{max-width:1200px;margin:auto;padding:20px}
+h2{
+ color:#f4c75d;border-right:5px solid #c99a42;
+ padding-right:12px;margin:35px 0 20px
 }
-nav a:hover{color:var(--gold)}
-.hero{
-  text-align:center;
-  padding:75px 20px 65px;
-  background:
-  linear-gradient(#10251bdc,#10251be8),
-  radial-gradient(circle at center,#47704c,#14251d);
+.shelves{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:18px
 }
-.hero h1{
-  font-size:clamp(30px,5vw,52px);
-  color:var(--gold);
-  margin:0 0 15px;
+.card{
+ background:linear-gradient(145deg,#704322,#321d12);
+ border:4px solid #b77c37;border-radius:12px;
+ padding:20px;text-align:center;
+ box-shadow:inset 0 0 15px #160c06,0 5px 15px #0008
 }
-.hero p{color:#eee0c6;line-height:2}
-.hero-button{
-  display:inline-block;
-  background:var(--gold);
-  color:#263528;
-  padding:12px 27px;
-  border-radius:8px;
-  font-weight:800;
-  margin-top:15px;
+.card .picture{font-size:55px}
+.card h3{color:#ffdb88}
+.card p{color:#ead5aa;font-size:13px;line-height:2}
+.card a,.button{
+ display:inline-block;background:#152421;color:#f8d78d;
+ border:2px solid #c99a42;border-radius:25px;
+ padding:10px 20px;text-decoration:none;margin-top:8px
 }
-.search-wrap{max-width:550px;margin:25px auto 0}
-.search-wrap input{
-  width:100%;
-  padding:14px 18px;
-  border:2px solid var(--gold);
-  border-radius:10px;
-  background:#fff9ed;
-  font-family:inherit;
-  font-size:15px;
+.card a:hover,.button:hover{background:#9a642d;color:white}
+.years{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+ gap:12px
 }
-main{max-width:1200px;margin:auto;padding:25px 16px 60px}
-.section-title{
-  color:var(--gold);
-  font-size:25px;
-  border-right:5px solid var(--gold);
-  padding-right:13px;
-  margin:40px 0 22px;
+.year{
+ padding:17px 8px;text-align:center;
+ background:#633b22;border:2px solid #c99a42;
+ border-radius:8px;color:#ffe2a3;text-decoration:none
 }
-.shelf{
-  background:linear-gradient(110deg,#754a2c,#9a6840,#603b24);
-  padding:18px;
-  border:8px solid #4a2b19;
-  border-bottom:15px solid #3c2417;
-  border-radius:7px;
-  box-shadow:inset 0 0 20px #27170c,0 12px 20px #0006;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-  gap:15px;
-  margin-bottom:30px;
-}
-.item{
-  min-height:145px;
-  background:linear-gradient(145deg,#28523c,#173527);
-  border:2px solid #d1a75d;
-  border-radius:8px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:15px 8px;
-  text-align:center;
-  transition:.2s;
-}
-.item:hover{transform:translateY(-5px);background:#326448}
-.item .emoji{font-size:38px;margin-bottom:8px}
-.item strong{color:#f4d18b;font-size:15px}
-.item small{color:#e8dfcb;margin-top:7px}
-.years .item{background:linear-gradient(145deg,#69472d,#3d2a1e)}
-.years .item strong{font-size:20px}
+.year:hover{background:#9b642f}
 .panel{
-  background:#20392c;
-  border:1px solid #947344;
-  border-radius:12px;
-  padding:20px;
-  margin:25px 0;
+ background:#39251a;border:2px solid #a87536;
+ padding:20px;border-radius:12px;margin-top:20px
 }
-.panel h3{color:var(--gold);margin-top:0}
-.panel p{line-height:2;color:#e6ddca}
-.video-box{
-  background:#0d1712;
-  border:2px solid var(--gold);
-  border-radius:12px;
-  padding:15px;
-  margin:20px 0;
-}
-.video-box video{
-  width:100%;
-  max-height:520px;
-  background:#000;
-  border-radius:8px;
-}
-.video-controls{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:15px;
-}
-select,.download{
-  padding:11px 14px;
-  border-radius:7px;
-  border:1px solid var(--gold);
-  font-family:inherit;
-}
-select{background:#fff8e9;color:#222}
-.download{
-  background:var(--gold);
-  color:#1b2b20;
-  font-weight:800;
-}
+select,input{font-family:inherit}
+select{padding:10px;border-radius:7px;margin:5px}
+video{width:100%;background:#000;border-radius:8px;margin-top:15px}
 footer{
-  background:#0e2118;
-  border-top:3px solid var(--gold);
-  padding:35px 15px;
-  text-align:center;
-  color:#d9c9a8;
-  line-height:2;
+ text-align:center;background:#101b18;
+ border-top:3px solid #c99a42;padding:30px;
+ color:#e9d5a8;line-height:2
 }
-footer strong{color:var(--gold)}
-.hidden{display:none!important}
-@media(max-width:650px){
-  header{padding:12px}
-  .top{justify-content:center}
-  nav{justify-content:center;gap:10px}
-  .hero{padding:50px 15px}
-  .shelf{grid-template-columns:repeat(2,minmax(0,1fr));padding:10px;gap:10px}
-  .item{min-height:125px}
+@media(max-width:750px){
+ .shelves{grid-template-columns:repeat(2,1fr)}
+ header{justify-content:center}
+ nav{justify-content:center}
+ .logo{width:100%;text-align:center}
+}
+@media(max-width:430px){
+ .shelves{grid-template-columns:1fr}
+ main{padding:12px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="top">
-    <a class="logo" href="#home">
-      <span class="logo-icon">📼</span>
-      <span>گنجینه نوستالژی</span>
-    </a>
-    <nav>
-      <a href="#home">خانه</a>
-      <a href="#archive">آرشیو</a>
-      <a href="#fitile">فیتیله</a>
-      <a href="#kolah">کلاه‌قرمزی</a>
-      <a href="#pourang">عموپورنگ</a>
-      <a href="#watch">پخش برنامه‌ها</a>
-      <a href="#about">درباره ما</a>
-    </nav>
-  </div>
+ <div class="logo">📼 گنجینه نوستالژی</div>
+ <nav>
+  <a href="#home">صفحه اصلی</a>
+  <a href="#archive">آرشیو برنامه‌ها</a>
+  <a href="#about">درباره ما</a>
+ </nav>
 </header>
 
+<div class="search">
+ <input id="search" type="search" placeholder="جستجوی برنامه..." oninput="findCards()">
+</div>
+
 <section class="hero" id="home">
-  <h1>به خانه خاطرات خوش آمدید</h1>
-  <p>
-    جایی برای زنده کردن خاطرات تلویزیونی؛
-    از فیتیله و کلاه‌قرمزی تا عموپورنگ و هزاران خاطره دیگر.
-  </p>
-  <a class="hero-button" href="#archive">ورود به آرشیو</a>
-  <div class="search-wrap">
-    <input id="search" type="search" placeholder="دنبال کدام برنامه می‌گردی؟" oninput="searchItems()">
-  </div>
+ <img src="archive-room.png" alt="اتاق آرشیو گنجینه نوستالژی">
 </section>
 
-<main>
+<main id="archive">
+ <h2>قفسه‌های گنجینه نوستالژی</h2>
 
-<section id="archive">
-  <h2 class="section-title">قفسه‌های گنجینه</h2>
-  <div class="shelf searchable">
-    <a class="item" href="#fitile"><span class="emoji">📺</span><strong>فیتیله</strong><small>آرشیو سالانه</small></a>
-    <a class="item" href="#kolah"><span class="emoji">🎩</span><strong>کلاه‌قرمزی</strong><small>مجموعه‌های خاطره‌انگیز</small></a>
-    <a class="item" href="#pourang"><span class="emoji">🎈</span><strong>عموپورنگ</strong><small>برنامه‌های قدیمی</small></a>
-    <a class="item" href="#cartoon"><span class="emoji">🐻</span><strong>کارتون‌ها</strong><small>انیمیشن و خاطره</small></a>
-    <a class="item" href="#series"><span class="emoji">🎬</span><strong>سریال‌ها</strong><small>مجموعه‌های تلویزیونی</small></a>
-    <a class="item" href="#tv"><span class="emoji">📡</span><strong>برنامه‌های تلویزیونی</strong><small>آرشیو برنامه‌ها</small></a>
-  </div>
-</section>
+ <div class="shelves">
+  <article class="card">
+   <div class="picture">📺</div>
+   <h3>فیتیله جمعه تعطیله</h3>
+   <p>آرشیو خاطره‌انگیز فیتیله از سال ۱۳۸۱ تا ۱۳۹۴</p>
+   <a href="#fitile">مشاهده آرشیو</a>
+  </article>
 
-<section id="fitile">
-  <h2 class="section-title">آرشیو فیتیله جمعه تعطیله</h2>
+  <article class="card">
+   <div class="picture">🎩</div>
+   <h3>کلاه‌قرمزی و جغجغه</h3>
+   <p>مجموعه‌های خاطره‌انگیز کلاه‌قرمزی</p>
+   <a href="#kolah">مشاهده آرشیو</a>
+  </article>
+
+  <article class="card">
+   <div class="picture">🎈</div>
+   <h3>عموپورنگ</h3>
+   <p>برنامه‌های خاطره‌انگیز عموپورنگ</p>
+   <a href="#pourang">مشاهده آرشیو</a>
+  </article>
+
+  <article class="card">
+   <div class="picture">🐻</div>
+   <h3>کارتون و انیمیشن</h3>
+   <p>لحظه‌های شاد کودکی</p>
+   <a href="#cartoon">مشاهده آرشیو</a>
+  </article>
+
+  <article class="card">
+   <div class="picture">🎬</div>
+   <h3>سریال‌های خاطره‌انگیز</h3>
+   <p>سریال‌هایی که فراموش نمی‌شوند</p>
+   <a href="#series">مشاهده آرشیو</a>
+  </article>
+
+  <article class="card">
+   <div class="picture">📡</div>
+   <h3>برنامه‌های تلویزیونی</h3>
+   <p>برنامه‌های قدیمی و نوستالژیک</p>
+   <a href="#tv">مشاهده آرشیو</a>
+  </article>
+ </div>
+
+ <section id="fitile">
+  <h2>آرشیو فیتیله جمعه تعطیله</h2>
   <div class="panel">
-    <h3>خاطرات فیتیله از سال ۱۳۸۱ تا ۱۳۹۴</h3>
-    <p>سال موردنظرت را انتخاب کن. لینک قسمت‌ها پس از آماده شدن به آرشیو همان سال اضافه می‌شوند.</p>
+   <p>سال موردنظرت را انتخاب کن:</p>
+   <div class="years">
+    <a class="year" href="#fitile">۱۳۸۱</a>
+    <a class="year" href="#fitile">۱۳۸۲</a>
+    <a class="year" href="#fitile">۱۳۸۳</a>
+    <a class="year" href="#fitile">۱۳۸۴</a>
+    <a class="year" href="#fitile">۱۳۸۵</a>
+    <a class="year" href="#fitile">۱۳۸۶</a>
+    <a class="year" href="#fitile">۱۳۸۷</a>
+    <a class="year" href="#fitile">۱۳۸۸</a>
+    <a class="year" href="#fitile">۱۳۸۹</a>
+    <a class="year" href="#fitile">۱۳۹۰</a>
+    <a class="year" href="#fitile">۱۳۹۱</a>
+    <a class="year" href="#fitile">۱۳۹۲</a>
+    <a class="year" href="#fitile">۱۳۹۳</a>
+    <a class="year" href="#fitile">۱۳۹۴</a>
+   </div>
   </div>
-  <div class="shelf years searchable">
-    <a class="item" href="#fitile"><strong>۱۳۸۱</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۸۲</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۸۳</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۸۴</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۸۵</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۸۶</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۸۷</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۸۸</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۸۹</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۹۰</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۹۱</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۹۲</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۹۳</strong><small>مشاهده آرشیو</small></a>
-    <a class="item" href="#fitile"><strong>۱۳۹۴</strong><small>مشاهده آرشیو</small></a>
-  </div>
-</section>
+ </section>
 
-<section id="kolah">
-  <h2 class="section-title">قفسه کلاه‌قرمزی</h2>
-  <div class="shelf searchable">
-    <a class="item" href="#kolah-player"><span class="emoji">🎩</span><strong>کلاه‌قرمزی ۱۳۸۸</strong><small>قسمت اول</small></a>
-    <a class="item" href="#kolah-player"><span class="emoji">🎩</span><strong>کلاه‌قرمزی ۱۳۹۰</strong><small>قسمت اول</small></a>
-  </div>
-
-  <div class="panel" id="kolah-player">
-    <h3>تماشای کلاه‌قرمزی</h3>
-    <p>سال و کیفیت موردنظرت را انتخاب کن.</p>
-
-    <div class="video-controls">
-      <select id="kolahYear" onchange="updateVideo()">
-        <option value="88">کلاه‌قرمزی ۱۳۸۸</option>
-        <option value="90">کلاه‌قرمزی ۱۳۹۰</option>
-      </select>
-
-      <select id="kolahQuality" onchange="updateVideo()">
-        <option value="480p">480p</option>
-        <option value="720p">720p</option>
-        <option value="1080p">1080p</option>
-      </select>
-      <a class="download" id="downloadLink" href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E01.IR-DL.mp4" target="_blank" rel="noopener">دانلود مستقیم</a>
-    </div>
-
-    <div class="video-box">
-      <video id="kolahVideo" controls playsinline preload="metadata">
-        <source src="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E01.IR-DL.mp4" type="video/mp4">
-        مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
-      </video>
-    </div>
-    <p>اگر پخش آنلاین انجام نشد، از گزینه دانلود مستقیم استفاده کن.</p>
-  </div>
-</section>
-
-<section id="pourang">
-  <h2 class="section-title">قفسه عموپورنگ</h2>
-  <div class="shelf searchable">
-    <div class="item"><span class="emoji">🎈</span><strong>شبکه کودک</strong><small>آرشیو برنامه‌ها</small></div>
-    <div class="item"><span class="emoji">📺</span><strong>شبکه یک</strong><small>برنامه‌های قدیمی</small></div>
-    <div class="item"><span class="emoji">💿</span><strong>نمایش خانگی</strong><small>مجموعه‌ها</small></div>
-  </div>
-</section>
-
-<section id="cartoon">
-  <h2 class="section-title">قفسه کارتون و انیمیشن</h2>
-  <div class="shelf searchable">
-    <div class="item"><span class="emoji">🐻</span><strong>کارتون‌های قدیمی</strong></div>
-    <div class="item"><span class="emoji">🚀</span><strong>انیمیشن</strong></div>
-    <div class="item"><span class="emoji">🧸</span><strong>برنامه کودک</strong></div>
-  </div>
-</section>
-
-<section id="series">
-  <h2 class="section-title">قفسه سریال‌ها</h2>
-  <div class="shelf searchable">
-    <div class="item"><span class="emoji">🎞️</span><strong>سریال‌های ایرانی</strong></div>
-    <div class="item"><span class="emoji">📼</span><strong>مجموعه‌های خاطره‌انگیز</strong></div>
-  </div>
-</section>
-
-<section id="tv">
-  <h2 class="section-title">برنامه‌های تلویزیونی</h2>
-  <div class="shelf searchable">
-    <div class="item"><span class="emoji">📡</span><strong>برنامه‌های قدیمی</strong></div>
-    <div class="item"><span class="emoji">🎤</span><strong>جنگ‌های تلویزیونی</strong></div>
-    <div class="item"><span class="emoji">🎉</span><strong>ویژه‌برنامه‌ها</strong></div>
-  </div>
-</section>
-
-<section id="watch">
-  <h2 class="section-title">پخش برنامه‌ها</h2>
+ <section id="kolah">
+  <h2>آرشیو کلاه‌قرمزی</h2>
   <div class="panel">
-    <h3>تماشای ویدئو با لینک مستقیم</h3>
-    <p>اگر لینک مستقیم ویدئوی مجاز داری، آن را وارد کن تا در این صفحه پخش شود.</p>
-    <input id="customUrl" type="url" placeholder="https://example.com/video.mp4"
-      style="width:100%;padding:13px;border-radius:8px;border:1px solid #d6ad62;font-family:inherit">
-    <button onclick="playCustom()" class="download" style="margin-top:12px;cursor:pointer">پخش ویدئو</button>
-    <div class="video-box">
-      <video id="customVideo" controls playsinline style="width:100%;max-height:500px"></video>
-      <p id="videoMessage"></p>
-    </div>
+   <h3>کلاه‌قرمزی ۱۳۸۸ و ۱۳۹۰ ـ قسمت اول</h3>
+   <select id="year" onchange="changeVideo()">
+    <option value="88">سال ۱۳۸۸</option>
+    <option value="90">سال ۱۳۹۰</option>
+   </select>
+   <select id="quality" onchange="changeVideo()">
+    <option>480p</option>
+    <option>720p</option>
+    <option>1080p</option>
+   </select>
+   <video id="player" controls playsinline>
+    <source src="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E01.IR-DL.mp4">
+   </video>
+   <p><a class="button" id="download" target="_blank" rel="noopener" href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E01.IR-DL.mp4">دانلود مستقیم</a></p>
   </div>
-</section>
+ </section>
 
-<section id="about">
-  <h2 class="section-title">درباره گنجینه نوستالژی</h2>
+ <section id="pourang">
+  <h2>آرشیو عموپورنگ</h2>
+  <div class="panel">آرشیو برنامه‌های عموپورنگ به‌زودی تکمیل می‌شود.</div>
+ </section>
+
+ <section id="cartoon">
+  <h2>کارتون و انیمیشن</h2>
+  <div class="panel">قفسه کارتون‌های خاطره‌انگیز</div>
+ </section>
+
+ <section id="series">
+  <h2>سریال‌های خاطره‌انگیز</h2>
+  <div class="panel">آرشیو سریال‌های تلویزیونی</div>
+ </section>
+
+ <section id="tv">
+  <h2>برنامه‌های تلویزیونی</h2>
+  <div class="panel">آرشیو برنامه‌های قدیمی تلویزیون</div>
+ </section>
+
+ <section id="about">
+  <h2>درباره گنجینه نوستالژی</h2>
   <div class="panel">
-    <h3>خانه‌ای برای خاطرات قدیمی</h3>
-    <p>
-      گنجینه نوستالژی با هدف گردآوری و معرفی برنامه‌های خاطره‌انگیز تلویزیون ایران ساخته شده است.
-      اینجا قرار است خاطرات کودکی دوباره زنده شوند.
-    </p>
+   گنجینه نوستالژی؛ خانه خاطرات شیرین تلویزیون ایران.
   </div>
-</section>
-
+ </section>
 </main>
 
 <footer>
-  <strong>گنجینه نوستالژی</strong>
-  <p>خانه خاطرات تلویزیون ایران</p>
-  <small>تمامی حقوق طراحی این وب‌سایت محفوظ است.</small>
+ <strong>گنجینه نوستالژی</strong>
+ <div>خانه خاطرات شیرین تلویزیون ایران</div>
 </footer>
 
 <script>
-function searchItems(){
-  const term=document.getElementById('search').value.trim().toLowerCase();
-  document.querySelectorAll('.searchable .item').forEach(item=>{
-    item.classList.toggle('hidden',!item.innerText.toLowerCase().includes(term));
-  });
+function findCards(){
+ const q=document.getElementById('search').value.trim().toLowerCase();
+ document.querySelectorAll('.card').forEach(card=>{
+  card.style.display=card.innerText.toLowerCase().includes(q)?'':'none';
+ });
 }
-
-function kolahUrl(year,quality){
-  return `https://dl3.ir-dl.com/series/Kolah.Ghermezi.${year}/${quality}/Kolah.Ghermezi.${year}.${quality}.E01.IR-DL.mp4`;
-}
-
-function updateVideo(){
-  const year=document.getElementById('kolahYear').value;
-  const quality=document.getElementById('kolahQuality').value;
-  const url=kolahUrl(year,quality);
-  const video=document.getElementById('kolahVideo');
-  video.src=url;
-  video.load();
-  document.getElementById('downloadLink').href=url;
-}
-
-function playCustom(){
-  const input=document.getElementById('customUrl');
-  const message=document.getElementById('videoMessage');
-  const video=document.getElementById('customVideo');
-  const url=input.value.trim();
-
-  if(!url){
-    message.textContent='لطفاً ابتدا لینک ویدئو را وارد کن.';
-    return;
-  }
-
-  try{
-    const parsed=new URL(url);
-    if(!['http:','https:'].includes(parsed.protocol)){
-      throw new Error('invalid');
-    }
-    video.src=parsed.href;
-    video.load();
-    message.textContent='اگر لینک مستقیم ویدئو باشد، پخش آغاز می‌شود.';
-    video.play().catch(()=>{
-      message.textContent='برای شروع پخش، دکمه پخش ویدئو را بزن.';
-    });
-  }catch(error){
-    message.textContent='لینک واردشده معتبر نیست.';
-  }
+function changeVideo(){
+ const y=document.getElementById('year').value;
+ const q=document.getElementById('quality').value;
+ const url=`https://dl3.ir-dl.com/series/Kolah.Ghermezi.${y}/${q}/Kolah.Ghermezi.${y}.${q}.E01.IR-DL.mp4`;
+ const player=document.getElementById('player');
+ player.src=url;
+ player.load();
+ document.getElementById('download').href=url;
 }
 </script>
-
 </body>
 </html>
