@@ -2,166 +2,235 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11110f">
 <title>گنجینه نوستالژی | آرشیو خاطرات تلویزیون</title>
 <style>
+:root{--gold:#e6bd70;--gold2:#a77b37;--bg:#10100f;--panel:#1b1915;--muted:#b9ad99}
 *{box-sizing:border-box}
-body{margin:0;background:#10100f;color:#f5ead5;font-family:Tahoma,Arial,sans-serif}
-header{background:#171510;border-bottom:1px solid #80612d;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:24px;font-weight:bold;color:#e8bd68}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:#eee0c5;text-decoration:none;font-size:14px}
-nav a:hover{color:#e8bd68}
-.hero{padding:65px 7%;background:linear-gradient(100deg,#17130d,#3a2915,#17130d);text-align:center;border-bottom:1px solid #72572d}
-.hero h1{font-size:34px;color:#f1cc7e}
-.hero p{line-height:2;color:#ddd}
-.button{display:inline-block;background:#b58a43;color:#17120b;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:12px}
-main{max-width:1200px;margin:auto;padding:30px 18px}
-.section-title{color:#e9c77f;border-right:4px solid #b58a43;padding-right:12px;margin:35px 0 20px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
-.card{background:#1c1a16;border:1px solid #514027;border-radius:13px;padding:20px;text-align:center;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#d4a957}
-.card h3{color:#e9c77f}
-.card p{color:#c7bba7;font-size:13px;line-height:1.8}
-.year-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px}
-.year{background:#211c14;border:1px solid #80612d;color:#f0d18d;padding:16px;text-align:center;border-radius:9px;text-decoration:none}
-.year:hover{background:#44331b}
-.episodes{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:18px}
-.episode{display:block;background:#211c14;border:1px solid #80612d;color:#f0d18d;padding:15px;text-align:center;border-radius:9px;text-decoration:none}
-.episode:hover{background:#44331b}
-.poster{width:100%;height:170px;object-fit:cover;border-radius:9px;background:#302719}
-.search{width:100%;max-width:420px;padding:13px;border-radius:8px;border:1px solid #80612d;background:#201c16;color:white;margin:15px 0}
-footer{text-align:center;background:#171510;padding:30px;color:#bcae96;margin-top:40px;line-height:2}
-.small{font-size:12px;color:#a99b83}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#f5ead5;font-family:Tahoma,Arial,sans-serif}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:#15130fee;backdrop-filter:blur(12px);border-bottom:1px solid #574326;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:23px;font-weight:bold;color:var(--gold)}
+nav{display:flex;align-items:center;gap:18px}
+nav a{text-decoration:none;color:#e8dcc6;font-size:13px}
+nav a:hover{color:var(--gold)}
+.menu{display:none;background:none;color:var(--gold);border:1px solid #80612d;border-radius:8px;padding:9px;font-size:20px}
+.hero{min-height:390px;padding:65px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#100f0d 5%,#17130de8 55%,#261a0cbb),radial-gradient(ellipse at 80% 40%,#80602d,#17130d 65%);border-bottom:1px solid #574326}
+.hero-content{max-width:650px}
+.eyebrow{color:var(--gold);letter-spacing:2px;font-size:12px}
+.hero h1{font-size:clamp(30px,5vw,54px);line-height:1.5;margin:12px 0}
+.hero p{color:#d0c2aa;line-height:2;font-size:15px}
+.btn{display:inline-block;background:linear-gradient(135deg,#e9c77f,#a87932);color:#21180c;text-decoration:none;border:0;border-radius:8px;padding:12px 20px;font-weight:bold;cursor:pointer;margin:5px}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold2)}
+main{max-width:1250px;margin:auto;padding:25px 18px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:38px 0 18px}
+.section-head h2{font-size:21px;color:var(--gold);border-right:4px solid var(--gold2);padding-right:12px;margin:0}
+.section-head small{color:var(--muted)}
+.search-wrap{margin:20px 0}
+.search{width:100%;max-width:520px;padding:14px 16px;border-radius:9px;border:1px solid #66502c;background:#1b1915;color:white;font:inherit}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:15px}
+.card{background:linear-gradient(145deg,#211e18,#171613);border:1px solid #514027;border-radius:14px;padding:16px;transition:.25s;overflow:hidden}
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.card h3{color:var(--gold);margin:12px 0 8px}
+.card p{font-size:13px;color:var(--muted);line-height:1.9}
+.icon{font-size:32px}
+.poster{width:100%;height:190px;object-fit:cover;border-radius:9px;background:#302719}
+.year-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:9px}
+.year{background:#211c14;border:1px solid #80612d;color:#f0d18d;padding:14px;text-align:center;border-radius:9px;text-decoration:none}
+.year:hover{background:#49371d}
+.panel{background:#191713;border:1px solid #604a29;border-radius:15px;padding:20px;margin:18px 0}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:15px 0}
+select{padding:12px;background:#201c16;color:#f0d18d;border:1px solid #80612d;border-radius:8px;font:inherit}
+.episodes{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.episode{display:block;background:#211c14;border:1px solid #80612d;color:#f0d18d;padding:14px;text-align:center;border-radius:9px;text-decoration:none;font-size:13px}
+.episode:hover{background:#49371d}
+.note{color:#b9ad99;font-size:12px;line-height:2}
+.empty{display:none;color:#d7bd8c;padding:15px}
+footer{margin-top:50px;padding:35px 20px;text-align:center;background:#171510;border-top:1px solid #574326;color:#bcae96;line-height:2}
+footer strong{color:var(--gold);font-size:20px}
+@media(max-width:700px){
+ header{padding:12px 4%}
+ .menu{display:block}
+ nav{display:none;position:absolute;top:100%;right:0;left:0;background:#171510;padding:20px;flex-direction:column;align-items:stretch;border-bottom:1px solid #80612d}
+ nav.open{display:flex}
+ nav a{padding:9px}
+ .hero{min-height:330px;padding:45px 7%}
+ .hero h1{font-size:32px}
+ main{padding:18px 13px}
+ .card{padding:13px}
+}
 </style>
 </head>
 <body>
 
 <header>
   <div class="logo">🎞️ گنجینه نوستالژی</div>
-  <nav>
+  <button class="menu" id="menuButton" aria-label="باز کردن منو">☰</button>
+  <nav id="navigation">
     <a href="#home">خانه</a>
     <a href="#categories">دسته‌بندی‌ها</a>
     <a href="#fitile">فیتیله</a>
     <a href="#kolah">کلاه‌قرمزی</a>
-    <a href="#about">درباره ما</a>
+    <a href="#resources">منابع</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <h1>به گنجینه خاطرات خوش آمدید</h1>
-  <p>آرشیوی برای زنده نگه داشتن خاطرات تلویزیون و برنامه‌های دوست‌داشتنی</p>
-  <a class="button" href="#categories">ورود به آرشیو</a>
+  <div class="hero-content">
+    <div class="eyebrow">ARCHIVE OF MEMORIES</div>
+    <h1>خاطراتت را دوباره تماشا کن</h1>
+    <p>به گنجینه نوستالژی خوش آمدی؛ خانه‌ای برای آرشیو برنامه‌ها، سریال‌ها و خاطرات تلویزیون ایران.</p>
+    <a class="btn" href="#categories">کشف آرشیو</a>
+    <a class="btn btn-outline" href="#kolah">کلاه‌قرمزی</a>
+  </div>
 </section>
 
 <main>
-  <h2 class="section-title" id="categories">دسته‌بندی آرشیو</h2>
-  <div class="cards">
-    <div class="card"><h3>🎈 فیتیله</h3><p>آرشیو برنامه‌های عموهای فیتیله‌ای</p><a class="button" href="#fitile">مشاهده آرشیو</a></div>
-    <div class="card"><h3>🎩 کلاه‌قرمزی</h3><p>مجموعه‌ها و ویژه‌برنامه‌ها</p><a class="button" href="#kolah">مشاهده آرشیو</a></div>
-    <div class="card"><h3>🧸 عمو پورنگ</h3><p>برنامه‌های خاطره‌انگیز عمو پورنگ</p></div>
-    <div class="card"><h3>📺 برنامه‌های تلویزیونی</h3><p>مجموعه‌های قدیمی تلویزیون</p></div>
-    <div class="card"><h3>🐻 کارتون و انیمیشن</h3><p>کارتون‌های خاطره‌انگیز</p></div>
-    <div class="card"><h3>🎬 سریال‌ها</h3><p>سریال‌های قدیمی و نوستالژیک</p></div>
+  <div class="search-wrap">
+    <input class="search" id="siteSearch" placeholder="🔎 جست‌وجو در آرشیو؛ مثلاً کلاه‌قرمزی..." aria-label="جست‌وجو">
   </div>
 
-  <h2 class="section-title" id="fitile">🎈 آرشیو فیتیله جمعه تعطیله</h2>
-  <p>انتخاب سال موردنظر:</p>
-  <div class="year-grid" id="fitile-years"></div>
-
-  <h2 class="section-title" id="kolah">🎩 آرشیو کلاه‌قرمزی</h2>
-  <div class="cards">
-    <div class="card">
-      <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNjIwZjhmOTUtZmE5Ny00OTczLTk2MmQtMTM5MjY1ZmVhZjhmXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg" alt="کلاه قرمزی ۸۸">
-      <h3>کلاه‌قرمزی ۱۳۸۸</h3>
-      <p>۱۵ قسمت | کیفیت 480p</p>
-      <a class="button" href="#episodes-88">مشاهده قسمت‌ها</a>
-    </div>
-    <div class="card">
-      <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMTFmZjg5N2QtYjg5Ny00NGZjLWE3MGEtM2FiMzZkNmY1MDEzXkEyXkFqcGc%40._V1_.jpg" alt="کلاه قرمزی ۹۰">
-      <h3>کلاه‌قرمزی ۱۳۹۰</h3>
-      <p>۱۶ قسمت</p>
-      <p class="small">لینک قسمت‌ها هنوز اضافه نشده</p>
-    </div>
-    <div class="card">
-      <img class="poster" src="https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fseasons%2F268907-91.jpg" alt="کلاه قرمزی ۹۱">
-      <h3>کلاه‌قرمزی ۱۳۹۱</h3>
-      <p>۱۷ قسمت</p>
-    </div>
-    <div class="card">
-      <img class="poster" src="https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fseasons%2F268907-92.jpg" alt="کلاه قرمزی ۹۲">
-      <h3>کلاه‌قرمزی ۱۳۹۲</h3>
-      <p>۲۱ قسمت</p>
-    </div>
-    <div class="card">
-      <div class="poster"></div>
-      <h3>کلاه‌قرمزی ۱۳۹۳</h3>
-      <p>۲۳ قسمت</p>
-    </div>
-    <div class="card">
-      <img class="poster" src="https://sansmedia.ir/sans/uploads/video_thumb/13707.jpg" alt="کلاه قرمزی ۹۴">
-      <h3>کلاه‌قرمزی ۱۳۹۴</h3>
-      <p>۲۲ قسمت</p>
-      <a class="button" href="https://sansmedia.ir/sans/watch/94-kolah-ghermezi.html" target="_blank" rel="noopener">صفحه آرشیو</a>
-    </div>
-    <div class="card">
-      <img class="poster" src="https://www.sansmedia.ir/sans/uploads/video_thumb/13696.jpg" alt="کلاه قرمزی ۹۷">
-      <h3>کلاه‌قرمزی ۱۳۹۷</h3>
-      <p>۱۹ قسمت</p>
-      <a class="button" href="https://sansmedia.ir/sans/watch/97-kolah-ghermezi.html?key=zxlagxxct5so" target="_blank" rel="noopener">صفحه آرشیو</a>
-    </div>
+  <div class="section-head" id="categories">
+    <h2>دسته‌بندی آرشیو</h2><small>گنجینه برنامه‌های خاطره‌انگیز</small>
+  </div>
+  <div class="grid" id="categoryGrid">
+    <article class="card searchable"><div class="icon">🎈</div><h3>فیتیله</h3><p>آرشیو عموهای فیتیله‌ای و برنامه‌های جمعه تعطیله</p><a class="btn" href="#fitile">مشاهده</a></article>
+    <article class="card searchable"><div class="icon">🎩</div><h3>کلاه‌قرمزی</h3><p>مجموعه‌ها و ویژه‌برنامه‌های کلاه‌قرمزی</p><a class="btn" href="#kolah">مشاهده</a></article>
+    <article class="card searchable"><div class="icon">🧸</div><h3>عمو پورنگ</h3><p>برنامه‌های خاطره‌انگیز عمو پورنگ</p></article>
+    <article class="card searchable"><div class="icon">🐻</div><h3>کارتون و انیمیشن</h3><p>کارتون‌های قدیمی و محبوب</p></article>
+    <article class="card searchable"><div class="icon">📺</div><h3>برنامه‌های تلویزیونی</h3><p>برنامه‌های قدیمی شبکه‌های تلویزیونی</p></article>
+    <article class="card searchable"><div class="icon">🎬</div><h3>سریال‌ها</h3><p>سریال‌های خاطره‌انگیز ایرانی</p></article>
   </div>
 
-  <h2 class="section-title" id="episodes-88">قسمت‌های کلاه‌قرمزی ۱۳۸۸</h2>
-  <p>کیفیت 480p | ۱۵ قسمت</p>
-  <input class="search" id="episode-search" placeholder="جست‌وجوی شماره قسمت...">
-  <div class="episodes" id="episode-list"></div>
+  <div class="section-head" id="fitile">
+    <h2>🎈 آرشیو فیتیله جمعه تعطیله</h2><small>سال‌های ۱۳۸۱ تا ۱۳۹۴</small>
+  </div>
+  <div class="year-grid" id="fitileYears"></div>
+  <p class="note">صفحه‌های سال‌های فیتیله به‌تدریج تکمیل می‌شوند.</p>
 
-  <h2 class="section-title">منابع و صفحه‌های آرشیو</h2>
-  <div class="cards">
-    <div class="card"><h3>کانال کلاه‌قرمزی</h3><a class="button" href="https://t.me/KolahGhermeziFans" target="_blank" rel="noopener">ورود به تلگرام</a></div>
-    <div class="card"><h3>یوتیوب کلاه‌قرمزی</h3><a class="button" href="https://www.youtube.com/@kolahghermeziofficial" target="_blank" rel="noopener">مشاهده کانال</a></div>
+  <div class="section-head" id="kolah">
+    <h2>🎩 آرشیو کلاه‌قرمزی</h2><small>مجموعه‌های تلویزیونی</small>
+  </div>
+  <div class="grid">
+    <article class="card searchable">
+      <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNjIwZjhmOTUtZmE5Ny00OTczLTk2MmQtMTM5MjY1ZmVhZjhmXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg" alt="کلاه قرمزی ۱۳۸۸">
+      <h3>کلاه‌قرمزی ۱۳۸۸</h3><p>۱۵ قسمت | کیفیت‌های 480p، 720p و 1080p</p>
+      <a class="btn" href="#archive88">ورود به آرشیو</a>
+    </article>
+    <article class="card searchable">
+      <img class="poster" src="https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fseasons%2F268907-90.jpg" alt="کلاه قرمزی ۱۳۹۰">
+      <h3>کلاه‌قرمزی ۱۳۹۰</h3><p>۱۶ قسمت | کیفیت‌های 480p، 720p و 1080p</p>
+      <a class="btn" href="#archive90">ورود به آرشیو</a>
+    </article>
+    <article class="card searchable">
+      <img class="poster" src="https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fseasons%2F268907-91.jpg" alt="کلاه قرمزی ۱۳۹۱">
+      <h3>کلاه‌قرمزی ۱۳۹۱</h3><p>۱۷ قسمت</p><span class="note">در حال تکمیل</span>
+    </article>
+    <article class="card searchable">
+      <img class="poster" src="https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fseasons%2F268907-92.jpg" alt="کلاه قرمزی ۱۳۹۲">
+      <h3>کلاه‌قرمزی ۱۳۹۲</h3><p>۲۱ قسمت</p><span class="note">در حال تکمیل</span>
+    </article>
+    <article class="card searchable">
+      <div class="poster"></div><h3>کلاه‌قرمزی ۱۳۹۳</h3><p>۲۳ قسمت</p><span class="note">پوستر و آرشیو در حال تکمیل</span>
+    </article>
+    <article class="card searchable">
+      <img class="poster" src="https://sansmedia.ir/sans/uploads/video_thumb/13707.jpg" alt="کلاه قرمزی ۱۳۹۴">
+      <h3>کلاه‌قرمزی ۱۳۹۴</h3><p>۲۲ قسمت</p>
+      <a class="btn" href="https://sansmedia.ir/sans/watch/94-kolah-ghermezi.html" target="_blank" rel="noopener">صفحه آرشیو</a>
+    </article>
+    <article class="card searchable">
+      <img class="poster" src="https://www.sansmedia.ir/sans/uploads/video_thumb/13696.jpg" alt="کلاه قرمزی ۱۳۹۷">
+      <h3>کلاه‌قرمزی ۱۳۹۷</h3><p>۱۹ قسمت</p>
+      <a class="btn" href="https://sansmedia.ir/sans/watch/97-kolah-ghermezi.html?key=zxlagxxct5so" target="_blank" rel="noopener">صفحه آرشیو</a>
+    </article>
+  </div>
+
+  <section class="panel" id="archive88">
+    <div class="section-head"><h2>کلاه‌قرمزی ۱۳۸۸</h2><small>۱۵ قسمت</small></div>
+    <div class="controls">
+      <label for="quality88">انتخاب کیفیت:</label>
+      <select id="quality88"><option>480p</option><option>720p</option><option>1080p</option></select>
+    </div>
+    <div class="episodes" id="episodes88"></div>
+  </section>
+
+  <section class="panel" id="archive90">
+    <div class="section-head"><h2>کلاه‌قرمزی ۱۳۹۰</h2><small>۱۶ قسمت</small></div>
+    <div class="controls">
+      <label for="quality90">انتخاب کیفیت:</label>
+      <select id="quality90"><option>480p</option><option>720p</option><option>1080p</option></select>
+    </div>
+    <div class="episodes" id="episodes90"></div>
+  </section>
+
+  <p class="note">توجه: لینک‌های قسمت‌ها بر اساس الگوی لینک قسمت اول ساخته شده‌اند. فعال بودن همه قسمت‌ها و کیفیت‌ها به بررسی جداگانه نیاز دارد.</p>
+
+  <div class="section-head" id="resources">
+    <h2>منابع و ارتباط</h2>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="icon">✈️</div><h3>کانال تلگرام کلاه‌قرمزی</h3><a class="btn" href="https://t.me/KolahGhermeziFans" target="_blank" rel="noopener">ورود به تلگرام</a></article>
+    <article class="card"><div class="icon">▶️</div><h3>یوتیوب کلاه‌قرمزی</h3><a class="btn" href="https://www.youtube.com/@kolahghermeziofficial" target="_blank" rel="noopener">مشاهده کانال</a></article>
   </div>
 </main>
 
-<footer id="about">
-  <strong>گنجینه نوستالژی</strong>
-  <p>خانه خاطرات تلویزیون ایران</p>
-  <span class="small">این سایت یک آرشیو معرفی و دسته‌بندی است؛ دسترسی هر لینک به فعال بودن منبع اصلی بستگی دارد.</span>
+<footer>
+  <strong>🎞️ گنجینه نوستالژی</strong>
+  <div>خانه خاطرات تلویزیون ایران</div>
+  <div class="note">آرشیو در حال تکمیل است.</div>
 </footer>
 
 <script>
-const fitileYears = document.getElementById("fitile-years");
-for(let year=1381; year<=1394; year++){
+document.getElementById("menuButton").addEventListener("click",()=>{
+  document.getElementById("navigation").classList.toggle("open");
+});
+document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>{
+  document.getElementById("navigation").classList.remove("open");
+}));
+
+const fitileYears=document.getElementById("fitileYears");
+for(let y=1381;y<=1394;y++){
   const a=document.createElement("a");
   a.className="year";
   a.href="#fitile";
-  a.textContent=year;
+  a.textContent=y;
   a.addEventListener("click",e=>{
     e.preventDefault();
-    alert("آرشیو فیتیله سال "+year+" به‌زودی تکمیل می‌شود.");
+    alert("آرشیو فیتیله سال "+y+" هنوز در حال تکمیل است.");
   });
   fitileYears.appendChild(a);
 }
 
-const episodeList=document.getElementById("episode-list");
-for(let i=1;i<=15;i++){
-  const ep=String(i).padStart(2,"0");
-  const url=`https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E${ep}.IR-DL.mp4`;
-  const a=document.createElement("a");
-  a.className="episode";
-  a.href=url;
-  a.target="_blank";
-  a.rel="noopener";
-  a.textContent=`قسمت ${i} | 480p`;
-  a.dataset.number=String(i);
-  episodeList.appendChild(a);
+function buildEpisodes(year,count,qualityId,containerId){
+  const quality=document.getElementById(qualityId);
+  const container=document.getElementById(containerId);
+  function render(){
+    container.innerHTML="";
+    const q=quality.value;
+    for(let i=1;i<=count;i++){
+      const ep=String(i).padStart(2,"0");
+      const url=`https://dl3.ir-dl.com/series/Kolah.Ghermezi.${year}/${q}/Kolah.Ghermezi.${year}.${q}.E${ep}.IR-DL.mp4`;
+      const a=document.createElement("a");
+      a.className="episode";
+      a.href=url;
+      a.target="_blank";
+      a.rel="noopener";
+      a.textContent=`قسمت ${i} | ${q}`;
+      container.appendChild(a);
+    }
+  }
+  quality.addEventListener("change",render);
+  render();
 }
+buildEpisodes("88",15,"quality88","episodes88");
+buildEpisodes("90",16,"quality90","episodes90");
 
-document.getElementById("episode-search").addEventListener("input",function(){
-  const q=this.value.trim();
-  document.querySelectorAll(".episode").forEach(a=>{
-    a.style.display=a.textContent.includes(q)?"block":"none";
+document.getElementById("siteSearch").addEventListener("input",function(){
+  const q=this.value.trim().toLowerCase();
+  document.querySelectorAll(".searchable").forEach(card=>{
+    card.style.display=card.textContent.toLowerCase().includes(q)?"":"none";
   });
 });
 </script>
