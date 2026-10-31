@@ -4,118 +4,249 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="i2ljrD7BCBAx_lX8w85ADAGMMVxt-pPr0pKEGvQIEVg">
-<title>گنجینه نوستالژی</title>
+<title>گنجینه نوستالژی | اتاق خاطرات</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#170b06;color:#fff1ce;font-family:Tahoma,Arial}
-header{background:#321609;border-bottom:3px solid #b98235;padding:18px;text-align:center}
-.logo{font-size:30px;color:#ffc653;font-weight:bold}
-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:15px}
-nav a,.btn{background:#70401c;color:#fff0c8;padding:11px 17px;border:1px solid #c18b43;border-radius:10px;text-decoration:none}
-.hero{min-height:430px;background:linear-gradient(#0004,#0008),url('archive-room.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding:25px}
-.intro{background:#241108dd;border:2px solid #c18b43;border-radius:18px;text-align:center;padding:25px;max-width:600px}
-h1,h2,h3{color:#ffc653}
-h1{font-size:38px}
-.intro p{line-height:2}
-section{max-width:1150px;margin:auto;padding:30px 18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:17px}
-.card{background:linear-gradient(145deg,#70401e,#2c1309);border:2px solid #a66e30;border-radius:16px;padding:20px;text-align:center;box-shadow:0 8px 20px #0008}
-.card h3{font-size:22px}
-.card p{line-height:1.9}
-.card a{display:inline-block;background:#d69a3c;color:#241006;padding:10px 15px;border-radius:8px;text-decoration:none;font-weight:bold}
-.years{display:flex;flex-wrap:wrap;gap:9px}
-.years a{background:#603216;color:#ffe2a5;border:1px solid #bd843b;border-radius:8px;padding:10px;text-decoration:none}
-footer{text-align:center;background:#321609;padding:25px;color:#f5ca7b}
-@media(max-width:600px){h1{font-size:28px}.hero{min-height:330px}}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ color:#fff1d2;
+ font-family:Tahoma,Arial,sans-serif;
+ background:#160c07 url('archive-room.png') center center/cover fixed no-repeat;
+}
+body:before{
+ content:"";
+ position:fixed;inset:0;
+ background:linear-gradient(180deg,#16090066,#160900b8 55%,#100702e8);
+ z-index:-1;
+}
+header{
+ position:sticky;top:0;z-index:10;
+ background:#211006eF;
+ border-bottom:3px solid #bd8740;
+ padding:15px 12px;
+ text-align:center;
+ box-shadow:0 5px 20px #0009;
+}
+.logo{font-size:27px;font-weight:bold;color:#ffd078;text-shadow:0 2px 8px #000}
+nav{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:13px}
+nav a{
+ color:#ffe6b5;text-decoration:none;
+ background:#553018;border:1px solid #b98242;
+ padding:10px 15px;border-radius:7px;
+}
+nav a:hover,.shelf-item:hover{background:#a56a2c;color:white}
+main{max-width:1200px;margin:auto;padding:22px 14px}
+.welcome{
+ min-height:300px;display:flex;align-items:center;justify-content:center;
+ text-align:center;
+}
+.welcome-box{
+ background:#1c0e08dc;border:2px solid #c18a43;
+ border-radius:18px;padding:24px;max-width:620px;
+ box-shadow:0 15px 40px #000a;
+}
+h1,h2,h3{color:#ffd078}
+h1{font-size:35px;margin:8px}
+p{line-height:2}
+.button{
+ display:inline-block;background:#d49a48;color:#261306;
+ padding:12px 20px;border-radius:8px;
+ text-decoration:none;font-weight:bold;margin-top:10px;
+}
+.room-section{
+ margin:28px 0;padding:20px;
+ background:linear-gradient(145deg,#29160bdc,#130a06eF);
+ border:2px solid #94602e;border-radius:16px;
+ box-shadow:0 12px 30px #0009;
+}
+.section-title{
+ text-align:center;font-size:25px;
+ border-bottom:1px solid #986532;padding-bottom:15px;
+}
+.shelves{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+ gap:17px;margin-top:22px;
+}
+.shelf{
+ background:linear-gradient(180deg,#74431f,#35190c);
+ border:5px solid #75451f;
+ border-bottom:10px solid #9a6330;
+ border-radius:8px;padding:15px 12px;
+ box-shadow:inset 0 0 12px #160800,0 8px 14px #0009;
+ text-align:center;
+}
+.shelf h3{font-size:21px;margin:8px}
+.shelf p{font-size:13px;color:#f4d9a9}
+.shelf-item{
+ display:block;text-decoration:none;color:#ffe7b8;
+ background:#211108;border:1px solid #a8753b;
+ border-radius:7px;padding:12px;margin-top:10px;
+ transition:.2s;
+}
+.year-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(75px,1fr));
+ gap:10px;margin-top:20px;
+}
+.year{
+ display:block;text-align:center;
+ background:linear-gradient(#815027,#44230e);
+ border:2px solid #c18a43;border-radius:7px;
+ color:#ffe5b0;text-decoration:none;
+ padding:13px 5px;font-weight:bold;
+ box-shadow:0 4px 8px #0008;
+}
+.year:hover{background:#bd843b;color:#1b0d05}
+.tv-area{
+ text-align:center;margin:30px auto;
+ padding:25px 12px;
+}
+.tv{
+ display:inline-block;
+ background:linear-gradient(145deg,#70421f,#211006);
+ border:9px ridge #9c6a36;
+ border-radius:30px;padding:20px;
+ box-shadow:0 15px 30px #000b;
+ max-width:100%;
+}
+.tv-screen{
+ width:min(430px,75vw);min-height:160px;
+ display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(#4c321c,#100b08);
+ border:7px solid #170c06;border-radius:35px;
+ color:#ffd078;font-size:25px;font-weight:bold;
+ text-shadow:0 0 12px #d99a3d;
+}
+.tv-caption{color:#f4d19a;margin-top:12px}
+footer{
+ text-align:center;background:#170b06ed;
+ border-top:3px solid #9b682f;
+ padding:25px;color:#f4d09a;
+}
+@media(max-width:600px){
+ .logo{font-size:22px}
+ h1{font-size:27px}
+ .welcome{min-height:260px}
+ .welcome-box{padding:18px}
+ main{padding:12px 9px}
+ .room-section{padding:14px}
+ .section-title{font-size:21px}
+}
 </style>
 </head>
 <body>
+
 <header>
-<div class="logo">🎞 گنجینه نوستالژی</div>
-<nav>
-<a href="#home">خانه</a>
-<a href="#archive">آرشیو</a>
-<a href="#watch">پخش برنامه‌ها</a>
-<a href="#about">درباره ما</a>
-</nav>
+ <div class="logo">🎞 گنجینه نوستالژی</div>
+ <nav>
+  <a href="#home">خانه</a>
+  <a href="#archive">قفسه‌های آرشیو</a>
+  <a href="#fitile">فیتیله</a>
+  <a href="#watch">تماشای برنامه‌ها</a>
+  <a href="#about">درباره ما</a>
+ </nav>
 </header>
 
-<div class="hero" id="home">
-<div class="intro">
-<h1>گنجینه نوستالژی</h1>
-<p>به اتاق خاطرات تلویزیون خوش آمدید؛
-جایی برای زنده کردن خاطرات شیرین کودکی.</p>
-<a class="btn" href="#archive">ورود به آرشیو</a>
-</div>
-</div>
+<main>
+ <section class="welcome" id="home">
+  <div class="welcome-box">
+   <h1>به اتاق خاطرات خوش آمدید</h1>
+   <p>درهای گنجینه نوستالژی باز است؛
+   به دنیای برنامه‌ها و خاطرات شیرین تلویزیون سفر کنید.</p>
+   <a class="button" href="#archive">ورود به اتاق آرشیو</a>
+  </div>
+ </section>
 
-<section id="archive">
-<h2>📚 قفسه‌های آرشیو</h2>
-<div class="grid">
-<div class="card">
-<h3>📺 فیتیله</h3>
-<p>آرشیو فیتیله جمعه تعطیله، از سال ۱۳۸۱ تا ۱۳۹۴</p>
-<a href="#fitile">مشاهده آرشیو</a>
-</div>
-<div class="card">
-<h3>🎭 کلاه‌قرمزی</h3>
-<p>مجموعه‌های خاطره‌انگیز کلاه‌قرمزی</p>
-<a href="#kolah">مشاهده آرشیو</a>
-</div>
-<div class="card">
-<h3>⭐ عمو پورنگ</h3>
-<p>برنامه‌های خاطره‌انگیز عمو پورنگ</p>
-<a href="#pourang">مشاهده آرشیو</a>
-</div>
-<div class="card">
-<h3>🎬 کارتون و انیمیشن</h3>
-<p>کارتون‌های خاطره‌انگیز</p>
-<a href="#other">مشاهده آرشیو</a>
-</div>
-<div class="card">
-<h3>📼 سریال و برنامه‌ها</h3>
-<p>برنامه‌های قدیمی تلویزیون</p>
-<a href="#other">مشاهده آرشیو</a>
-</div>
-</div>
-</section>
+ <section class="room-section" id="archive">
+  <h2 class="section-title">📚 قفسه‌های خاطرات</h2>
+  <div class="shelves">
+   <div class="shelf">
+    <h3>📺 فیتیله</h3>
+    <p>فیتیله جمعه تعطیله، از ۱۳۸۱ تا ۱۳۹۴</p>
+    <a class="shelf-item" href="#fitile">باز کردن قفسه فیتیله</a>
+   </div>
+   <div class="shelf">
+    <h3>🎭 کلاه‌قرمزی</h3>
+    <p>مجموعه‌های خاطره‌انگیز کلاه‌قرمزی</p>
+    <a class="shelf-item" href="#kolah">باز کردن قفسه کلاه‌قرمزی</a>
+   </div>
+   <div class="shelf">
+    <h3>⭐ عمو پورنگ</h3>
+    <p>برنامه‌های خاطره‌انگیز عمو پورنگ</p>
+    <a class="shelf-item" href="#pourang">باز کردن قفسه عمو پورنگ</a>
+   </div>
+   <div class="shelf">
+    <h3>🎬 کارتون‌ها</h3>
+    <p>کارتون و انیمیشن‌های قدیمی</p>
+    <a class="shelf-item" href="#cartoon">باز کردن قفسه کارتون‌ها</a>
+   </div>
+   <div class="shelf">
+    <h3>📼 سریال‌ها</h3>
+    <p>سریال‌ها و برنامه‌های تلویزیونی</p>
+    <a class="shelf-item" href="#other">باز کردن قفسه سریال‌ها</a>
+   </div>
+  </div>
+ </section>
 
-<section id="fitile">
-<h2>📺 آرشیو فیتیله جمعه تعطیله</h2>
-<div class="years">
-''' + ''.join([]) + r'''
-<a href="#fitile">۱۳۸۱</a><a href="#fitile">۱۳۸۲</a>
-<a href="#fitile">۱۳۸۳</a><a href="#fitile">۱۳۸۴</a>
-<a href="#fitile">۱۳۸۵</a><a href="#fitile">۱۳۸۶</a>
-<a href="#fitile">۱۳۸۷</a><a href="#fitile">۱۳۸۸</a>
-<a href="#fitile">۱۳۸۹</a><a href="#fitile">۱۳۹۰</a>
-<a href="#fitile">۱۳۹۱</a><a href="#fitile">۱۳۹۲</a>
-<a href="#fitile">۱۳۹۳</a><a href="#fitile">۱۳۹۴</a>
-</div>
-</section>
+ <section class="room-section" id="fitile">
+  <h2 class="section-title">📺 قفسه فیتیله جمعه تعطیله</h2>
+  <p style="text-align:center">سال موردنظرت را از داخل قفسه انتخاب کن.</p>
+  <div class="year-grid">
+   <a class="year" href="#fitile">۱۳۸۱</a>
+   <a class="year" href="#fitile">۱۳۸۲</a>
+   <a class="year" href="#fitile">۱۳۸۳</a>
+   <a class="year" href="#fitile">۱۳۸۴</a>
+   <a class="year" href="#fitile">۱۳۸۵</a>
+   <a class="year" href="#fitile">۱۳۸۶</a>
+   <a class="year" href="#fitile">۱۳۸۷</a>
+   <a class="year" href="#fitile">۱۳۸۸</a>
+   <a class="year" href="#fitile">۱۳۸۹</a>
+   <a class="year" href="#fitile">۱۳۹۰</a>
+   <a class="year" href="#fitile">۱۳۹۱</a>
+   <a class="year" href="#fitile">۱۳۹۲</a>
+   <a class="year" href="#fitile">۱۳۹۳</a>
+   <a class="year" href="#fitile">۱۳۹۴</a>
+  </div>
+ </section>
 
-<section id="watch">
-<h2>▶️ پخش برنامه‌ها</h2>
-<div class="grid">
-<div class="card" id="kolah">
-<h3>کلاه‌قرمزی ۱۳۸۸</h3>
-<p>آرشیو قسمت‌ها</p>
-</div>
-<div class="card" id="pourang">
-<h3>عمو پورنگ</h3>
-<p>آرشیو قسمت‌ها</p>
-</div>
-<div class="card" id="other">
-<h3>سایر برنامه‌ها</h3>
-<p>کارتون، سریال و برنامه‌های تلویزیونی</p>
-</div>
-</div>
-</section>
+ <section class="tv-area" id="watch">
+  <div class="tv">
+   <div class="tv-screen">گنجینه نوستالژی</div>
+   <div class="tv-caption">📺 تلویزیون خاطرات</div>
+  </div>
+ </section>
 
-<section id="about">
-<h2>درباره گنجینه نوستالژی</h2>
-<p>خانه خاطرات تلویزیونی ایران؛ برای نگهداری و مرور برنامه‌های دوست‌داشتنی گذشته.</p>
-</section>
+ <section class="room-section">
+  <h2 class="section-title">▶️ قفسه پخش برنامه‌ها</h2>
+  <div class="shelves">
+   <div class="shelf" id="kolah">
+    <h3>🎭 کلاه‌قرمزی</h3>
+    <p>آرشیو مجموعه‌ها و قسمت‌ها</p>
+   </div>
+   <div class="shelf" id="pourang">
+    <h3>⭐ عمو پورنگ</h3>
+    <p>آرشیو برنامه‌های عمو پورنگ</p>
+   </div>
+   <div class="shelf" id="cartoon">
+    <h3>🎬 کارتون و انیمیشن</h3>
+    <p>آرشیو کارتون‌های خاطره‌انگیز</p>
+   </div>
+   <div class="shelf" id="other">
+    <h3>📼 سایر برنامه‌ها</h3>
+    <p>برنامه‌ها و سریال‌های قدیمی</p>
+   </div>
+  </div>
+ </section>
+
+ <section class="room-section" id="about">
+  <h2 class="section-title">درباره گنجینه نوستالژی</h2>
+  <p style="text-align:center">
+   خانه خاطرات تلویزیونی ایران؛
+   جایی برای نگهداری و مرور برنامه‌های دوست‌داشتنی گذشته.
+  </p>
+ </section>
+</main>
 
 <footer>✦ گنجینه نوستالژی | سفر به دنیای خاطرات ✦</footer>
 </body>
