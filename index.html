@@ -2,220 +2,812 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google-site-verification" content="i2ljrD7BCBAx_lX8w85ADAGMMVxt-pPr0pKEGvQIEVg">
-<title>گنجینه نوستالژی</title>
+<title>گنجینه نوستالژی | دنیای خاطرات</title>
+<meta name="description" content="تماشای آرشیو فیلم، سریال و برنامه‌های نوستالژیک در گنجینه نوستالژی">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
+:root{
+ --bg:#0b0d12;
+ --panel:#141821;
+ --panel2:#1b202b;
+ --text:#f6f3ed;
+ --muted:#9da4b2;
+ --gold:#e6b86b;
+ --orange:#ef7849;
+ --line:#292e39;
+}
+
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
- margin:0;color:#fff0d0;font-family:Tahoma,Arial;
- background:#160b06 url('archive-room.png') center center/cover fixed;
+ margin:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:Vazirmatn,sans-serif;
 }
-body:before{
- content:"";position:fixed;inset:0;
- background:linear-gradient(#10080055,#100800bb);
- z-index:-1
-}
+
+button,input{font:inherit}
+
+a{color:inherit;text-decoration:none}
+
 header{
- position:sticky;top:0;z-index:10;text-align:center;
- padding:14px;background:#1c0d08eF;
- border-bottom:3px solid #b98139;backdrop-filter:blur(8px)
+ position:sticky;
+ top:0;
+ z-index:20;
+ background:#0b0d12ed;
+ backdrop-filter:blur(16px);
+ border-bottom:1px solid var(--line);
 }
-.logo{font-size:27px;font-weight:bold;color:#ffd477;text-shadow:0 2px 12px #e39b36}
-nav{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
-nav a,.btn{
- color:#ffe8b2;text-decoration:none;background:#573018;
- border:1px solid #d39a4c;padding:10px 15px;border-radius:8px
+
+.nav{
+ max-width:1250px;
+ margin:auto;
+ min-height:75px;
+ padding:12px 20px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:20px;
 }
-nav a:hover,.btn:hover{background:#a66a2e}
+
+.brand{
+ display:flex;
+ align-items:center;
+ gap:11px;
+ font-size:21px;
+ font-weight:900;
+}
+
+.brand-icon{
+ width:43px;
+ height:43px;
+ display:grid;
+ place-items:center;
+ border-radius:13px;
+ background:linear-gradient(135deg,var(--gold),var(--orange));
+ color:#21150b;
+ font-size:23px;
+}
+
+.brand span{color:var(--gold)}
+
+.nav-links{
+ display:flex;
+ gap:25px;
+ color:#c6c8ce;
+ font-size:13px;
+}
+
+.nav-links a:hover{color:var(--gold)}
+
+.nav-button{
+ border:1px solid #8d693e;
+ color:var(--gold);
+ background:transparent;
+ padding:9px 16px;
+ border-radius:10px;
+ cursor:pointer;
+ font-size:12px;
+}
+
 .hero{
- min-height:490px;display:flex;align-items:center;justify-content:center;
- padding:25px;text-align:center
+ max-width:1250px;
+ margin:25px auto;
+ padding:20px;
 }
-.intro{
- max-width:600px;padding:28px;background:#1c0d08df;
- border:2px solid #d3a04e;border-radius:18px;
- box-shadow:0 12px 40px #000b
+
+.hero-box{
+ min-height:370px;
+ position:relative;
+ overflow:hidden;
+ border-radius:25px;
+ background:
+ linear-gradient(90deg,#11151df5 5%,#11151dbd 55%,#11151d55),
+ radial-gradient(circle at 80% 20%,#a76d36,#39251c 50%,#11151d);
+ display:flex;
+ align-items:center;
+ padding:45px;
+ border:1px solid #39302a;
 }
-h1,h2,h3{color:#ffd477}
-h1{font-size:36px}
-.intro p{line-height:2}
-section{
- max-width:1150px;margin:25px auto;padding:24px 18px;
- background:#180b07d9;border:1px solid #9d6b32;
- border-radius:18px;box-shadow:0 12px 35px #0009
+
+.hero-box:after{
+ content:"✦";
+ position:absolute;
+ left:9%;
+ top:10%;
+ font-size:160px;
+ color:#e6b86b1c;
 }
-.shelf-title{text-align:center;margin-bottom:25px}
-.shelf{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
- gap:18px;padding:18px;background:#382014;
- border:9px solid #75421f;border-radius:12px;
- box-shadow:inset 0 0 20px #160800,0 12px 20px #0009
+
+.hero-content{
+ position:relative;
+ z-index:2;
+ max-width:620px;
 }
+
+.hero-tag{
+ display:inline-block;
+ color:var(--gold);
+ background:#e6b86b18;
+ border:1px solid #e6b86b55;
+ padding:7px 13px;
+ border-radius:30px;
+ font-size:12px;
+}
+
+.hero h1{
+ font-size:clamp(27px,5vw,48px);
+ line-height:1.5;
+ margin:18px 0 10px;
+ font-weight:900;
+}
+
+.hero h1 span{color:var(--gold)}
+
+.hero p{
+ color:#c1c3ca;
+ line-height:2;
+ font-size:14px;
+}
+
+.hero-actions{
+ display:flex;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-top:25px;
+}
+
+.primary,.secondary{
+ border:0;
+ padding:12px 22px;
+ border-radius:11px;
+ cursor:pointer;
+ font-weight:700;
+}
+
+.primary{
+ background:linear-gradient(110deg,var(--gold),var(--orange));
+ color:#24160d;
+}
+
+.secondary{
+ background:#ffffff12;
+ color:white;
+ border:1px solid #ffffff30;
+}
+
+.container{
+ max-width:1250px;
+ margin:auto;
+ padding:15px 20px;
+}
+
+.section-head{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:15px;
+ margin:35px 0 20px;
+}
+
+.section-head h2{
+ margin:0;
+ font-size:21px;
+ font-weight:800;
+}
+
+.section-head p{
+ color:var(--muted);
+ font-size:12px;
+ margin:5px 0 0;
+}
+
+.count{
+ color:var(--gold);
+ font-size:12px;
+}
+
+.stats{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:13px;
+ margin:20px 0 30px;
+}
+
+.stat{
+ background:linear-gradient(140deg,#191e29,#121620);
+ border:1px solid var(--line);
+ padding:17px;
+ border-radius:15px;
+}
+
+.stat strong{
+ display:block;
+ font-size:24px;
+ color:var(--gold);
+}
+
+.stat span{
+ color:var(--muted);
+ font-size:12px;
+}
+
+.search-wrap{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ background:var(--panel);
+ border:1px solid var(--line);
+ padding:5px 15px;
+ border-radius:13px;
+ margin-bottom:15px;
+}
+
+.search-wrap input{
+ background:transparent;
+ border:0;
+ outline:0;
+ color:white;
+ width:100%;
+ padding:12px 0;
+}
+
+.search-icon{font-size:19px}
+
+.filters{
+ display:flex;
+ flex-wrap:wrap;
+ gap:9px;
+ margin:17px 0 23px;
+}
+
+.filter{
+ background:var(--panel2);
+ border:1px solid var(--line);
+ color:#c8cad1;
+ padding:8px 15px;
+ border-radius:30px;
+ cursor:pointer;
+ font-size:12px;
+}
+
+.filter.active,.filter:hover{
+ background:var(--gold);
+ color:#24180d;
+ border-color:var(--gold);
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(5,minmax(0,1fr));
+ gap:17px;
+}
+
 .card{
- min-height:155px;text-align:center;padding:20px 12px;
- background:linear-gradient(145deg,#81502a,#32180c);
- border:2px solid #c18a45;border-radius:12px;
- box-shadow:0 7px 12px #0008
+ background:var(--panel);
+ border:1px solid var(--line);
+ border-radius:15px;
+ overflow:hidden;
+ cursor:pointer;
+ transition:.25s;
+ min-width:0;
 }
-.card h3{font-size:21px}
-.card p{line-height:1.9;color:#f4d9ad}
-.card a,.quality a{
- display:inline-block;text-decoration:none;color:#271306;
- background:#e2ae55;padding:10px 13px;
- border-radius:7px;font-weight:bold;margin:4px
+
+.card:hover{
+ transform:translateY(-6px);
+ border-color:#a77c49;
+ box-shadow:0 15px 35px #0006;
 }
-.card a:hover,.quality a:hover{background:#ffe0a0}
-.tv{
- max-width:650px;margin:30px auto;text-align:center;
- padding:22px;background:linear-gradient(145deg,#684021,#241006);
- border:9px ridge #bd8742;border-radius:25px;
- box-shadow:0 15px 35px #000b
+
+.poster{
+ width:100%;
+ aspect-ratio:2/2.8;
+ display:block;
+ object-fit:cover;
+ background:#222936;
 }
-.screen{
- background:#080d0b;border:9px solid #21150e;
- border-radius:30px;padding:35px 12px;
- box-shadow:inset 0 0 25px #34704b;
- color:#8dffad;font-size:25px;text-shadow:0 0 12px #35d56b
+
+.poster-fallback{
+ width:100%;
+ aspect-ratio:2/2.8;
+ display:grid;
+ place-items:center;
+ background:linear-gradient(145deg,#34303a,#171a24);
+ font-size:45px;
+ color:var(--gold);
 }
+
+.card-info{padding:12px}
+
+.card-title{
+ font-size:13px;
+ font-weight:700;
+ line-height:1.9;
+ min-height:48px;
+}
+
+.card-meta{
+ display:flex;
+ justify-content:space-between;
+ gap:5px;
+ color:var(--muted);
+ font-size:10px;
+ margin-top:9px;
+}
+
+.card-label{
+ display:inline-block;
+ color:var(--gold);
+ background:#e6b86b15;
+ padding:4px 8px;
+ border-radius:7px;
+ margin-top:10px;
+ font-size:10px;
+}
+
+.status{
+ text-align:center;
+ color:var(--muted);
+ font-size:12px;
+ padding:20px;
+}
+
+.empty{
+ grid-column:1/-1;
+ text-align:center;
+ padding:45px 15px;
+ background:var(--panel);
+ border-radius:15px;
+ color:var(--muted);
+}
+
+.modal{
+ position:fixed;
+ inset:0;
+ z-index:50;
+ background:#000d;
+ display:none;
+ overflow:auto;
+ padding:20px;
+}
+
+.modal.show{display:block}
+
+.modal-box{
+ max-width:750px;
+ margin:35px auto;
+ background:#151a24;
+ border:1px solid #383d49;
+ border-radius:20px;
+ padding:22px;
+}
+
+.modal-top{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:12px;
+}
+
+.modal-top h2{font-size:20px}
+
+.close{
+ background:#ffffff13;
+ border:1px solid var(--line);
+ color:white;
+ border-radius:10px;
+ padding:8px 13px;
+ cursor:pointer;
+}
+
+.detail-header{
+ display:flex;
+ gap:18px;
+ margin:15px 0 22px;
+}
+
+.detail-poster{
+ width:125px;
+ height:175px;
+ object-fit:cover;
+ border-radius:12px;
+ background:#222936;
+}
+
+.detail-description{
+ color:#b5bac5;
+ font-size:13px;
+ line-height:2.2;
+}
+
 .episode{
- background:linear-gradient(145deg,#714322,#2b1409);
- border:1px solid #bd8742;border-radius:12px;
- padding:18px;margin:15px 0;text-align:center
+ background:#202632;
+ border:1px solid var(--line);
+ border-radius:12px;
+ padding:14px;
+ margin:12px 0;
 }
-.episode h3{margin-top:0}
-.quality{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
-.note{color:#e9c995;text-align:center;line-height:2}
+
+.episode h3{
+ font-size:14px;
+ margin:0 0 12px;
+}
+
+.quality{
+ display:inline-block;
+ margin:4px;
+ padding:8px 12px;
+ border-radius:8px;
+ background:#3a3022;
+ border:1px solid #84653d;
+ color:#f2cc8c;
+ font-size:11px;
+}
+
+.quality:hover{
+ background:var(--gold);
+ color:#21160d;
+}
+
 footer{
- text-align:center;padding:28px;background:#190b06ed;
- border-top:3px solid #b98139;color:#f3ca83
+ margin-top:55px;
+ padding:35px 20px;
+ background:#11151d;
+ border-top:1px solid var(--line);
+ text-align:center;
 }
-@media(max-width:600px){
- h1{font-size:27px}
- .hero{min-height:370px}
- .screen{font-size:19px;padding:25px 8px}
- section{margin:14px 8px;padding:17px 12px}
+
+footer strong{
+ color:var(--gold);
+ font-size:19px;
+}
+
+footer p{
+ color:var(--muted);
+ font-size:12px;
+ line-height:2;
+}
+
+@media(max-width:950px){
+ .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+@media(max-width:650px){
+ .nav{flex-wrap:wrap}
+ .nav-links{order:3;width:100%;justify-content:center}
+ .hero-box{padding:25px;min-height:330px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .stats{grid-template-columns:repeat(3,1fr);gap:8px}
+ .stat{padding:12px}
+ .stat strong{font-size:19px}
+ .stat span{font-size:10px}
+ .section-head h2{font-size:18px}
+ .detail-header{align-items:flex-start}
+}
+
+@media(min-width:1250px){
+ .grid{grid-template-columns:repeat(6,minmax(0,1fr))}
 }
 </style>
 </head>
+
 <body>
 
 <header>
- <div class="logo">🎞 گنجینه نوستالژی</div>
- <nav>
-  <a href="#home">خانه</a>
-  <a href="#archive">قفسه‌ها</a>
-  <a href="#kolah">کلاه‌قرمزی</a>
-  <a href="#fitile">فیتیله</a>
-  <a href="#about">درباره ما</a>
- </nav>
+ <div class="nav">
+  <a class="brand" href="#">
+   <div class="brand-icon">🎞</div>
+   گنجینه <span>نوستالژی</span>
+  </a>
+
+  <div class="nav-links">
+   <a href="#">خانه</a>
+   <a href="#archive">آرشیو</a>
+   <a href="#about">درباره ما</a>
+  </div>
+
+  <a class="nav-button" href="#archive">ورود به آرشیو ←</a>
+ </div>
 </header>
 
-<div class="hero" id="home">
- <div class="intro">
-  <h1>به اتاق خاطرات خوش آمدید</h1>
-  <p>درهای گنجینه نوستالژی باز است؛
-  سفری به دنیای برنامه‌ها و خاطرات شیرین تلویزیون.</p>
-  <a class="btn" href="#archive">ورود به اتاق آرشیو</a>
+<section class="hero">
+ <div class="hero-box">
+  <div class="hero-content">
+   <span class="hero-tag">دنیای خاطرات ماندگار</span>
+   <h1>هر خاطره، یک داستان<br><span>هر تصویر، یک گنجینه</span></h1>
+   <p>
+    به گنجینه نوستالژی خوش آمدید؛
+    جایی برای کشف دوباره فیلم‌ها، سریال‌ها و خاطرات تصویری.
+   </p>
+   <div class="hero-actions">
+    <a href="#archive" class="primary">کشف آرشیو</a>
+    <a href="#about" class="secondary">درباره گنجینه</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<main class="container" id="archive">
+
+ <div class="section-head">
+  <div>
+   <h2>آرشیو بزرگ گنجینه</h2>
+   <p>مجموعه‌ای از آثار خاطره‌انگیز</p>
+  </div>
+  <span class="count" id="count">در حال بارگذاری...</span>
+ </div>
+
+ <div class="stats">
+  <div class="stat">
+   <strong id="statTitles">—</strong>
+   <span>عنوان آرشیو</span>
+  </div>
+  <div class="stat">
+   <strong id="statEpisodes">—</strong>
+   <span>قسمت شناسایی‌شده</span>
+  </div>
+  <div class="stat">
+   <strong id="statLinks">—</strong>
+   <span>لینک رسانه</span>
+  </div>
+ </div>
+
+ <div class="search-wrap">
+  <span class="search-icon">⌕</span>
+  <input id="search" type="search" placeholder="نام فیلم، سریال یا برنامه را جستجو کن...">
+ </div>
+
+ <div class="filters">
+  <button class="filter active" data-filter="all">همه آثار</button>
+  <button class="filter" data-filter="episodes">سریال‌ها</button>
+  <button class="filter" data-filter="other">سایر آثار</button>
+ </div>
+
+ <div id="status" class="status">در حال دریافت اطلاعات آرشیو...</div>
+ <div id="grid" class="grid"></div>
+
+</main>
+
+<section class="container" id="about">
+ <div class="section-head">
+  <div>
+   <h2>درباره گنجینه نوستالژی</h2>
+   <p>یک خانه برای خاطرات فراموش‌نشدنی</p>
+  </div>
+ </div>
+ <p class="detail-description">
+  گنجینه نوستالژی با هدف دسته‌بندی و معرفی آثار خاطره‌انگیز
+  سینما و تلویزیون ساخته شده است. اینجا می‌توانید دوباره
+  سراغ دنیای فیلم‌ها، سریال‌ها و برنامه‌های محبوب بروید.
+ </p>
+</section>
+
+<div class="modal" id="modal">
+ <div class="modal-box">
+  <div class="modal-top">
+   <h2 id="modalTitle">جزئیات اثر</h2>
+   <button class="close" id="close">✕ بستن</button>
+  </div>
+  <div id="modalContent"></div>
  </div>
 </div>
-
-<section id="archive">
- <h2 class="shelf-title">📚 قفسه‌های خاطرات</h2>
- <div class="shelf">
-  <div class="card">
-   <h3>📺 فیتیله</h3>
-   <p>آرشیو فیتیله جمعه تعطیله</p>
-   <a href="#fitile">ورود به قفسه</a>
-  </div>
-  <div class="card">
-   <h3>🎭 کلاه‌قرمزی</h3>
-   <p>مجموعه‌های خاطره‌انگیز کلاه‌قرمزی</p>
-   <a href="#kolah">ورود به قفسه</a>
-  </div>
-  <div class="card">
-   <h3>⭐ عمو پورنگ</h3>
-   <p>برنامه‌های خاطره‌انگیز عمو پورنگ</p>
-   <a href="#pourang">ورود به قفسه</a>
-  </div>
-  <div class="card">
-   <h3>🎬 کارتون و انیمیشن</h3>
-   <p>کارتون‌های قدیمی و دوست‌داشتنی</p>
-   <a href="#other">ورود به قفسه</a>
-  </div>
- </div>
-</section>
-
-<div class="tv">
- <div class="screen">
-  گنجینه نوستالژی
-  <div style="font-size:15px;margin-top:15px">تلویزیون خاطرات شما</div>
- </div>
- <p>📺 تلویزیون قدیمی اتاق آرشیو</p>
-</div>
-
-<section id="kolah">
- <h2 class="shelf-title">🎭 آرشیو کلاه‌قرمزی ۱۳۸۸</h2>
- <p class="note">قسمت‌های موجود فعلی — سه کیفیت برای هر قسمت</p>
-
- <div class="episode">
-  <h3>کلاه‌قرمزی ۸۸ ـ قسمت ۱</h3>
-  <div class="quality">
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E01.IR-DL.mp4">۴۸۰p</a>
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/720p/Kolah.Ghermezi.88.720p.E01.IR-DL.mp4">۷۲۰p</a>
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/1080p/Kolah.Ghermezi.88.1080p.E01.IR-DL.mp4">۱۰۸۰p</a>
-  </div>
- </div>
-
- <div class="episode">
-  <h3>کلاه‌قرمزی ۸۸ ـ قسمت ۲</h3>
-  <div class="quality">
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E02.IR-DL.mp4">۴۸۰p</a>
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/720p/Kolah.Ghermezi.88.720p.E02.IR-DL.mp4">۷۲۰p</a>
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/1080p/Kolah.Ghermezi.88.1080p.E02.IR-DL.mp4">۱۰۸۰p</a>
-  </div>
- </div>
-
- <div class="episode">
-  <h3>کلاه‌قرمزی ۸۸ ـ قسمت ۳</h3>
-  <div class="quality">
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/480p/Kolah.Ghermezi.88.480p.E03.IR-DL.mp4">۴۸۰p</a>
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/720p/Kolah.Ghermezi.88.720p.E03.IR-DL.mp4">۷۲۰p</a>
-   <a href="https://dl3.ir-dl.com/series/Kolah.Ghermezi.88/1080p/Kolah.Ghermezi.88.1080p.E03.IR-DL.mp4">۱۰۸۰p</a>
-  </div>
- </div>
-</section>
-
-<section id="fitile">
- <h2 class="shelf-title">📺 آرشیو فیتیله جمعه تعطیله</h2>
- <div class="shelf">
-  <div class="card">
-   <h3>سال‌های ۱۳۸۱ تا ۱۳۹۴</h3>
-   <p>قفسه آرشیو سالانه فیتیله</p>
-   <p>آرشیو قسمت‌ها به‌زودی تکمیل می‌شود.</p>
-  </div>
- </div>
-</section>
-
-<section id="pourang">
- <h2 class="shelf-title">⭐ آرشیو عمو پورنگ</h2>
- <p class="note">این قفسه به‌زودی تکمیل می‌شود.</p>
-</section>
-
-<section id="other">
- <h2 class="shelf-title">🎬 سایر برنامه‌ها</h2>
- <p class="note">کارتون‌ها، سریال‌ها و برنامه‌های خاطره‌انگیز</p>
-</section>
-
-<section id="about">
- <h2 class="shelf-title">درباره گنجینه نوستالژی</h2>
- <p class="note">خانه خاطرات تلویزیونی ایران؛ برای نگهداری و مرور برنامه‌های دوست‌داشتنی گذشته.</p>
-</section>
 
 <footer>
- ✦ گنجینه نوستالژی | سفر به دنیای خاطرات ✦
+ <strong>گنجینه نوستالژی</strong>
+ <p>خاطرات ماندگار، همیشه زنده‌اند.</p>
+ <p>© گنجینه نوستالژی</p>
 </footer>
+
+<script>
+const grid=document.getElementById("grid");
+const statusBox=document.getElementById("status");
+const search=document.getElementById("search");
+const modal=document.getElementById("modal");
+const modalContent=document.getElementById("modalContent");
+
+let archive=[];
+let activeFilter="all";
+
+function create(tag,className,text){
+ const el=document.createElement(tag);
+ if(className) el.className=className;
+ if(text!==undefined) el.textContent=text;
+ return el;
+}
+
+function makeCard(item){
+ const card=create("article","card");
+
+ if(item.poster){
+  const img=create("img","poster");
+  img.src=item.poster;
+  img.alt=item.title;
+  img.loading="lazy";
+  img.onerror=()=>{
+   const fallback=create("div","poster-fallback","🎞");
+   img.replaceWith(fallback);
+  };
+  card.appendChild(img);
+ }else{
+  card.appendChild(create("div","poster-fallback","🎞"));
+ }
+
+ const info=create("div","card-info");
+ info.appendChild(create("div","card-title",item.title));
+
+ const episodes=item.episodes||[];
+ const other=item.other_media_links||[];
+
+ const meta=create("div","card-meta");
+ meta.appendChild(create("span", "",episodes.length+" قسمت"));
+ meta.appendChild(create("span","",other.length+" فایل"));
+ info.appendChild(meta);
+
+ info.appendChild(create(
+  "span","card-label",
+  episodes.length?"آرشیو سریالی":"مجموعه رسانه‌ای"
+ ));
+
+ card.appendChild(info);
+ card.onclick=()=>openDetails(item);
+ return card;
+}
+
+function render(){
+ const q=search.value.trim().toLowerCase();
+
+ const filtered=archive.filter(item=>{
+  const title=(item.title||"").toLowerCase();
+  const episodes=item.episodes||[];
+  const other=item.other_media_links||[];
+
+  const matchSearch=title.includes(q);
+  const matchFilter=
+   activeFilter==="all" ||
+   (activeFilter==="episodes" && episodes.length>0) ||
+   (activeFilter==="other" && other.length>0);
+
+  return matchSearch && matchFilter;
+ });
+
+ grid.replaceChildren();
+
+ if(!filtered.length){
+  grid.appendChild(create("div","empty","اثری با این مشخصات پیدا نشد."));
+ }else{
+  filtered.forEach(item=>grid.appendChild(makeCard(item)));
+ }
+
+ document.getElementById("count").textContent=filtered.length+" اثر";
+ statusBox.textContent="نمایش "+filtered.length+" عنوان";
+}
+
+function openDetails(item){
+ modalContent.replaceChildren();
+
+ const head=create("div","detail-header");
+
+ if(item.poster){
+  const img=create("img","detail-poster");
+  img.src=item.poster;
+  img.alt=item.title;
+  head.appendChild(img);
+ }
+
+ const intro=create("div","");
+ intro.appendChild(create("h3","",item.title));
+ intro.appendChild(create(
+  "p","detail-description",
+  item.description||"توضیحی برای این اثر ثبت نشده است."
+ ));
+ head.appendChild(intro);
+ modalContent.appendChild(head);
+
+ const episodes=item.episodes||[];
+ const other=item.other_media_links||[];
+
+ if(episodes.length){
+  modalContent.appendChild(create("h3","","قسمت‌ها"));
+
+  episodes.forEach(ep=>{
+   const box=create("div","episode");
+   box.appendChild(create("h3","","قسمت "+ep.number));
+
+   (ep.qualities||[]).forEach(q=>{
+    const link=create("a","quality",q.quality||"مشاهده لینک");
+    link.href=q.url;
+    link.target="_blank";
+    link.rel="noopener noreferrer";
+    box.appendChild(link);
+   });
+
+   modalContent.appendChild(box);
+  });
+ }
+
+ if(other.length){
+  modalContent.appendChild(create("h3","","سایر فایل‌های رسانه‌ای"));
+
+  other.forEach(q=>{
+   const link=create("a","quality",q.quality||"مشاهده فایل");
+   link.href=q.url;
+   link.target="_blank";
+   link.rel="noopener noreferrer";
+   modalContent.appendChild(link);
+  });
+ }
+
+ if(!episodes.length && !other.length){
+  modalContent.appendChild(create("p","detail-description","هنوز لینکی برای این اثر ثبت نشده است."));
+ }
+
+ if(item.page_url){
+  const a=create("a","quality","صفحه معرفی اثر");
+  a.href=item.page_url;
+  a.target="_blank";
+  a.rel="noopener noreferrer";
+  modalContent.appendChild(a);
+ }
+
+ modal.classList.add("show");
+}
+
+document.getElementById("close").onclick=()=>{
+ modal.classList.remove("show");
+};
+
+modal.addEventListener("click",e=>{
+ if(e.target===modal) modal.classList.remove("show");
+});
+
+search.addEventListener("input",render);
+
+document.querySelectorAll(".filter").forEach(button=>{
+ button.onclick=()=>{
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  activeFilter=button.dataset.filter;
+  render();
+ };
+});
+
+fetch("./ganjineh_final_min.json")
+ .then(response=>{
+  if(!response.ok) throw new Error("فایل آرشیو پیدا نشد");
+  return response.json();
+ })
+ .then(data=>{
+  archive=data;
+
+  const episodes=archive.reduce(
+   (sum,x)=>sum+(x.episodes||[]).length,0
+  );
+
+  const links=archive.reduce((sum,x)=>{
+   const a=(x.episodes||[]).reduce(
+    (n,e)=>n+(e.qualities||[]).length,0
+   );
+   return sum+a+(x.other_media_links||[]).length;
+  },0);
+
+  document.getElementById("statTitles").textContent=archive.length.toLocaleString("fa-IR");
+  document.getElementById("statEpisodes").textContent=episodes.toLocaleString("fa-IR");
+  document.getElementById("statLinks").textContent=links.toLocaleString("fa-IR");
+
+  render();
+ })
+ .catch(error=>{
+  statusBox.textContent="بارگذاری آرشیو ناموفق بود. وجود فایل JSON کنار index.html را بررسی کن.";
+  console.error(error);
+ });
+</script>
 
 </body>
 </html>
