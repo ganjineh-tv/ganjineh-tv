@@ -6,526 +6,109 @@
 <meta name="google-site-verification" content="i2ljrD7BCBAx_lX8w85ADAGMMVxt-pPr0pKEGvQIEVg">
 <title>گنجینه نوستالژی | دنیای خاطرات</title>
 <meta name="description" content="تماشای آرشیو فیلم، سریال و برنامه‌های نوستالژیک در گنجینه نوستالژی">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
-:root{
- --bg:#0b0d12;
- --panel:#141821;
- --panel2:#1b202b;
- --text:#f6f3ed;
- --muted:#9da4b2;
- --gold:#e6b86b;
- --orange:#ef7849;
- --line:#292e39;
-}
-
+:root{--bg:#0b0d12;--panel:#141821;--panel2:#1b202b;--text:#f6f3ed;--muted:#9da4b2;--gold:#e6b86b;--orange:#ef7849;--line:#292e39}
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
-
-body{
- margin:0;
- background:var(--bg);
- color:var(--text);
- font-family:Vazirmatn,sans-serif;
-}
-
+body{margin:0;background:var(--bg);color:var(--text);font-family:Vazirmatn,sans-serif}
 button,input{font:inherit}
-
 a{color:inherit;text-decoration:none}
-
-header{
- position:sticky;
- top:0;
- z-index:20;
- background:#0b0d12ed;
- backdrop-filter:blur(16px);
- border-bottom:1px solid var(--line);
-}
-
-.nav{
- max-width:1250px;
- margin:auto;
- min-height:75px;
- padding:12px 20px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:20px;
-}
-
-.brand{
- display:flex;
- align-items:center;
- gap:11px;
- font-size:21px;
- font-weight:900;
-}
-
-.brand-icon{
- width:43px;
- height:43px;
- display:grid;
- place-items:center;
- border-radius:13px;
- background:linear-gradient(135deg,var(--gold),var(--orange));
- color:#21150b;
- font-size:23px;
-}
-
+header{position:sticky;top:0;z-index:20;background:#0b0d12ed;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{max-width:1250px;margin:auto;min-height:75px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:900}
+.brand-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--gold),var(--orange));color:#21150b;font-size:23px}
 .brand span{color:var(--gold)}
-
-.nav-links{
- display:flex;
- gap:25px;
- color:#c6c8ce;
- font-size:13px;
-}
-
+.nav-links{display:flex;gap:25px;color:#c6c8ce;font-size:13px}
 .nav-links a:hover{color:var(--gold)}
-
-.nav-button{
- border:1px solid #8d693e;
- color:var(--gold);
- background:transparent;
- padding:9px 16px;
- border-radius:10px;
- cursor:pointer;
- font-size:12px;
-}
-
-.hero{
- max-width:1250px;
- margin:25px auto;
- padding:20px;
-}
-
-.hero-box{
- min-height:370px;
- position:relative;
- overflow:hidden;
- border-radius:25px;
- background:
- linear-gradient(90deg,#11151df5 5%,#11151dbd 55%,#11151d55),
- radial-gradient(circle at 80% 20%,#a76d36,#39251c 50%,#11151d);
- display:flex;
- align-items:center;
- padding:45px;
- border:1px solid #39302a;
-}
-
-.hero-box:after{
- content:"✦";
- position:absolute;
- left:9%;
- top:10%;
- font-size:160px;
- color:#e6b86b1c;
-}
-
-.hero-content{
- position:relative;
- z-index:2;
- max-width:620px;
-}
-
-.hero-tag{
- display:inline-block;
- color:var(--gold);
- background:#e6b86b18;
- border:1px solid #e6b86b55;
- padding:7px 13px;
- border-radius:30px;
- font-size:12px;
-}
-
-.hero h1{
- font-size:clamp(27px,5vw,48px);
- line-height:1.5;
- margin:18px 0 10px;
- font-weight:900;
-}
-
+.nav-button{border:1px solid #8d693e;color:var(--gold);background:transparent;padding:9px 16px;border-radius:10px;cursor:pointer;font-size:12px}
+.hero{max-width:1250px;margin:25px auto;padding:20px}
+.hero-box{min-height:370px;position:relative;overflow:hidden;border-radius:25px;background:linear-gradient(90deg,#11151df5 5%,#11151dbd 55%,#11151d55),radial-gradient(circle at 80% 20%,#a76d36,#39251c 50%,#11151d);display:flex;align-items:center;padding:45px;border:1px solid #39302a}
+.hero-box:after{content:"✦";position:absolute;left:9%;top:10%;font-size:160px;color:#e6b86b1c}
+.hero-content{position:relative;z-index:2;max-width:620px}
+.hero-tag{display:inline-block;color:var(--gold);background:#e6b86b18;border:1px solid #e6b86b55;padding:7px 13px;border-radius:30px;font-size:12px}
+.hero h1{font-size:clamp(27px,5vw,48px);line-height:1.5;margin:18px 0 10px;font-weight:900}
 .hero h1 span{color:var(--gold)}
-
-.hero p{
- color:#c1c3ca;
- line-height:2;
- font-size:14px;
-}
-
-.hero-actions{
- display:flex;
- flex-wrap:wrap;
- gap:12px;
- margin-top:25px;
-}
-
-.primary,.secondary{
- border:0;
- padding:12px 22px;
- border-radius:11px;
- cursor:pointer;
- font-weight:700;
-}
-
-.primary{
- background:linear-gradient(110deg,var(--gold),var(--orange));
- color:#24160d;
-}
-
-.secondary{
- background:#ffffff12;
- color:white;
- border:1px solid #ffffff30;
-}
-
-.container{
- max-width:1250px;
- margin:auto;
- padding:15px 20px;
-}
-
-.section-head{
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:15px;
- margin:35px 0 20px;
-}
-
-.section-head h2{
- margin:0;
- font-size:21px;
- font-weight:800;
-}
-
-.section-head p{
- color:var(--muted);
- font-size:12px;
- margin:5px 0 0;
-}
-
-.count{
- color:var(--gold);
- font-size:12px;
-}
-
-.stats{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:13px;
- margin:20px 0 30px;
-}
-
-.stat{
- background:linear-gradient(140deg,#191e29,#121620);
- border:1px solid var(--line);
- padding:17px;
- border-radius:15px;
-}
-
-.stat strong{
- display:block;
- font-size:24px;
- color:var(--gold);
-}
-
-.stat span{
- color:var(--muted);
- font-size:12px;
-}
-
-.search-wrap{
- display:flex;
- align-items:center;
- gap:10px;
- background:var(--panel);
- border:1px solid var(--line);
- padding:5px 15px;
- border-radius:13px;
- margin-bottom:15px;
-}
-
-.search-wrap input{
- background:transparent;
- border:0;
- outline:0;
- color:white;
- width:100%;
- padding:12px 0;
-}
-
+.hero p{color:#c1c3ca;line-height:2;font-size:14px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.primary,.secondary{border:0;padding:12px 22px;border-radius:11px;cursor:pointer;font-weight:700}
+.primary{background:linear-gradient(110deg,var(--gold),var(--orange));color:#24160d}
+.secondary{background:#ffffff12;color:white;border:1px solid #ffffff30}
+.container{max-width:1250px;margin:auto;padding:15px 20px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:35px 0 20px}
+.section-head h2{margin:0;font-size:21px;font-weight:800}
+.section-head p{color:var(--muted);font-size:12px;margin:5px 0 0}
+.count{color:var(--gold);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:20px 0 30px}
+.stat{background:linear-gradient(140deg,#191e29,#121620);border:1px solid var(--line);padding:17px;border-radius:15px}
+.stat strong{display:block;font-size:24px;color:var(--gold)}
+.stat span{color:var(--muted);font-size:12px}
+.search-wrap{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);padding:5px 15px;border-radius:13px;margin-bottom:15px}
+.search-wrap input{background:transparent;border:0;outline:0;color:white;width:100%;padding:12px 0}
 .search-icon{font-size:19px}
-
-.filters{
- display:flex;
- flex-wrap:wrap;
- gap:9px;
- margin:17px 0 23px;
-}
-
-.filter{
- background:var(--panel2);
- border:1px solid var(--line);
- color:#c8cad1;
- padding:8px 15px;
- border-radius:30px;
- cursor:pointer;
- font-size:12px;
-}
-
-.filter.active,.filter:hover{
- background:var(--gold);
- color:#24180d;
- border-color:var(--gold);
-}
-
-.grid{
- display:grid;
- grid-template-columns:repeat(5,minmax(0,1fr));
- gap:17px;
-}
-
-.card{
- background:var(--panel);
- border:1px solid var(--line);
- border-radius:15px;
- overflow:hidden;
- cursor:pointer;
- transition:.25s;
- min-width:0;
-}
-
-.card:hover{
- transform:translateY(-6px);
- border-color:#a77c49;
- box-shadow:0 15px 35px #0006;
-}
-
-.poster{
- width:100%;
- aspect-ratio:2/2.8;
- display:block;
- object-fit:cover;
- background:#222936;
-}
-
-.poster-fallback{
- width:100%;
- aspect-ratio:2/2.8;
- display:grid;
- place-items:center;
- background:linear-gradient(145deg,#34303a,#171a24);
- font-size:45px;
- color:var(--gold);
-}
-
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 23px}
+.filter{background:var(--panel2);border:1px solid var(--line);color:#c8cad1;padding:8px 15px;border-radius:30px;cursor:pointer;font-size:12px}
+.filter.active,.filter:hover{background:var(--gold);color:#24180d;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:17px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden;cursor:pointer;transition:.25s;min-width:0}
+.card:hover{transform:translateY(-6px);border-color:#a77c49;box-shadow:0 15px 35px #0006}
+.poster{width:100%;aspect-ratio:2/2.8;display:block;object-fit:cover;background:#222936}
+.poster-fallback{width:100%;aspect-ratio:2/2.8;display:grid;place-items:center;background:linear-gradient(145deg,#34303a,#171a24);font-size:45px;color:var(--gold)}
 .card-info{padding:12px}
-
-.card-title{
- font-size:13px;
- font-weight:700;
- line-height:1.9;
- min-height:48px;
-}
-
-.card-meta{
- display:flex;
- justify-content:space-between;
- gap:5px;
- color:var(--muted);
- font-size:10px;
- margin-top:9px;
-}
-
-.card-label{
- display:inline-block;
- color:var(--gold);
- background:#e6b86b15;
- padding:4px 8px;
- border-radius:7px;
- margin-top:10px;
- font-size:10px;
-}
-
-.status{
- text-align:center;
- color:var(--muted);
- font-size:12px;
- padding:20px;
-}
-
-.empty{
- grid-column:1/-1;
- text-align:center;
- padding:45px 15px;
- background:var(--panel);
- border-radius:15px;
- color:var(--muted);
-}
-
-.modal{
- position:fixed;
- inset:0;
- z-index:50;
- background:#000d;
- display:none;
- overflow:auto;
- padding:20px;
-}
-
+.card-title{font-size:13px;font-weight:700;line-height:1.9;min-height:48px}
+.card-meta{display:flex;justify-content:space-between;gap:5px;color:var(--muted);font-size:10px;margin-top:9px}
+.card-label{display:inline-block;color:var(--gold);background:#e6b86b15;padding:4px 8px;border-radius:7px;margin-top:10px;font-size:10px}
+.status{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+.empty{grid-column:1/-1;text-align:center;padding:45px 15px;background:var(--panel);border-radius:15px;color:var(--muted)}
+.modal{position:fixed;inset:0;z-index:50;background:#000d;display:none;overflow:auto;padding:20px}
 .modal.show{display:block}
-
-.modal-box{
- max-width:750px;
- margin:35px auto;
- background:#151a24;
- border:1px solid #383d49;
- border-radius:20px;
- padding:22px;
-}
-
-.modal-top{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:12px;
-}
-
+.modal-box{max-width:750px;margin:35px auto;background:#151a24;border:1px solid #383d49;border-radius:20px;padding:22px}
+.modal-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .modal-top h2{font-size:20px}
-
-.close{
- background:#ffffff13;
- border:1px solid var(--line);
- color:white;
- border-radius:10px;
- padding:8px 13px;
- cursor:pointer;
-}
-
-.detail-header{
- display:flex;
- gap:18px;
- margin:15px 0 22px;
-}
-
-.detail-poster{
- width:125px;
- height:175px;
- object-fit:cover;
- border-radius:12px;
- background:#222936;
-}
-
-.detail-description{
- color:#b5bac5;
- font-size:13px;
- line-height:2.2;
-}
-
-.episode{
- background:#202632;
- border:1px solid var(--line);
- border-radius:12px;
- padding:14px;
- margin:12px 0;
-}
-
-.episode h3{
- font-size:14px;
- margin:0 0 12px;
-}
-
-.quality{
- display:inline-block;
- margin:4px;
- padding:8px 12px;
- border-radius:8px;
- background:#3a3022;
- border:1px solid #84653d;
- color:#f2cc8c;
- font-size:11px;
-}
-
-.quality:hover{
- background:var(--gold);
- color:#21160d;
-}
-
-footer{
- margin-top:55px;
- padding:35px 20px;
- background:#11151d;
- border-top:1px solid var(--line);
- text-align:center;
-}
-
-footer strong{
- color:var(--gold);
- font-size:19px;
-}
-
-footer p{
- color:var(--muted);
- font-size:12px;
- line-height:2;
-}
-
-@media(max-width:950px){
- .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-}
-
+.close{background:#ffffff13;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 13px;cursor:pointer}
+.detail-header{display:flex;gap:18px;margin:15px 0 22px}
+.detail-poster{width:125px;height:175px;object-fit:cover;border-radius:12px;background:#222936}
+.detail-description{color:#b5bac5;font-size:13px;line-height:2.2}
+.episode{background:#202632;border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
+.episode h3{font-size:14px;margin:0 0 12px}
+.quality{display:inline-block;margin:4px;padding:8px 12px;border-radius:8px;background:#3a3022;border:1px solid #84653d;color:#f2cc8c;font-size:11px}
+.quality:hover{background:var(--gold);color:#21160d}
+footer{margin-top:55px;padding:35px 20px;background:#11151d;border-top:1px solid var(--line);text-align:center}
+footer strong{color:var(--gold);font-size:19px}
+footer p{color:var(--muted);font-size:12px;line-height:2}
+@media(max-width:950px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:650px){
- .nav{flex-wrap:wrap}
- .nav-links{order:3;width:100%;justify-content:center}
- .hero-box{padding:25px;min-height:330px}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
- .stats{grid-template-columns:repeat(3,1fr);gap:8px}
- .stat{padding:12px}
- .stat strong{font-size:19px}
- .stat span{font-size:10px}
- .section-head h2{font-size:18px}
- .detail-header{align-items:flex-start}
+.nav{flex-wrap:wrap}
+.nav-links{order:3;width:100%;justify-content:center}
+.hero-box{padding:25px;min-height:330px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.stats{grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{padding:12px}
+.stat strong{font-size:19px}
+.stat span{font-size:10px}
+.section-head h2{font-size:18px}
+.detail-header{align-items:flex-start}
 }
-
-@media(min-width:1250px){
- .grid{grid-template-columns:repeat(6,minmax(0,1fr))}
-}
+@media(min-width:1250px){.grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
 </style>
 </head>
-
 <body>
-
 <header>
  <div class="nav">
-  <a class="brand" href="#">
-   <div class="brand-icon">🎞</div>
-   گنجینه <span>نوستالژی</span>
-  </a>
-
+  <a class="brand" href="#"><div class="brand-icon">🎞</div>گنجینه <span>نوستالژی</span></a>
   <div class="nav-links">
-   <a href="#">خانه</a>
-   <a href="#archive">آرشیو</a>
-   <a href="#about">درباره ما</a>
+   <a href="#">خانه</a><a href="#archive">آرشیو</a><a href="#about">درباره ما</a>
   </div>
-
   <a class="nav-button" href="#archive">ورود به آرشیو ←</a>
  </div>
 </header>
-
 <section class="hero">
  <div class="hero-box">
   <div class="hero-content">
    <span class="hero-tag">دنیای خاطرات ماندگار</span>
    <h1>هر خاطره، یک داستان<br><span>هر تصویر، یک گنجینه</span></h1>
-   <p>
-    به گنجینه نوستالژی خوش آمدید؛
-    جایی برای کشف دوباره فیلم‌ها، سریال‌ها و خاطرات تصویری.
-   </p>
+   <p>به گنجینه نوستالژی خوش آمدید؛ جایی برای کشف دوباره فیلم‌ها، سریال‌ها و خاطرات تصویری.</p>
    <div class="hero-actions">
     <a href="#archive" class="primary">کشف آرشیو</a>
     <a href="#about" class="secondary">درباره گنجینه</a>
@@ -533,62 +116,34 @@ footer p{
   </div>
  </div>
 </section>
-
 <main class="container" id="archive">
-
  <div class="section-head">
-  <div>
-   <h2>آرشیو بزرگ گنجینه</h2>
-   <p>مجموعه‌ای از آثار خاطره‌انگیز</p>
-  </div>
+  <div><h2>آرشیو بزرگ گنجینه</h2><p>مجموعه‌ای از آثار خاطره‌انگیز</p></div>
   <span class="count" id="count">در حال بارگذاری...</span>
  </div>
-
  <div class="stats">
-  <div class="stat">
-   <strong id="statTitles">—</strong>
-   <span>عنوان آرشیو</span>
-  </div>
-  <div class="stat">
-   <strong id="statEpisodes">—</strong>
-   <span>قسمت شناسایی‌شده</span>
-  </div>
-  <div class="stat">
-   <strong id="statLinks">—</strong>
-   <span>لینک رسانه</span>
-  </div>
+  <div class="stat"><strong id="statTitles">—</strong><span>عنوان آرشیو</span></div>
+  <div class="stat"><strong id="statEpisodes">—</strong><span>قسمت شناسایی‌شده</span></div>
+  <div class="stat"><strong id="statLinks">—</strong><span>لینک رسانه</span></div>
  </div>
-
  <div class="search-wrap">
   <span class="search-icon">⌕</span>
   <input id="search" type="search" placeholder="نام فیلم، سریال یا برنامه را جستجو کن...">
  </div>
-
  <div class="filters">
   <button class="filter active" data-filter="all">همه آثار</button>
   <button class="filter" data-filter="episodes">سریال‌ها</button>
   <button class="filter" data-filter="other">سایر آثار</button>
  </div>
-
  <div id="status" class="status">در حال دریافت اطلاعات آرشیو...</div>
  <div id="grid" class="grid"></div>
-
 </main>
-
 <section class="container" id="about">
  <div class="section-head">
-  <div>
-   <h2>درباره گنجینه نوستالژی</h2>
-   <p>یک خانه برای خاطرات فراموش‌نشدنی</p>
-  </div>
+  <div><h2>درباره گنجینه نوستالژی</h2><p>یک خانه برای خاطرات فراموش‌نشدنی</p></div>
  </div>
- <p class="detail-description">
-  گنجینه نوستالژی با هدف دسته‌بندی و معرفی آثار خاطره‌انگیز
-  سینما و تلویزیون ساخته شده است. اینجا می‌توانید دوباره
-  سراغ دنیای فیلم‌ها، سریال‌ها و برنامه‌های محبوب بروید.
- </p>
+ <p class="detail-description">گنجینه نوستالژی با هدف دسته‌بندی و معرفی آثار خاطره‌انگیز سینما و تلویزیون ساخته شده است. اینجا می‌توانید دوباره سراغ دنیای فیلم‌ها، سریال‌ها و برنامه‌های محبوب بروید.</p>
 </section>
-
 <div class="modal" id="modal">
  <div class="modal-box">
   <div class="modal-top">
@@ -598,33 +153,29 @@ footer p{
   <div id="modalContent"></div>
  </div>
 </div>
-
 <footer>
  <strong>گنجینه نوستالژی</strong>
  <p>خاطرات ماندگار، همیشه زنده‌اند.</p>
  <p>© گنجینه نوستالژی</p>
 </footer>
-
 <script>
 const grid=document.getElementById("grid");
 const statusBox=document.getElementById("status");
 const search=document.getElementById("search");
 const modal=document.getElementById("modal");
 const modalContent=document.getElementById("modalContent");
-
 let archive=[];
 let activeFilter="all";
 
 function create(tag,className,text){
  const el=document.createElement(tag);
- if(className) el.className=className;
- if(text!==undefined) el.textContent=text;
+ if(className)el.className=className;
+ if(text!==undefined)el.textContent=text;
  return el;
 }
 
 function makeCard(item){
  const card=create("article","card");
-
  if(item.poster){
   const img=create("img","poster");
   img.src=item.poster;
@@ -638,23 +189,15 @@ function makeCard(item){
  }else{
   card.appendChild(create("div","poster-fallback","🎞"));
  }
-
  const info=create("div","card-info");
  info.appendChild(create("div","card-title",item.title));
-
  const episodes=item.episodes||[];
  const other=item.other_media_links||[];
-
  const meta=create("div","card-meta");
- meta.appendChild(create("span", "",episodes.length+" قسمت"));
+ meta.appendChild(create("span","",episodes.length+" قسمت"));
  meta.appendChild(create("span","",other.length+" فایل"));
  info.appendChild(meta);
-
- info.appendChild(create(
-  "span","card-label",
-  episodes.length?"آرشیو سریالی":"مجموعه رسانه‌ای"
- ));
-
+ info.appendChild(create("span","card-label",episodes.length?"آرشیو سریالی":"مجموعه رسانه‌ای"));
  card.appendChild(info);
  card.onclick=()=>openDetails(item);
  return card;
@@ -662,29 +205,22 @@ function makeCard(item){
 
 function render(){
  const q=search.value.trim().toLowerCase();
-
  const filtered=archive.filter(item=>{
   const title=(item.title||"").toLowerCase();
   const episodes=item.episodes||[];
   const other=item.other_media_links||[];
-
   const matchSearch=title.includes(q);
-  const matchFilter=
-   activeFilter==="all" ||
-   (activeFilter==="episodes" && episodes.length>0) ||
-   (activeFilter==="other" && other.length>0);
-
-  return matchSearch && matchFilter;
+  const matchFilter=activeFilter==="all"||
+   (activeFilter==="episodes"&&episodes.length>0)||
+   (activeFilter==="other"&&other.length>0);
+  return matchSearch&&matchFilter;
  });
-
  grid.replaceChildren();
-
  if(!filtered.length){
   grid.appendChild(create("div","empty","اثری با این مشخصات پیدا نشد."));
  }else{
   filtered.forEach(item=>grid.appendChild(makeCard(item)));
  }
-
  document.getElementById("count").textContent=filtered.length+" اثر";
  statusBox.textContent="نمایش "+filtered.length+" عنوان";
 }
@@ -692,22 +228,15 @@ function render(){
 function openDetails(item){
  modalContent.replaceChildren();
 
+ // نمایش پوستر و عنوان؛ بدون بخش معرفی اثر و توضیحات
  const head=create("div","detail-header");
-
  if(item.poster){
   const img=create("img","detail-poster");
   img.src=item.poster;
   img.alt=item.title;
   head.appendChild(img);
  }
-
- const intro=create("div","");
- intro.appendChild(create("h3","",item.title));
- intro.appendChild(create(
-  "p","detail-description",
-  item.description||"توضیحی برای این اثر ثبت نشده است."
- ));
- head.appendChild(intro);
+ head.appendChild(create("h3","",item.title));
  modalContent.appendChild(head);
 
  const episodes=item.episodes||[];
@@ -715,11 +244,9 @@ function openDetails(item){
 
  if(episodes.length){
   modalContent.appendChild(create("h3","","قسمت‌ها"));
-
   episodes.forEach(ep=>{
    const box=create("div","episode");
    box.appendChild(create("h3","","قسمت "+ep.number));
-
    (ep.qualities||[]).forEach(q=>{
     const link=create("a","quality",q.quality||"مشاهده لینک");
     link.href=q.url;
@@ -727,14 +254,12 @@ function openDetails(item){
     link.rel="noopener noreferrer";
     box.appendChild(link);
    });
-
    modalContent.appendChild(box);
   });
  }
 
  if(other.length){
   modalContent.appendChild(create("h3","","سایر فایل‌های رسانه‌ای"));
-
   other.forEach(q=>{
    const link=create("a","quality",q.quality||"مشاهده فایل");
    link.href=q.url;
@@ -744,31 +269,19 @@ function openDetails(item){
   });
  }
 
- if(!episodes.length && !other.length){
+ if(!episodes.length&&!other.length){
   modalContent.appendChild(create("p","detail-description","هنوز لینکی برای این اثر ثبت نشده است."));
  }
-
- if(item.page_url){
-  const a=create("a","quality","صفحه معرفی اثر");
-  a.href=item.page_url;
-  a.target="_blank";
-  a.rel="noopener noreferrer";
-  modalContent.appendChild(a);
- }
-
  modal.classList.add("show");
 }
 
 document.getElementById("close").onclick=()=>{
  modal.classList.remove("show");
 };
-
 modal.addEventListener("click",e=>{
- if(e.target===modal) modal.classList.remove("show");
+ if(e.target===modal)modal.classList.remove("show");
 });
-
 search.addEventListener("input",render);
-
 document.querySelectorAll(".filter").forEach(button=>{
  button.onclick=()=>{
   document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
@@ -780,27 +293,19 @@ document.querySelectorAll(".filter").forEach(button=>{
 
 fetch("./ganjineh_final_min.json")
  .then(response=>{
-  if(!response.ok) throw new Error("فایل آرشیو پیدا نشد");
+  if(!response.ok)throw new Error("فایل آرشیو پیدا نشد");
   return response.json();
  })
  .then(data=>{
   archive=data;
-
-  const episodes=archive.reduce(
-   (sum,x)=>sum+(x.episodes||[]).length,0
-  );
-
+  const episodes=archive.reduce((sum,x)=>sum+(x.episodes||[]).length,0);
   const links=archive.reduce((sum,x)=>{
-   const a=(x.episodes||[]).reduce(
-    (n,e)=>n+(e.qualities||[]).length,0
-   );
+   const a=(x.episodes||[]).reduce((n,e)=>n+(e.qualities||[]).length,0);
    return sum+a+(x.other_media_links||[]).length;
   },0);
-
   document.getElementById("statTitles").textContent=archive.length.toLocaleString("fa-IR");
   document.getElementById("statEpisodes").textContent=episodes.toLocaleString("fa-IR");
   document.getElementById("statLinks").textContent=links.toLocaleString("fa-IR");
-
   render();
  })
  .catch(error=>{
@@ -808,6 +313,5 @@ fetch("./ganjineh_final_min.json")
   console.error(error);
  });
 </script>
-
 </body>
 </html>
