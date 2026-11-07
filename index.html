@@ -19,12 +19,12 @@ h2{color:#e8c878}
 .item{background:#17130e;border:1px solid #a8873b;border-radius:12px;padding:25px 12px}
 .item h3{color:#f3d48a}
 .item p{color:#ccc;line-height:1.8}
-#live{background:#100d09;border-top:1px solid #a8873b;border-bottom:1px solid #a8873b}
-.player{width:100%;max-width:1000px;height:500px;border:2px solid #a8873b;border-radius:12px;background:#000}
+#watch{background:#100d09;border-top:1px solid #a8873b;border-bottom:1px solid #a8873b}
+
 #status{padding:12px;color:#e8c878}
 .archive-note{color:#bbb;line-height:2}
 footer{text-align:center;padding:25px;color:#aaa;background:#100d09}
-@media(max-width:600px){.logo{font-size:25px}.player{height:260px}}
+@media(max-width:600px){.logo{font-size:25px}}
 </style>
 </head>
 <body>
@@ -37,7 +37,7 @@ footer{text-align:center;padding:25px;color:#aaa;background:#100d09}
 
 <nav>
   <a href="#home">خانه</a>
-  <a href="#live">تلویزیون اینترنتی</a>
+  <a href="watch.html">تماشای آنلاین</a>
   <a href="catalog.html">آرشیو کامل ۵۷۵ عنوان</a>
   <a href="#about">درباره ما</a>
 </nav>
@@ -50,18 +50,10 @@ footer{text-align:center;padding:25px;color:#aaa;background:#100d09}
   </div>
 </section>
 
-<section id="live">
-  <h2>📺 تلویزیون اینترنتی گنجینه نوستالژی</h2>
-  <p>پخش ویژه برنامه‌های خاطره‌انگیز</p>
-  <div id="status">در حال اتصال به پخش زنده...</div>
-  <iframe
-    class="player"
-    src="https://physicians-special-classroom-calgary.trycloudflare.com/live.html"
-    title="تلویزیون اینترنتی گنجینه نوستالژی"
-    allow="autoplay; fullscreen"
-    allowfullscreen>
-  </iframe>
-  <p>در صورت قطع پخش، ممکن است سرور موقتاً در دسترس نباشد.</p>
+<section id="watch">
+  <h2>🎬 تماشای آنلاین گنجینه نوستالژی</h2>
+  <p>آرشیو خاطره‌انگیز را جست‌وجو کن، قسمت و کیفیت دلخواهت را انتخاب کن و آنلاین تماشا کن.</p>
+  <a href="watch.html" class="btn">ورود به پخش‌کننده</a>
 </section>
 
 <section id="archive">
