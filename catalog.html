@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>آرشیو ۵۷۵ عنوان | گنجینه نوستالژی</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090909;color:#e8c878;font-family:Tahoma,Arial}header{text-align:center;padding:24px;background:#17130b;border-bottom:1px solid #a8873b}h1{font-size:23px}a{color:#f3d58c}input{width:92%;margin:18px 4%;padding:14px;background:#171717;color:white;border:1px solid #a8873b;border-radius:9px;font-size:16px}#count{text-align:center;color:#ddd}#items{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px;padding:12px}.card{background:#171717;border:1px solid #57451d;border-radius:10px;overflow:hidden}.card img{width:100%;height:190px;object-fit:cover}.card h3{font-size:13px;padding:8px}.card button,.episode button{background:#a8873b;color:#111;border:0;border-radius:6px;padding:9px;margin:5px}#detail{padding:16px;background:#171717;line-height:2}.episode{padding:10px;border-bottom:1px solid #57451d}
+</style>
+</head>
+<body>
+<header><h1>🏆 گنجینه نوستالژی</h1><p>آرشیو کامل سریال‌ها و فیلم‌ها</p><a href="index.html">بازگشت به صفحه اصلی</a></header>
+<input id="search" placeholder="جست‌وجوی عنوان..." oninput="render()">
+<div id="count">در حال بارگذاری...</div><main id="items"></main><section id="detail"></section>
+<script>
+let all=[];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function init(){try{let r=await fetch('data/ganjineh_final.json');if(!r.ok)throw Error(r.status);all=await r.json();document.getElementById('count').textContent=all.length+' عنوان | '+all.reduce((n,x)=>n+(x.episodes||[]).length,0)+' قسمت';render()}catch(e){document.getElementById('count').textContent='خطا در بارگذاری: '+e.message}}
+function render(){let q=document.getElementById('search').value.trim().toLowerCase();let a=all.map((x,i)=>({...x,i})).filter(x=>(x.title||'').toLowerCase().includes(q));document.getElementById('items').innerHTML=a.map(x=>`<article class="card"><img loading="lazy" src="${esc(x.poster)}" onerror="this.style.display='none'"><h3>${esc(x.title)}</h3><button onclick="show(${x.i})">نمایش ${x.episodes?.length||0} قسمت</button></article>`).join('');document.getElementById('count').textContent=a.length+' عنوان از '+all.length}
+function show(i){let x=all[i];document.getElementById('detail').innerHTML=`<h2>${esc(x.title)}</h2><p>${esc(x.description)}</p><p><a target="_blank" rel="noopener" href="${esc(x.page_url)}">صفحه معرفی</a></p><h3>قسمت‌ها</h3>`+(x.episodes||[]).map(e=>`<div class="episode">قسمت ${esc(e.number)}<br>`+(e.qualities||[]).map(v=>`<a target="_blank" rel="noopener" href="${esc(v.url)}">${esc(v.label||v.quality)}</a>　`).join('')+'</div>').join('');document.getElementById('detail').scrollIntoView({behavior:'smooth'})}
+init();
+</script>
+</body>
+</html>

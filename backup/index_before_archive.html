@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>گنجینه نوستالژی | آرشیو خاطرات</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:#f0d58b;font-family:Tahoma,sans-serif}
+header{text-align:center;padding:35px 15px;background:linear-gradient(#21170c,#090909);border-bottom:2px solid #a8873b}
+.logo{font-size:34px;font-weight:bold;color:#e8c878}
+header p{color:#d4bd86}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:15px;background:#17120c}
+nav a,.btn{color:#ffe2a5;background:#70401c;padding:11px 16px;border-radius:8px;text-decoration:none}
+section{padding:30px 15px;text-align:center}
+h2{color:#e8c878}
+.intro{max-width:850px;margin:auto;line-height:2;color:#ddd}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px;max-width:1000px;margin:25px auto}
+.item{background:#17130e;border:1px solid #a8873b;border-radius:12px;padding:25px 12px}
+.item h3{color:#f3d48a}
+.item p{color:#ccc;line-height:1.8}
+#live{background:#100d09;border-top:1px solid #a8873b;border-bottom:1px solid #a8873b}
+.player{width:100%;max-width:1000px;height:500px;border:2px solid #a8873b;border-radius:12px;background:#000}
+#status{padding:12px;color:#e8c878}
+.archive-note{color:#bbb;line-height:2}
+footer{text-align:center;padding:25px;color:#aaa;background:#100d09}
+@media(max-width:600px){.logo{font-size:25px}.player{height:260px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🏆 گنجینه نوستالژی</div>
+  <p>آرشیو خاطرات شیرین تلویزیون ایران</p>
+  <p>خاطراتی که هیچ‌وقت فراموش نمی‌شوند</p>
+</header>
+
+<nav>
+  <a href="#home">خانه</a>
+  <a href="#live">تلویزیون اینترنتی</a>
+  <a href="#archive">آرشیو برنامه‌ها</a>
+  <a href="#about">درباره ما</a>
+</nav>
+
+<section id="home">
+  <h2>به گنجینه نوستالژی خوش آمدید</h2>
+  <div class="intro">
+    اینجا خانه خاطرات تلویزیونی ماست؛
+    جایی برای زنده نگه داشتن برنامه‌ها و لحظه‌های خاطره‌انگیز گذشته.
+  </div>
+</section>
+
+<section id="live">
+  <h2>📺 تلویزیون اینترنتی گنجینه نوستالژی</h2>
+  <p>پخش ویژه برنامه‌های خاطره‌انگیز</p>
+  <div id="status">در حال اتصال به پخش زنده...</div>
+  <iframe
+    class="player"
+    src="https://physicians-special-classroom-calgary.trycloudflare.com/live.html"
+    title="تلویزیون اینترنتی گنجینه نوستالژی"
+    allow="autoplay; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <p>در صورت قطع پخش، ممکن است سرور موقتاً در دسترس نباشد.</p>
+</section>
+
+<section id="archive">
+  <h2>🎞️ آرشیو برنامه‌های خاطره‌انگیز</h2>
+  <div class="grid">
+
+    <div class="item">
+      <h3>📺 فیتیله</h3>
+      <p>خاطرات جمعه‌های کودکی</p>
+      <p>آرشیو سال‌های ۱۳۸۱ تا ۱۳۹۴</p>
+    </div>
+
+    <div class="item">
+      <h3>🎩 کلاه‌قرمزی</h3>
+      <p>ماجراهای عروسک‌های دوست‌داشتنی</p>
+    </div>
+
+    <div class="item">
+      <h3>🎭 عمو پورنگ</h3>
+      <p>لحظه‌های شاد و خاطره‌انگیز</p>
+    </div>
+
+    <div class="item">
+      <h3>🌟 خاطرات تلویزیونی</h3>
+      <p>مجموعه‌ای از برنامه‌های نوستالژیک</p>
+    </div>
+
+  </div>
+  <p class="archive-note">
+    آرشیو در حال تکمیل است. بخش‌های رسانه‌ای با اضافه شدن فایل‌ها و لینک‌ها فعال می‌شوند.
+  </p>
+</section>
+
+<section id="about">
+  <h2>درباره گنجینه نوستالژی</h2>
+  <p class="intro">
+    گنجینه نوستالژی با هدف نگهداری و معرفی خاطرات تلویزیونی ساخته شده است.
+    همراه ما باشید تا خاطرات قدیمی زنده بمانند.
+  </p>
+</section>
+
+<footer>
+  گنجینه نوستالژی © ۲۰۲۶
+  <br>
+  زنده نگه داشتن خاطرات
+</footer>
+
+</body>
+</html>
