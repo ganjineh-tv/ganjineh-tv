@@ -5,33 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>تلویزیون گنجینه نوستالژی</title>
 <style>
-body {
-  margin: 0;
-  background: #090909;
-  color: #e8c878;
-  font-family: Tahoma, sans-serif;
-  text-align: center;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#090909;
+  color:#e8c878;
+  font-family:Tahoma,sans-serif;
+  text-align:center;
 }
-header { padding: 22px; }
-iframe {
-  width: 95%;
-  max-width: 1000px;
-  height: 580px;
-  border: 1px solid #a8873b;
-  border-radius: 12px;
-  background: black;
+header{padding:22px}
+h2{color:#e8c878}
+#timer{
+  font-size:clamp(30px,8vw,55px);
+  font-weight:bold;
+  direction:ltr;
+  margin:25px 0;
+  color:#ffd36b;
+}
+#status{font-size:18px;line-height:2}
+iframe{
+  display:none;
+  width:95%;
+  max-width:1000px;
+  height:580px;
+  border:1px solid #a8873b;
+  border-radius:12px;
+  background:#000;
+}
+a{
+  display:inline-block;
+  margin:20px;
+  padding:12px 20px;
+  background:#70401c;
+  color:#ffe2a5;
+  border-radius:9px;
+  text-decoration:none;
 }
 </style>
 </head>
 <body>
 <header>
-  <h2>تلویزیون اینترنتی گنجینه نوستالژی</h2>
-  <p>پخش برنامه‌های خاطره‌انگیز</p>
+<h2>📺 تلویزیون اینترنتی گنجینه نوستالژی</h2>
+<p>پخش ویژه برنامه‌های خاطره‌انگیز</p>
+
+<div id="status">زمان باقی‌مانده تا شروع پخش</div>
+<div id="timer">--:--:--</div>
+
+<iframe id="player"
+src="https://females-rated-whether-qty.trycloudflare.com"
+allow="autoplay; fullscreen"
+allowfullscreen></iframe>
+
+<br>
+<a href="index.html">بازگشت به صفحه اصلی گنجینه</a>
 </header>
-<iframe
-  src="https://females-rated-whether-qty.trycloudflare.com"
-  allow="autoplay; fullscreen"
-  allowfullscreen>
-</iframe>
+
+<script>
+const target =
+new Date("2026-11-07T19:00:00+03:30").getTime();
+
+const timer = document.getElementById("timer");
+const status = document.getElementById("status");
+const player = document.getElementById("player");
+
+function updateTimer(){
+  const remaining = target - Date.now();
+
+  if(remaining <= 0){
+    timer.textContent = "00:00:00";
+    status.textContent = "🔴 پخش آغاز شده است";
+    player.style.display = "block";
+    return;
+  }
+
+  const h = Math.floor(remaining / 3600000);
+  const m = Math.floor((remaining % 3600000) / 60000);
+  const s = Math.floor((remaining % 60000) / 1000);
+
+  timer.textContent =
+  [h,m,s].map(n=>String(n).padStart(2,"0")).join(":");
+}
+
+updateTimer();
+setInterval(updateTimer,1000);
+</script>
 </body>
 </html>
